@@ -1,5 +1,7 @@
 # Open Bug Bounties
 
+[![Refresh and deploy GitHub Pages](https://github.com/VeigaPunk/open-bug-bounties/actions/workflows/pages.yml/badge.svg)](https://github.com/VeigaPunk/open-bug-bounties/actions/workflows/pages.yml)
+
 A public, source-linked index of open paid bug bounty programs:
 
 <https://veigapunk.github.io/open-bug-bounties/>
