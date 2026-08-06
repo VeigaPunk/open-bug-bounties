@@ -1,25 +1,35 @@
 # Open Bug Bounties
 
-Public **GitHub Pages** board for VeigaPunk tracked bounties / packages / staff handoffs.
+A public, source-linked index of open paid bug bounty programs:
 
-| | |
-|--|--|
-| **Live** | https://veigapunk.github.io/open-bug-bounties/ |
-| **Private ChatGPT site** | https://open-bug-bounties.jpveiga.chatgpt.site/ (auth) |
-| **Data** | [`data/bounties.json`](data/bounties.json) |
+<https://veigapunk.github.io/open-bug-bounties/>
 
-## Essence
+## Refresh policy
 
-Dark, dense, filterable board — same intent as the ChatGPT site (bounty inventory + status), public and crawlable. No login wall.
+GitHub Actions runs every 12 hours and on demand. It:
 
-## Godspeed + sekhmet
+- rechecks eligible first-party policy URLs while respecting `robots.txt`;
+- rechecks the permitted HackerOne and Sherlock directory pages;
+- retains the last-good inventory through transient failures;
+- leaves Bugcrowd, Intigriti, YesWeHack, HackenProof, Immunefi, and Cantina as clearly labeled snapshots until reuse or crawl permission is available;
+- rebuilds and republishes the static site after every refresh.
 
-L3 workers (`sekhmet`) inject the short godspeed directive on **every** dispatch into `in/godspeed.md` + `in/task.md` head. See [xbrd-spark](https://github.com/VeigaPunk/xbrd-spark).
+The index stores only minimal factual records: program name, source, surface, reward summary where independently verified, and a link to the official policy. It does not reproduce scopes, policy text, logos, or platform descriptions.
 
-## Refresh data
+## Local development
 
-Regenerate `data/bounties.json` from local orch inventory or a signed-in export of the ChatGPT site, then commit on `main`.
+Requires Node.js 22 or newer.
 
-## License
+```bash
+npm ci
+npm run dev
+```
 
-MIT OR Apache-2.0
+Run the same checks used by CI:
+
+```bash
+npm run refresh
+NEXT_PUBLIC_BASE_PATH=/open-bug-bounties npm test
+```
+
+Always verify the current scope and rules on the linked official page before testing.

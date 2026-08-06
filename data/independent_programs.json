@@ -1,0 +1,908 @@
+{
+  "last_permitted_check_at_utc": "2026-08-06T13:07:23Z",
+  "source_check": {
+    "status": "unchanged",
+    "checked": 47,
+    "reachable": 47,
+    "robots_disallowed": 0,
+    "consecutive_misses": 0,
+    "notes": [
+      "Epic Games and Roblox returned HTTP 403 to the conservative direct checker; their public first-party pages were verified through the browser-safe retriever and retained."
+    ]
+  },
+  "programs": [
+    {
+      "id": "google-vrp-family",
+      "name": "Google and Alphabet Vulnerability Reward Programs",
+      "category": "technology",
+      "official_url": "https://bughunters.google.com/about/rules/google-friends/google-and-alphabet-vulnerability-reward-program-vrp-rules",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Published monetary reward tables vary by subprogram",
+        "source_url": "https://bughunters.google.com/about/rules"
+      }
+    },
+    {
+      "id": "microsoft-bounty-family",
+      "name": "Microsoft Bounty Programs",
+      "category": "technology",
+      "official_url": "https://www.microsoft.com/en-us/msrc/bounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 250000,
+        "text": "Program-specific awards; the first-party overview advertises awards up to $250,000",
+        "source_url": "https://www.microsoft.com/en-us/msrc/bounty"
+      }
+    },
+    {
+      "id": "apple-security-bounty",
+      "name": "Apple Security Bounty",
+      "category": "technology",
+      "official_url": "https://security.apple.com/bounty/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 2000000,
+        "text": "Rewards reach $2 million; bonuses can exceed $5 million",
+        "source_url": "https://security.apple.com/bounty/"
+      }
+    },
+    {
+      "id": "meta-bug-bounty",
+      "name": "Meta Bug Bounty",
+      "category": "technology",
+      "official_url": "https://bugbounty.meta.com/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Program-specific cash rewards; the first-party portal publishes high-value examples and reward guidance",
+        "source_url": "https://bugbounty.meta.com/"
+      }
+    },
+    {
+      "id": "mozilla-security-bounties",
+      "name": "Mozilla Security Bug Bounties",
+      "category": "open_source",
+      "official_url": "https://www.mozilla.org/en-US/security/bug-bounty/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 500,
+        "max": 20000,
+        "text": "Client bounty page lists $500 to $20,000",
+        "source_url": "https://www.mozilla.org/en-US/security/client-bug-bounty/"
+      }
+    },
+    {
+      "id": "github-bug-bounty",
+      "name": "GitHub Bug Bounty",
+      "category": "developer_tools",
+      "official_url": "https://bounty.github.com/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "text": "First-party reward table; critical public-scope awards start at $10,000 and private-scope awards at $30,000",
+        "source_url": "https://bounty.github.com/rewards.html"
+      }
+    },
+    {
+      "id": "intel-bug-bounty",
+      "name": "Intel Bug Bounty Program",
+      "category": "hardware",
+      "official_url": "https://www.intel.com/content/www/us/en/security/security-practices/vulnerability-management/bug-bounty-program.html",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 500,
+        "max": 100000,
+        "text": "$500 to $100,000",
+        "source_url": "https://www.intel.com/content/www/us/en/security/security-practices/vulnerability-management/bug-bounty-program.html"
+      }
+    },
+    {
+      "id": "samsung-mobile-security-rewards",
+      "name": "Samsung Mobile Security Rewards Program",
+      "category": "mobile_hardware",
+      "official_url": "https://security.samsungmobile.com/rewardsProgram.smsb",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 200,
+        "max": 1000000,
+        "text": "$200 to $1,000,000 across the mobile rewards and high-impact programs",
+        "source_url": "https://security.samsungmobile.com/rewardsProgram.smsb"
+      }
+    },
+    {
+      "id": "synology-security-bounty",
+      "name": "Synology Security Bug Bounty",
+      "category": "hardware",
+      "official_url": "https://www.synology.com/security/bounty_program",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 30000,
+        "text": "Up to $30,000 for qualifying OS issues; lower maxima for software, cloud, and web categories",
+        "source_url": "https://www.synology.com/security/bounty_program"
+      }
+    },
+    {
+      "id": "qnap-security-bounty",
+      "name": "QNAP Security Bounty Program",
+      "category": "hardware",
+      "official_url": "https://www.qnap.com/en/security-bounty-program",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "currency": "USD",
+        "max": 20000,
+        "text": "Official page advertises rewards up to $20,000",
+        "source_url": "https://www.qnap.com/en/security-bounty-program"
+      }
+    },
+    {
+      "id": "netgear-product-security-bounty",
+      "name": "NETGEAR Product Security Bug Bounty",
+      "category": "hardware",
+      "official_url": "https://www.netgear.com/au/security/product-security/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "medium",
+      "reward": {
+        "text": "Official policy says eligible contributors may receive a Bug Bounty award; amount is not published on the checked page",
+        "source_url": "https://www.netgear.com/au/security/product-security/"
+      }
+    },
+    {
+      "id": "proton-bug-bounty",
+      "name": "Proton Bug Bounty",
+      "category": "privacy",
+      "official_url": "https://proton.me/security/bug-bounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 100000,
+        "text": "Maximum $100,000; published critical, high, and medium tiers",
+        "source_url": "https://proton.me/security/bug-bounty"
+      }
+    },
+    {
+      "id": "expressvpn-bug-bounty",
+      "name": "ExpressVPN Bug Bounty",
+      "category": "privacy",
+      "official_url": "https://www.expressvpn.com/bug-bounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 100000,
+        "text": "The first-party page advertises a one-time $100,000 bonus in addition to normal rewards",
+        "source_url": "https://www.expressvpn.com/bug-bounty"
+      }
+    },
+    {
+      "id": "brave-bug-bounty",
+      "name": "Brave Bug Bounty",
+      "category": "browser",
+      "official_url": "https://hack.brave.com/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "medium",
+      "reward": {
+        "text": "First-party page identifies an active HackerOne bug bounty; verify current amounts from the linked program",
+        "source_url": "https://hack.brave.com/"
+      }
+    },
+    {
+      "id": "opera-bug-bounty",
+      "name": "Opera Bug Bounty",
+      "category": "browser",
+      "official_url": "https://security.opera.com/en/bug-bounty/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "currency": "USD",
+        "max": 10000,
+        "text": "The latest first-party amount located says up to $10,000; recheck the linked Bugcrowd table",
+        "source_url": "https://blogs.opera.com/security/2021/04/earn-up-to-10k-from-the-opera-bug-bounty-program/"
+      }
+    },
+    {
+      "id": "kubernetes-bug-bounty",
+      "name": "Kubernetes Bug Bounty",
+      "category": "open_source",
+      "official_url": "https://kubernetes.io/blog/2020/01/14/kubernetes-bug-bounty-announcement/",
+      "participation": "public",
+      "status": "active_needs_freshness_confirmation",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "text": "CNCF-funded cash rewards; current amounts should be taken from the linked HackerOne program",
+        "source_url": "https://kubernetes.io/blog/2020/01/14/kubernetes-bug-bounty-announcement/"
+      }
+    },
+    {
+      "id": "wordpress-security-bounty",
+      "name": "WordPress Security Bounty",
+      "category": "open_source",
+      "official_url": "https://make.wordpress.org/core/handbook/testing/reporting-security-vulnerabilities/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Official handbook says monetary rewards are offered for eligible new, unreleased vulnerabilities",
+        "source_url": "https://make.wordpress.org/core/handbook/testing/reporting-security-vulnerabilities/"
+      }
+    },
+    {
+      "id": "nextcloud-bug-bounty",
+      "name": "Nextcloud Bug Bounty",
+      "category": "open_source",
+      "official_url": "https://nextcloud.com/security/threat-model/",
+      "participation": "public",
+      "status": "active_needs_freshness_confirmation",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "currency": "USD",
+        "max": 10000,
+        "text": "Last located first-party maximum is $10,000",
+        "source_url": "https://nextcloud.com/blog/nextcloud-conference-news-nextcloud-gmbh-doubling-hackerone-security-bug-bounties/"
+      }
+    },
+    {
+      "id": "gitlab-public-bug-bounty",
+      "name": "GitLab Public Bug Bounty",
+      "category": "developer_tools",
+      "official_url": "https://about.gitlab.com/blog/inside-the-gitlab-public-bug-bounty-program/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Cash bounties; current amounts should be read from the linked HackerOne program",
+        "source_url": "https://about.gitlab.com/blog/enhance-application-security-with-gitlab-hackerone/"
+      }
+    },
+    {
+      "id": "elastic-bug-bounty",
+      "name": "Elastic Bug Bounty",
+      "category": "developer_tools",
+      "official_url": "https://www.elastic.co/product-security",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Official security pages describe a mature paid public program; only reports through the official program are bounty-eligible",
+        "source_url": "https://www.elastic.co/product-security"
+      }
+    },
+    {
+      "id": "atlassian-public-bug-bounty",
+      "name": "Atlassian Public Bug Bounty",
+      "category": "saas",
+      "official_url": "https://www.atlassian.com/trust/security/report-a-vulnerability",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Cash rewards; Marketplace program publishes severity minimums from $100 to $1,500",
+        "source_url": "https://developer.atlassian.com/platform/marketplace/marketplace-security-bug-bounty-program/"
+      }
+    },
+    {
+      "id": "cloudflare-public-bug-bounty",
+      "name": "Cloudflare Public Bug Bounty",
+      "category": "cloud",
+      "official_url": "https://blog.cloudflare.com/cloudflare-bug-bounty-program/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Paid public bounty; current table is on the linked HackerOne program",
+        "source_url": "https://blog.cloudflare.com/cloudflare-bug-bounty-program/"
+      }
+    },
+    {
+      "id": "vercel-oss-bug-bounty",
+      "name": "Vercel OSS Bug Bounty",
+      "category": "open_source",
+      "official_url": "https://vercel.com/blog/the-vercel-oss-bug-bounty-program-is-now-available",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Cash rewards for eligible Vercel open-source projects; use current provider table for amounts",
+        "source_url": "https://vercel.com/security"
+      }
+    },
+    {
+      "id": "digitalocean-paid-bug-bounty",
+      "name": "DigitalOcean Paid Bug Bounty",
+      "category": "cloud",
+      "official_url": "https://www.digitalocean.com/blog/digitalocean-bug-bounty-program",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 8000,
+        "text": "Published tiers up to $8,000 for critical findings",
+        "source_url": "https://www.digitalocean.com/blog/digitalocean-bug-bounty-program"
+      }
+    },
+    {
+      "id": "glia-security-bounty",
+      "name": "Glia Security Bounty",
+      "category": "saas",
+      "official_url": "https://www.glia.com/security-bounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 200,
+        "text": "Published starting amounts: low $200+, medium $1,000+, high $2,500+, critical $5,000+",
+        "source_url": "https://www.glia.com/security-bounty"
+      }
+    },
+    {
+      "id": "shopify-bug-bounty",
+      "name": "Shopify Bug Bounty",
+      "category": "commerce",
+      "official_url": "https://www.shopify.com/bugbounty/about",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 200000,
+        "text": "Up to $200,000 plus applicable bonuses",
+        "source_url": "https://www.shopify.com/bugbounty/rewards"
+      }
+    },
+    {
+      "id": "discord-bug-bounty",
+      "name": "Discord Bug Bounty",
+      "category": "communications",
+      "official_url": "https://discord.com/security",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "Official security page says Discord offers rewards through Bugcrowd; amount varies",
+        "source_url": "https://discord.com/security"
+      }
+    },
+    {
+      "id": "slack-bug-bounty",
+      "name": "Slack Bug Bounty",
+      "category": "communications",
+      "official_url": "https://slack.com/report-vulnerability",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "medium",
+      "reward": {
+        "text": "First-party security material describes a public bounty; verify current amounts in the linked HackerOne program",
+        "source_url": "https://slack.com/intl/en-in/resources/why-use-slack/security-at-slack"
+      }
+    },
+    {
+      "id": "stripe-bug-bounty",
+      "name": "Stripe Bug Bounty",
+      "category": "payments",
+      "official_url": "https://docs.stripe.com/security",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Stripe says its vulnerability disclosure and reward program compensates independent researchers",
+        "source_url": "https://docs.stripe.com/security"
+      }
+    },
+    {
+      "id": "paypal-bug-bounty",
+      "name": "PayPal Bug Bounty",
+      "category": "payments",
+      "official_url": "https://www.paypal.com/us/webapps/mpp/security-tools/reporting-security-issues",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 50,
+        "max": 30000,
+        "text": "$50 to $30,000",
+        "source_url": "https://www.paypal.com/us/webapps/mpp/security-tools/reporting-security-issues"
+      }
+    },
+    {
+      "id": "onepassword-bug-bounty",
+      "name": "1Password Bug Bounty",
+      "category": "security_software",
+      "official_url": "https://support.1password.com/security-assessments/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "Public HackerOne bounty; current amount varies by severity",
+        "source_url": "https://support.1password.com/security-assessments/"
+      }
+    },
+    {
+      "id": "dashlane-bug-bounty",
+      "name": "Dashlane Bug Bounty",
+      "category": "security_software",
+      "official_url": "https://www.dashlane.com/security/researchers",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Qualifying reports may receive cash rewards; current amounts are on the provider program",
+        "source_url": "https://www.dashlane.com/security/researchers"
+      }
+    },
+    {
+      "id": "keeper-bugcrowd-bounty",
+      "name": "Keeper Security Public Bug Bounty",
+      "category": "security_software",
+      "official_url": "https://www.keepersecurity.com/vulnerability-disclosure-policy/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Separate public Bugcrowd program offers rewards; ordinary VDP submissions are not reward-eligible",
+        "source_url": "https://www.keepersecurity.com/vulnerability-disclosure-policy/"
+      }
+    },
+    {
+      "id": "riot-games-bug-bounty",
+      "name": "Riot Games Bug Bounty",
+      "category": "gaming",
+      "official_url": "https://www.riotgames.com/en/reporting-a-security-vulnerability",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "Valid in-scope reports may qualify for a bounty; amount varies",
+        "source_url": "https://www.riotgames.com/en/reporting-a-security-vulnerability"
+      }
+    },
+    {
+      "id": "epic-games-bug-bounty",
+      "name": "Epic Games Bug Bounty",
+      "category": "gaming",
+      "official_url": "https://www.epicgames.com/site/security",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "Epic says it awards eligible findings through its HackerOne program",
+        "source_url": "https://www.epicgames.com/site/security"
+      }
+    },
+    {
+      "id": "roblox-bug-bounty",
+      "name": "Roblox Bug Bounty",
+      "category": "gaming",
+      "official_url": "https://en.help.roblox.com/hc/en-us/articles/360038516512-How-to-Report-Security-Exploits",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Successful eligible submissions can receive financial rewards through HackerOne",
+        "source_url": "https://en.help.roblox.com/hc/en-us/articles/360038516512-How-to-Report-Security-Exploits"
+      }
+    },
+    {
+      "id": "nintendo-product-security-bounty",
+      "name": "Nintendo Product Security Bug Bounty",
+      "category": "gaming",
+      "official_url": "https://www.nintendo.com/au/support/product-security/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Nintendo says it pays bug bounties for eligible reports via HackerOne",
+        "source_url": "https://www.nintendo.com/au/support/product-security/"
+      }
+    },
+    {
+      "id": "playstation-bug-bounty",
+      "name": "PlayStation Bug Bounty",
+      "category": "gaming",
+      "official_url": "https://blog.playstation.com/2020/06/24/announcing-the-playstation-bug-bounty-program/",
+      "participation": "public",
+      "status": "active_needs_freshness_confirmation",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "currency": "USD",
+        "text": "Launch page says critical PlayStation 4 reports start at $50,000; verify current provider table",
+        "source_url": "https://blog.playstation.com/2020/06/24/announcing-the-playstation-bug-bounty-program/"
+      }
+    },
+    {
+      "id": "rockstar-games-public-bounty",
+      "name": "Rockstar Games Public Bug Bounty",
+      "category": "gaming",
+      "official_url": "https://support.rockstargames.com/articles/36Vh3bq19eTNSDWOsh9kIx/rockstar-games-public-hackerone-bug-bounty-program",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "Public HackerOne bounty; current amount varies",
+        "source_url": "https://support.rockstargames.com/articles/36Vh3bq19eTNSDWOsh9kIx/rockstar-games-public-hackerone-bug-bounty-program"
+      }
+    },
+    {
+      "id": "nvidia-bug-bounty",
+      "name": "NVIDIA Bug Bounty",
+      "category": "hardware",
+      "official_url": "https://www.nvidia.com/en-us/product-security/report-vulnerability/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "NVIDIA's first-party FAQ confirms a bug bounty and links Intigriti; amount varies",
+        "source_url": "https://www.nvidia.com/en-us/product-security/report-vulnerability/"
+      }
+    },
+    {
+      "id": "amd-bug-bounty",
+      "name": "AMD Bug Bounty",
+      "category": "hardware",
+      "official_url": "https://www.amd.com/en/resources/product-security.html",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "cash_rewards_amount_undisclosed",
+      "confidence": "high",
+      "reward": {
+        "text": "AMD's first-party product-security page links its Intigriti bounty; amount varies",
+        "source_url": "https://www.amd.com/en/resources/product-security.html"
+      }
+    },
+    {
+      "id": "cisco-public-bounty-subprograms",
+      "name": "Cisco Public Bug Bounty Programs",
+      "category": "networking",
+      "official_url": "https://sec.cloudapps.cisco.com/security/center/resources/cisco_bug_bounty_faq.html",
+      "participation": "public_for_listed_subprograms_only",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Monetary rewards for verified vulnerabilities; current amounts vary by subprogram",
+        "source_url": "https://meraki.cisco.com/trust/"
+      }
+    },
+    {
+      "id": "palo-alto-networks-product-bounty",
+      "name": "Palo Alto Networks Product Security Bug Bounty",
+      "category": "security_software",
+      "official_url": "https://security.paloaltonetworks.com/bugbounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Rewards depend on impact; no fixed amount was published on the checked first-party page",
+        "source_url": "https://security.paloaltonetworks.com/bugbounty"
+      }
+    },
+    {
+      "id": "sophos-bug-bounty",
+      "name": "Sophos Bug Bounty",
+      "category": "security_software",
+      "official_url": "https://www.sophos.com/en-us/trust/responsible-disclosure",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 80000,
+        "text": "A 2026 first-party post says rewards reach $80,000",
+        "source_url": "https://www.sophos.com/en-us/blog/bug-bounties-in-the-mythos-era"
+      }
+    },
+    {
+      "id": "okta-auth0-public-bounties",
+      "name": "Okta and Auth0 Public Bug Bounties",
+      "category": "identity",
+      "official_url": "https://www.okta.com/content/dam/okta---digital/en_us/legal/okta-vulnerability-disclosure-policy_v2.0.pdf",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Paid public programs; a 2025 first-party update reports $405,801 paid from May 2024 through May 2025",
+        "source_url": "https://sec.okta.com/articles/2025/05/oktas-secure-by-design-pledge-one-year-on/"
+      }
+    },
+    {
+      "id": "trend-micro-zdi",
+      "name": "Zero Day Initiative",
+      "category": "vendor_agnostic_acquisition",
+      "official_url": "https://www.zerodayinitiative.com/about/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Financial incentives for accepted, previously unpatched vulnerabilities; amount is determined per submission",
+        "source_url": "https://www.zerodayinitiative.com/about/benefits/"
+      }
+    },
+    {
+      "id": "huawei-security-reward",
+      "name": "Huawei Security Reward Program",
+      "category": "mobile_hardware",
+      "official_url": "https://bugbounty.huawei.com/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "currency": "EUR",
+        "max": 200000,
+        "text": "An older first-party security white paper says up to EUR 200,000; do not present as current without portal confirmation",
+        "source_url": "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/campaign/privacy/whitepaper/Read-HUAWEI-Mobile-Service-HMS-Security-Technical-White-Paper.pdf"
+      }
+    },
+    {
+      "id": "xiaomi-security-reward",
+      "name": "Xiaomi Security Reward Program",
+      "category": "mobile_hardware",
+      "official_url": "https://trust.mi.com/security",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Cash rewards and campaign bonuses; current amounts vary",
+        "source_url": "https://trust.mi.com/security"
+      }
+    },
+    {
+      "id": "oppo-security-bounty",
+      "name": "OPPO Security Bounty",
+      "category": "mobile_hardware",
+      "official_url": "https://security.oppo.com/en/report",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Published reward tables vary by product and scenario; preserve source currency and coefficients rather than guessing normalization",
+        "source_url": "https://security.oppo.com/en/add"
+      }
+    },
+    {
+      "id": "dji-bug-bounty",
+      "name": "DJI Bug Bounty",
+      "category": "hardware",
+      "official_url": "https://security.dji.com/en",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "currency": "USD",
+        "min": 50,
+        "max": 30000,
+        "text": "DJI Trust Center states $50 to $30,000; program guidelines also contain CNY-denominated minimums",
+        "source_url": "https://www.dji.com/trust-center"
+      }
+    },
+    {
+      "id": "mediatek-hackerone-bounty",
+      "name": "MediaTek Bug Bounty",
+      "category": "hardware",
+      "official_url": "https://www.mediatek.com/security-contact",
+      "participation": "public_needs_confirmation",
+      "status": "active_with_policy_conflict",
+      "paid_status": "confirmed_cash_on_current_contact_page",
+      "confidence": "medium",
+      "reward": {
+        "text": "Current contact page says only valid HackerOne bounty reports are eligible for monetary rewards",
+        "source_url": "https://www.mediatek.com/security-contact"
+      }
+    },
+    {
+      "id": "openai-security-bug-bounty",
+      "name": "OpenAI Security Bug Bounty",
+      "category": "ai",
+      "official_url": "https://openai.com/policies/coordinated-vulnerability-disclosure-policy/",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 200,
+        "max": 20000,
+        "text": "Published security bounty range is $200 to $20,000",
+        "source_url": "https://openai.com/index/bug-bounty-program/"
+      }
+    },
+    {
+      "id": "openai-safety-bug-bounty",
+      "name": "OpenAI Safety Bug Bounty",
+      "category": "ai_safety",
+      "official_url": "https://openai.com/index/safety-bug-bounty/",
+      "participation": "public_application",
+      "status": "active",
+      "paid_status": "confirmed_rewards_amount_undisclosed_first_party",
+      "confidence": "high",
+      "reward": {
+        "text": "Reward-bearing public safety and abuse program; current amounts are on the linked Bugcrowd page",
+        "source_url": "https://openai.com/index/safety-bug-bounty/"
+      }
+    },
+    {
+      "id": "telegram-bug-bounty",
+      "name": "Telegram Bug Bounty Program",
+      "category": "communications",
+      "official_url": "https://core.telegram.org/bug-bounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "min": 500,
+        "max": 100000,
+        "text": "First-party historical guidance says $500 to $100,000 or more; use the current rules page for eligibility",
+        "source_url": "https://telegram.org/blog/crowdsourcing-a-more-secure-future"
+      }
+    },
+    {
+      "id": "dropbox-bug-bounty",
+      "name": "Dropbox Bug Bounty",
+      "category": "cloud",
+      "official_url": "https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Dropbox says its bounty incentivizes researchers and strives for industry-leading rewards; current amounts are on Intigriti",
+        "source_url": "https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf"
+      }
+    },
+    {
+      "id": "reddit-bug-bounty",
+      "name": "Reddit Bug Bounty",
+      "category": "social",
+      "official_url": "https://redditinc.com/policies/bug-bounty-program",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "text": "Rewards are based on asset criticality, impact, and data sensitivity",
+        "source_url": "https://redditinc.com/policies/bug-bounty-program"
+      }
+    },
+    {
+      "id": "adobe-public-bug-bounty",
+      "name": "Adobe Public Bug Bounty",
+      "category": "software",
+      "official_url": "https://www.adobe.com/trust/security/bug-bounty.html",
+      "participation": "public",
+      "status": "active_provider_migration_scheduled",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "USD",
+        "max": 15000,
+        "text": "Public paid bounty; scoped AI assets can earn up to $15,000",
+        "source_url": "https://blog.adobe.com/security/adobe-expands-bug-bounty-program-to-incentivize-ai-security-research"
+      }
+    },
+    {
+      "id": "tiktok-global-bug-bounty",
+      "name": "TikTok Global Bug Bounty",
+      "category": "social",
+      "official_url": "https://newsroom.tiktok.com/en-ca/cyber-security-awareness-month-at-tiktok-ca",
+      "participation": "public",
+      "status": "active_needs_freshness_confirmation",
+      "paid_status": "confirmed_cash",
+      "confidence": "medium",
+      "reward": {
+        "text": "TikTok reported more than $1.6 million in cumulative public-program bounties as of October 2024",
+        "source_url": "https://newsroom.tiktok.com/en-ca/cyber-security-awareness-month-at-tiktok-ca"
+      }
+    },
+    {
+      "id": "swiss-post-bug-bounty",
+      "name": "Swiss Post Bug Bounty Programme",
+      "category": "public_services",
+      "official_url": "https://site.post.ch/en/about-us/security/bug-bounty",
+      "participation": "public",
+      "status": "active",
+      "paid_status": "confirmed_cash",
+      "confidence": "high",
+      "reward": {
+        "currency": "CHF",
+        "max": 10000,
+        "text": "Rewards up to CHF 10,000",
+        "source_url": "https://site.post.ch/en/about-us/security/bug-bounty"
+      }
+    },
+    {
+      "id": "tesla-product-security-bounty",
+      "name": "Tesla Product Security Bug Bounty",
+      "category": "automotive",
+      "official_url": "https://www.tesla.com/legal/security",
+      "participation": "public_with_vehicle_preregistration_requirements",
+      "status": "active",
+      "paid_status": "confirmed_rewards_amount_undisclosed_first_party",
+      "confidence": "high",
+      "reward": {
+        "text": "Tesla says Bugcrowd is its platform for rewarding all eligible issues; current amounts are on the linked program",
+        "source_url": "https://www.tesla.com/legal/security"
+      }
+    }
+  ]
+}
