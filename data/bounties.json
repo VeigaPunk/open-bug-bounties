@@ -1,0 +1,244 @@
+{
+  "generated_at": "2026-08-06T20:27:09.916427+00:00",
+  "source": "local lunch-orch open-author inventory (ChatGPT site mirror seed)",
+  "chatgpt_site": "https://open-bug-bounties.jpveiga.chatgpt.site/",
+  "count": 19,
+  "bounties": [
+    {
+      "repo": "VeigaPunk/opendbc-branch-coverage",
+      "number": 1,
+      "title": "[STAFF] Open PR for commaai/opendbc#2557 from VeigaPunk:branch-coverage-2557",
+      "url": "https://github.com/VeigaPunk/opendbc-branch-coverage/issues/1",
+      "updated": "2026-07-22T14:49:08Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "Staff: VeigaPunk is blocked from creating PRs on commaai org.  Please open: https://github.com/commaai/opendbc/compare/master...VeigaPunk:branch-coverage-2557  Local: 3691 tests, 100% branch. Closes #2557 when merged under VeigaPunk."
+    },
+    {
+      "repo": "VeigaPunk/op-fuzz-tx",
+      "number": 2,
+      "title": "Staff apply: TX fuzzy for openpilot #32425",
+      "url": "https://github.com/VeigaPunk/op-fuzz-tx/issues/2",
+      "updated": "2026-07-22T14:49:04Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "Ready patch for comma staff cherry-pick. See README."
+    },
+    {
+      "repo": "VeigaPunk/op-fuzz-tx",
+      "number": 1,
+      "title": "Staff: cherry-pick TX fuzzy patch for commaai/openpilot#32425",
+      "url": "https://github.com/VeigaPunk/op-fuzz-tx/issues/1",
+      "updated": "2026-07-22T14:17:26Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## Request GitHub user **VeigaPunk** is org-blocked from creating PRs/comments on `commaai/*`.  Ready patch for bounty https://github.com/commaai/openpilot/issues/32425 :  ```bash curl -fsSL https://raw.githubusercontent.com/VeigaPunk/op-fuzz-tx/main/tx-fuzzy.patch | git apply ``"
+    },
+    {
+      "repo": "VeigaPunk/openpilot-wifi-no-nm",
+      "number": 1,
+      "title": "[for maintainers] #37752 no-NM patch + CI fix for #38330",
+      "url": "https://github.com/VeigaPunk/openpilot-wifi-no-nm/issues/1",
+      "updated": "2026-07-22T14:09:55Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## For commaai / @andiradulescu / @adeebshihadeh  **Bounty:** https://github.com/commaai/openpilot/issues/37752   **Upstream draft:** https://github.com/commaai/openpilot/pull/38330 (unit tests fail: still imports `jeepney` after NM removal)  VeigaPunk is **GitHub-blocked** from "
+    },
+    {
+      "repo": "VeigaPunk/horizon-halo-comma-design",
+      "number": 1,
+      "title": "Staff handoff: comma four revision + website PR#335",
+      "url": "https://github.com/VeigaPunk/horizon-halo-comma-design/issues/1",
+      "updated": "2026-07-22T14:06:49Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## Status Blocked only on comma staff merge of https://github.com/commaai/website/pull/335  ## Maintainer feedback @sshane: Qt gone; comma four is headlining hardware \u2192 addressed in commit 5c9184b.  ## Links - Demo: https://veigapunk.github.io/horizon-halo-comma-design/ - Preview"
+    },
+    {
+      "repo": "VeigaPunk/harness-tester-bugs-veigapunk",
+      "number": 1,
+      "title": "Staff grade request: comma harness LB still 24",
+      "url": "https://github.com/VeigaPunk/harness-tester-bugs-veigapunk/issues/1",
+      "updated": "2026-07-29T02:09:46Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [
+        "help wanted"
+      ],
+      "snippet": "Public tracking issue for graders.  Form recorded @48 as VeigaPunk/hardware. PR: https://github.com/commaai/website/pull/334 (preview #1) Live: https://comma.ai/leaderboard#harness_tester_challenge still 24.  This is on our repo only (commaai comments blocked)."
+    },
+    {
+      "repo": "VeigaPunk/comma-controls-challenge",
+      "number": 1,
+      "title": "Awaiting comma LB publish @ 6.880",
+      "url": "https://github.com/VeigaPunk/comma-controls-challenge/issues/1",
+      "updated": "2026-07-22T14:48:20Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "Form recorded, emails to work@comma.ai + maintainers, PR#333 closed due to block. Score 6.880472 floor. Polling https://comma.ai/leaderboard"
+    },
+    {
+      "repo": "VeigaPunk/op-metadrive-macos-33207",
+      "number": 1,
+      "title": "Ready for cherry-pick: MetaDrive macOS #33207",
+      "url": "https://github.com/VeigaPunk/op-metadrive-macos-33207/issues/1",
+      "updated": "2026-07-22T14:47:47Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## Ready for staff cherry-pick  **Upstream issue:** https://github.com/commaai/openpilot/issues/33207  **Identity:** VeigaPunk is currently **blocked** from opening PRs / commenting on `commaai/*` (`User is blocked (createPullRequest)`, issue comments 403).  ### Artifacts - Patch"
+    },
+    {
+      "repo": "VeigaPunk/flash-bounty-128-package",
+      "number": 1,
+      "title": "Bounty #128 staff handoff: blocked on commaai, ready for cherry-pick",
+      "url": "https://github.com/VeigaPunk/flash-bounty-128-package/issues/1",
+      "updated": "2026-07-22T14:07:50Z",
+      "family": "comma.ai",
+      "status": "staff-blocked / package ready",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## Context Working **commaai/flash#128** (\\$100 walkthrough bounty) as **VeigaPunk**.  GitHub returns **Blocked** on all interaction with `commaai/*` (fork, issue comments, PR create). Package is published here for staff cherry-pick.  ## Maintainer bar @adeebshihadeh clarified on"
+    },
+    {
+      "repo": "huggingface/agents-course",
+      "number": 715,
+      "title": "Students_leaderboard: earliest-timestamp freeze among 615\u00d7100 scores",
+      "url": "https://github.com/huggingface/agents-course/issues/715",
+      "updated": "2026-07-22T14:51:15Z",
+      "family": "research-eval",
+      "status": "upstream open",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## Context The [Students_leaderboard](https://huggingface.co/spaces/agents-course/Students_leaderboard) ranks by **score DESC, then timestamp ASC**.  Live API currently has **615** entries at the **maximum score 100.0** (score formula is `correct/N*100` on Unit4 scoring \u2014 hard ce"
+    },
+    {
+      "repo": "qanta-org/qb-tournament-runner",
+      "number": 1,
+      "title": "Late eval: submission Space RUNTIME_ERROR + advcal-requests 404 (VeigaPunk)",
+      "url": "https://github.com/qanta-org/qb-tournament-runner/issues/1",
+      "updated": "2026-07-22T13:30:37Z",
+      "family": "research-eval",
+      "status": "upstream open",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "Cross-link: https://github.com/qanta-org/QANTA25/issues/1  The HF submission path for QANTA 2026 is down for external users: - https://huggingface.co/spaces/qanta-challenge/quizbowl-submission \u2192 RUNTIME_ERROR - register Space PAUSED - qanta-challenge/advcal-requests \u2192 404 - Open "
+    },
+    {
+      "repo": "qanta-org/QANTA25",
+      "number": 1,
+      "title": "Late eval request: VeigaPunk/qanta-tossup-v1 (submission Space RUNTIME_ERROR)",
+      "url": "https://github.com/qanta-org/QANTA25/issues/1",
+      "updated": "2026-07-22T14:50:59Z",
+      "family": "research-eval",
+      "status": "upstream open",
+      "tier": "external-bounty",
+      "labels": [],
+      "snippet": "## Request Post-deadline **public leaderboard eval only** (not prize eligibility) for HF user **VeigaPunk**.  ## Model - https://huggingface.co/VeigaPunk/qanta-tossup-v1 - Custom `quizbowl-tossup` + `quizbowl-bonus` pipelines (Qwen2.5-1.5B-Instruct base)  ## Why we cannot self-se"
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "number": 77902,
+      "title": "My Claude developed Arachnophobia. help. I tell him to check my spoderman repo, it insta blocks the chat.",
+      "url": "https://github.com/anthropics/claude-code/issues/77902",
+      "updated": "2026-07-16T18:51:58Z",
+      "family": "oss-tooling",
+      "status": "open",
+      "tier": "oss",
+      "labels": [
+        "bug",
+        "platform:linux",
+        "area:model"
+      ],
+      "snippet": "**Bug Description** https://rage-comic.fandom.com/wiki/Spooder-man  **Environment Info** - Platform: linux - Terminal: tmux - Version: 2.1.179 - Feedback ID: 976a0c5d-30c2-4930-8846-e891ec14fdce  **Errors** ```json [] ``` "
+    },
+    {
+      "repo": "oven-sh/bun",
+      "number": 29488,
+      "title": "bun.report crash: panic(main thread) Segmentation fault at address 0x431D45D0 on Bun v1.3.13",
+      "url": "https://github.com/oven-sh/bun/issues/29488",
+      "updated": "2026-04-19T15:22:57Z",
+      "family": "oss-tooling",
+      "status": "open",
+      "tier": "oss",
+      "labels": [],
+      "snippet": "### Crash report  Bun printed:  ```text panic(main thread): Segmentation fault at address 0x431D45D0 oh no: Bun has crashed. This indicates a bug in Bun, not your code. ```  ### Bun report link  https://bun.report/1.3.13/B_1743d2a4mgggkEuhogC49ohmF+ypRy9kt4F20y07Fiq3srFm42y6F____"
+    },
+    {
+      "repo": "VeigaPunk/aaronplug",
+      "number": 1,
+      "title": "TODO: swap to simplified version and integrate it to claude",
+      "url": "https://github.com/VeigaPunk/aaronplug/issues/1",
+      "updated": "2026-04-06T19:56:09Z",
+      "family": "oss-tooling",
+      "status": "open",
+      "tier": "oss",
+      "labels": [],
+      "snippet": "Swap the current codebase to the simplified sandbox version (headless-only, TUI removed) and wire it into the Claude Code integration surface.  Reference: sandbox at `/home/vhpnk/ClaudeCode/epublicdomain2186311` and execution report in private vault.  - [ ] Review sandbox diffs a"
+    },
+    {
+      "repo": "VeigaPunk/inv-hxh-v2",
+      "number": 5,
+      "title": "Hunt The Accountant \u2014 evidence collection for accountability",
+      "url": "https://github.com/VeigaPunk/inv-hxh-v2/issues/5",
+      "updated": "2026-04-03T19:53:45Z",
+      "family": "internal-ops",
+      "status": "active internal",
+      "tier": "internal",
+      "labels": [],
+      "snippet": "## Evidence collected  ### Proven (data-level) - [x] \"Saidas OMIE\" column = in-house Saidas PDF data (100% match, 5 periods, 140 data points) - [x] Three-way identity: Acct \"OMIE\" = Saidas PDF = Acomp exits = PEDIDOS Qtd.CX Liq - [x] Zero differences were structural (same source "
+    },
+    {
+      "repo": "VeigaPunk/inv-hxh-v2",
+      "number": 4,
+      "title": "Visual dashboard \u2014 diff viewer and reconciliation report UI",
+      "url": "https://github.com/VeigaPunk/inv-hxh-v2/issues/4",
+      "updated": "2026-04-03T19:53:30Z",
+      "family": "internal-ops",
+      "status": "active internal",
+      "tier": "internal",
+      "labels": [],
+      "snippet": "## Context Need a proper visualization tool for the owner to review reconciliation results. Current diff-viewer.html is a prototype.  ## Tasks - [ ] Side-by-side comparison: pipeline output vs accountant reference - [ ] Period navigation across all 5 weeks - [ ] Drill-down from s"
+    },
+    {
+      "repo": "VeigaPunk/inv-hxh-v2",
+      "number": 3,
+      "title": "CFOP adjustment logic \u2014 reconcile Omie exits vs control system",
+      "url": "https://github.com/VeigaPunk/inv-hxh-v2/issues/3",
+      "updated": "2026-04-03T19:53:19Z",
+      "family": "internal-ops",
+      "status": "active internal",
+      "tier": "internal",
+      "labels": [],
+      "snippet": "## Context Actual Omie ERP exits (CFOP 5.405) show ~23,900 unit gap vs control system across 5 periods. Gap grows from 7.9% (Feb) to 96.5% (Mar). Need to understand and adjust.  ## Two approaches (pending owner decision) 1. **Fix at ERP source** \u2014 adjust Omie data before export ("
+    },
+    {
+      "repo": "VeigaPunk/inv-hxh-v2",
+      "number": 2,
+      "title": "Omie API integration \u2014 replace web GUI exports with direct API calls",
+      "url": "https://github.com/VeigaPunk/inv-hxh-v2/issues/2",
+      "updated": "2026-04-03T19:52:57Z",
+      "family": "internal-ops",
+      "status": "active internal",
+      "tier": "internal",
+      "labels": [
+        "enhancement"
+      ],
+      "snippet": "## Context Currently using Playwright-driven web GUI exports (provisional). API access will provide: - Per-movement `devolucao`/`cancelamento` flags - Date-specific stock positions (`dDataPosicao`) - `PesquisarLancamentos` for Notas Acertadas mapping - Full CFOP granularity witho"
+    }
+  ]
+}
