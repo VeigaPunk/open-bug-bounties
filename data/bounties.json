@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T20:27:09.916427+00:00",
+  "generated_at": "2026-08-06T20:31:12.826404+00:00",
   "source": "local lunch-orch open-author inventory (ChatGPT site mirror seed)",
   "chatgpt_site": "https://open-bug-bounties.jpveiga.chatgpt.site/",
   "count": 19,
@@ -14,7 +14,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "Staff: VeigaPunk is blocked from creating PRs on commaai org.  Please open: https://github.com/commaai/opendbc/compare/master...VeigaPunk:branch-coverage-2557  Local: 3691 tests, 100% branch. Closes #2557 when merged under VeigaPunk."
+      "snippet": "Staff: VeigaPunk is blocked from creating PRs on commaai org.  Please open: https://github.com/commaai/opendbc/compare/master...VeigaPunk:branch-coverage-2557  Local: 3691 tests, 100% branch. Closes #2557 when merged under VeigaPunk.",
+      "next_action_pack": "1) Axes  \n- PR visibility/mergeability  \n- Branch-coverage evidence (3,691 tests; 100%)  \n- Staff-permission unblock  \n- Reproducible verification  \n\n2) Next concrete action in 48h  \nStaff opens `commaai/opendbc` PR from `VeigaPunk:branch-coverage-2557` using the supplied compare URL, linking/closes issue #1 and attaching the coverage artifact.\n\n3) Blocker  \nVeigaPunk cannot create PRs in the `commaai` organization.\n\n4) Gate command  \n`git diff --check master...VeigaPunk/branch-coverage-2557 && cargo test --workspace`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/op-fuzz-tx",
@@ -26,7 +29,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "Ready patch for comma staff cherry-pick. See README."
+      "snippet": "Ready patch for comma staff cherry-pick. See README.",
+      "next_action_pack": "1) Axes: fuzz coverage; TX correctness; reproducibility; integration risk; CI/runtime cost.\n\n2) Next action (48h): comma staff cherry-picks the README-referenced patch, runs the TX fuzz smoke/regression suite, and posts seed, corpus, crash, and runtime results on issue #2.\n\n3) Blocker: staff review/cherry-pick authority; no merge until openpilot CI confirms no TX regressions.\n\n4) Gate command: `cargo test --workspace --all-targets`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/op-fuzz-tx",
@@ -38,7 +44,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## Request GitHub user **VeigaPunk** is org-blocked from creating PRs/comments on `commaai/*`.  Ready patch for bounty https://github.com/commaai/openpilot/issues/32425 :  ```bash curl -fsSL https://raw.githubusercontent.com/VeigaPunk/op-fuzz-tx/main/tx-fuzzy.patch | git apply ``"
+      "snippet": "## Request GitHub user **VeigaPunk** is org-blocked from creating PRs/comments on `commaai/*`.  Ready patch for bounty https://github.com/commaai/openpilot/issues/32425 :  ```bash curl -fsSL https://raw.githubusercontent.com/VeigaPunk/op-fuzz-tx/main/tx-fuzzy.patch | git apply ``",
+      "next_action_pack": "1) Axes: access, patch integrity, integration, CI, auditability.\n\n2) Next action in 48h: an authorized `commaai` maintainer fetches the ready VeigaPunk patch, verifies its commit hash, cherry-picks it onto `openpilot`, and opens/updates PR #32425.\n\n3) Blocker: VeigaPunk is organization-blocked from creating PRs or comments in `commaai/*`; staff intervention is required.\n\n4) Gate command:\n```sh\ngit apply --check op-fuzz-tx.patch && git diff --check\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/openpilot-wifi-no-nm",
@@ -50,7 +59,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## For commaai / @andiradulescu / @adeebshihadeh  **Bounty:** https://github.com/commaai/openpilot/issues/37752   **Upstream draft:** https://github.com/commaai/openpilot/pull/38330 (unit tests fail: still imports `jeepney` after NM removal)  VeigaPunk is **GitHub-blocked** from "
+      "snippet": "## For commaai / @andiradulescu / @adeebshihadeh  **Bounty:** https://github.com/commaai/openpilot/issues/37752   **Upstream draft:** https://github.com/commaai/openpilot/pull/38330 (unit tests fail: still imports `jeepney` after NM removal)  VeigaPunk is **GitHub-blocked** from ",
+      "next_action_pack": "1. Axes  \n   - No-NetworkManager functional correctness  \n   - CI/unit-test reliability  \n   - Upstream mergeability  \n   - Maintainer response/readiness  \n\n2. Next concrete action in 48h  \n   Rebase PR #38330, reproduce and fix its failing unit tests, publish green CI logs, then request review from `@andiradulescu` and `@adeebshihadeh`.\n\n3. Blocker  \n   Staff-blocked: upstream maintainer approval is pending, and the draft currently has failing unit tests.\n\n4. Gate command  \n   `cargo test --workspace --all-targets --no-fail-fast`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/horizon-halo-comma-design",
@@ -62,7 +74,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## Status Blocked only on comma staff merge of https://github.com/commaai/website/pull/335  ## Maintainer feedback @sshane: Qt gone; comma four is headlining hardware \u2192 addressed in commit 5c9184b.  ## Links - Demo: https://veigapunk.github.io/horizon-halo-comma-design/ - Preview"
+      "snippet": "## Status Blocked only on comma staff merge of https://github.com/commaai/website/pull/335  ## Maintainer feedback @sshane: Qt gone; comma four is headlining hardware \u2192 addressed in commit 5c9184b.  ## Links - Demo: https://veigapunk.github.io/horizon-halo-comma-design/ - Preview",
+      "next_action_pack": "1) Axes  \n- Staff-merge readiness (PR #335)  \n- Comma Four hardware prominence  \n- Visual/design fidelity after Qt removal  \n- Website integration risk  \n- Handoff evidence and reproducibility  \n\n2) Next concrete action (within 48h)  \nRecheck PR #335, confirm staff merge status, then capture the merged diff and verify commit `5c9184b` is represented in production-facing website content.\n\n3) Blocker  \nOnly comma staff merging `https://github.com/commaai/website/pull/335`.\n\n4) Gate command  \n\n```bash\ngh pr view 335 --repo commaai/website --json state,mergedAt,mergeCommit --jq 'select(.state==\"MERGED\")'\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/harness-tester-bugs-veigapunk",
@@ -76,7 +91,10 @@
       "labels": [
         "help wanted"
       ],
-      "snippet": "Public tracking issue for graders.  Form recorded @48 as VeigaPunk/hardware. PR: https://github.com/commaai/website/pull/334 (preview #1) Live: https://comma.ai/leaderboard#harness_tester_challenge still 24.  This is on our repo only (commaai comments blocked)."
+      "snippet": "Public tracking issue for graders.  Form recorded @48 as VeigaPunk/hardware. PR: https://github.com/commaai/website/pull/334 (preview #1) Live: https://comma.ai/leaderboard#harness_tester_challenge still 24.  This is on our repo only (commaai comments blocked).",
+      "next_action_pack": "1. Axes: staff-readiness, package completeness, PR/preview health, live leaderboard visibility, blocker clearance.\n2. Next concrete action within 48h: ask comma.ai staff to review/merge PR #334, verify preview #1, then confirm the live challenge entry at `/leaderboard#harness_tester_challenge`.\n3. Blocker: comma.ai remains staff-blocked; leaderboard status is still LB 24.\n4. Gate command:\n```rust\nstd::process::Command::new(\"curl\")\n    .args([\"-fsSL\", \"https://comma.ai/leaderboard#harness_tester_challenge\"])\n    .status()\n    .expect(\"leaderboard gate failed\");\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/comma-controls-challenge",
@@ -88,7 +106,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "Form recorded, emails to work@comma.ai + maintainers, PR#333 closed due to block. Score 6.880472 floor. Polling https://comma.ai/leaderboard"
+      "snippet": "Form recorded, emails to work@comma.ai + maintainers, PR#333 closed due to block. Score 6.880472 floor. Polling https://comma.ai/leaderboard",
+      "next_action_pack": "1) Axes  \n- Leaderboard score: 6.880472 (floor)  \n- Publication status: comma LB pending  \n- Maintainer response/unblock  \n- Evidence freshness: issue, form, emails, PR#333  \n\n2) Next concrete action in 48h  \nSend one concise follow-up to work@comma.ai and maintainers citing issue #1, form completion, and closed PR#333; poll https://comma.ai/leaderboard and log any change.\n\n3) Blocker  \nStaff-blocked: awaiting comma.ai leaderboard publication.\n\n4) Gate command  \n`cargo test --all --locked`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/op-metadrive-macos-33207",
@@ -100,7 +121,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## Ready for staff cherry-pick  **Upstream issue:** https://github.com/commaai/openpilot/issues/33207  **Identity:** VeigaPunk is currently **blocked** from opening PRs / commenting on `commaai/*` (`User is blocked (createPullRequest)`, issue comments 403).  ### Artifacts - Patch"
+      "snippet": "## Ready for staff cherry-pick  **Upstream issue:** https://github.com/commaai/openpilot/issues/33207  **Identity:** VeigaPunk is currently **blocked** from opening PRs / commenting on `commaai/*` (`User is blocked (createPullRequest)`, issue comments 403).  ### Artifacts - Patch",
+      "next_action_pack": "1) Axes  \n- Package readiness: ready for cherry-pick  \n- Upstream integration: commaai/openpilot issue #33207  \n- Access: staff-only merge path  \n- Time: 48-hour execution window  \n\n2) Next concrete action in 48h  \n- Have comma.ai staff cherry-pick the prepared MetaDrive macOS package and link the resulting commit to issue #33207.\n\n3) Blocker  \n- VeigaPunk cannot open PRs or comment on `commaai/*`; staff intervention is required.\n\n4) Gate command  \n```bash\ngit cherry-pick <prepared-metadrive-macos-33207-commit>\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/flash-bounty-128-package",
@@ -112,7 +136,10 @@
       "status": "staff-blocked / package ready",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## Context Working **commaai/flash#128** (\\$100 walkthrough bounty) as **VeigaPunk**.  GitHub returns **Blocked** on all interaction with `commaai/*` (fork, issue comments, PR create). Package is published here for staff cherry-pick.  ## Maintainer bar @adeebshihadeh clarified on"
+      "snippet": "## Context Working **commaai/flash#128** (\\$100 walkthrough bounty) as **VeigaPunk**.  GitHub returns **Blocked** on all interaction with `commaai/*` (fork, issue comments, PR create). Package is published here for staff cherry-pick.  ## Maintainer bar @adeebshihadeh clarified on",
+      "next_action_pack": "Axes:\n- Reproducibility: package builds/tests cleanly.\n- Evidence: walkthrough and artifacts are publicly reviewable.\n- Access: ability to fork, comment, or open a PR in `commaai/*`.\n- Handoff: staff can cherry-pick without further author action.\n- Time: concrete progress within 48 hours.\n\nNext concrete action (within 48h):\n- Publish/verify the package commit, walkthrough, and checksum.\n- Send the staff handoff with the exact commit and cherry-pick instructions.\n- Recheck `commaai/flash#128` access once; otherwise leave the package ready.\n\nBlocker:\n- GitHub returns `Blocked` for every interaction with `commaai/*` (fork, comments, PR creation). This is an external permission/policy block.\n\nGate command:\n\n```bash\ncargo test --all --locked\n```\n\nStatus: staff-blocked; package ready for cherry-pick.",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "huggingface/agents-course",
@@ -124,7 +151,10 @@
       "status": "upstream open",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## Context The [Students_leaderboard](https://huggingface.co/spaces/agents-course/Students_leaderboard) ranks by **score DESC, then timestamp ASC**.  Live API currently has **615** entries at the **maximum score 100.0** (score formula is `correct/N*100` on Unit4 scoring \u2014 hard ce"
+      "snippet": "## Context The [Students_leaderboard](https://huggingface.co/spaces/agents-course/Students_leaderboard) ranks by **score DESC, then timestamp ASC**.  Live API currently has **615** entries at the **maximum score 100.0** (score formula is `correct/N*100` on Unit4 scoring \u2014 hard ce",
+      "next_action_pack": "1) Axes  \n- Correctness: score DESC, timestamp ASC; earliest timestamp wins ties.  \n- Completeness: exactly 615 entries; validate all 100-score groups.  \n- Reproducibility: immutable snapshot, retrieval time, SHA-256.  \n- Compatibility: preserve upstream API/schema and ranking semantics.  \n- Timeliness: freeze and publish within 48h.\n\n2) Next concrete action in 48h  \nCapture the live API response, archive its SHA-256, normalize timestamps to UTC, run the deterministic sort, and publish the frozen 615-entry artifact plus validation report.\n\n3) Blocker  \nNo authoritative immutable snapshot/schema is identified; the live Space API may change while the freeze is being computed.\n\n4) Gate command  \n\n```bash\ncargo test --locked --all-targets -- leaderboard_freeze\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "qanta-org/qb-tournament-runner",
@@ -136,7 +166,10 @@
       "status": "upstream open",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "Cross-link: https://github.com/qanta-org/QANTA25/issues/1  The HF submission path for QANTA 2026 is down for external users: - https://huggingface.co/spaces/qanta-challenge/quizbowl-submission \u2192 RUNTIME_ERROR - register Space PAUSED - qanta-challenge/advcal-requests \u2192 404 - Open "
+      "snippet": "Cross-link: https://github.com/qanta-org/QANTA25/issues/1  The HF submission path for QANTA 2026 is down for external users: - https://huggingface.co/spaces/qanta-challenge/quizbowl-submission \u2192 RUNTIME_ERROR - register Space PAUSED - qanta-challenge/advcal-requests \u2192 404 - Open ",
+      "next_action_pack": "1. Axes  \n   - Runtime reliability (HF Space exits `RUNTIME_ERROR`)  \n   - API compatibility (`advcal-requests` returns 404)  \n   - User impact (external submissions blocked)  \n   - Recovery speed/observability (clear health checks and logs)\n\n2. Next concrete action (within 48h)  \n   Reproduce both failures, capture Space logs/request traces, then publish a minimal fix or temporary submission fallback; add a smoke test covering submission startup and `advcal-requests`, and cross-link findings to QANTA25#1.\n\n3. Blocker  \n   The Hugging Face Space and `advcal-requests` endpoint are upstream-controlled and currently unavailable to external users; maintainer access or an approved fallback is required.\n\n4. Gate command  \n   `cargo test --workspace --all-targets`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "qanta-org/QANTA25",
@@ -148,7 +181,10 @@
       "status": "upstream open",
       "tier": "external-bounty",
       "labels": [],
-      "snippet": "## Request Post-deadline **public leaderboard eval only** (not prize eligibility) for HF user **VeigaPunk**.  ## Model - https://huggingface.co/VeigaPunk/qanta-tossup-v1 - Custom `quizbowl-tossup` + `quizbowl-bonus` pipelines (Qwen2.5-1.5B-Instruct base)  ## Why we cannot self-se"
+      "snippet": "## Request Post-deadline **public leaderboard eval only** (not prize eligibility) for HF user **VeigaPunk**.  ## Model - https://huggingface.co/VeigaPunk/qanta-tossup-v1 - Custom `quizbowl-tossup` + `quizbowl-bonus` pipelines (Qwen2.5-1.5B-Instruct base)  ## Why we cannot self-se",
+      "next_action_pack": "Axes:\n1. Runtime reliability (eliminate `RUNTIME_ERROR`).\n2. Answer quality (public-split accuracy, calibrated confidence).\n3. Reproducibility (pinned HF revision, deterministic config/logs).\n4. Evaluation integrity (post-deadline, public-only, no prize eligibility).\n\nNext concrete action (48h): rerun the public leaderboard harness against `VeigaPunk/qanta-tossup-v1` at a pinned commit; first execute 10-example smoke test, then full public evaluation; attach logs, revision, config, and metrics to QANTA25#1.\n\nBlocker: the prior submission\u2019s runtime failure is unresolved; custom `quizbowl-tossup` code/output-schema compatibility must be verified before accepting metrics.\n\nGate command:\n\n```text\ncargo run --locked --release --bin qanta-gate -- --model VeigaPunk/qanta-tossup-v1 --revision <PINNED_SHA> --split public --smoke 10 --full --require-jsonl-schema\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "anthropics/claude-code",
@@ -164,7 +200,10 @@
         "platform:linux",
         "area:model"
       ],
-      "snippet": "**Bug Description** https://rage-comic.fandom.com/wiki/Spooder-man  **Environment Info** - Platform: linux - Terminal: tmux - Version: 2.1.179 - Feedback ID: 976a0c5d-30c2-4930-8846-e891ec14fdce  **Errors** ```json [] ``` "
+      "snippet": "**Bug Description** https://rage-comic.fandom.com/wiki/Spooder-man  **Environment Info** - Platform: linux - Terminal: tmux - Version: 2.1.179 - Feedback ID: 976a0c5d-30c2-4930-8846-e891ec14fdce  **Errors** ```json [] ``` ",
+      "next_action_pack": "1) Axes  \n- Reproducibility: exact prompt, tmux/Linux, version 2.1.179  \n- False-positive rate: \u201cspiderman/spooder\u201d benign variants vs genuine spider-harm requests  \n- User impact: chat hard-block vs warning/continuation  \n- Safety/regression: preserve legitimate arachnophobia safeguards  \n- Observability: moderation reason/code and Feedback ID `976a0c5d-30c2-4930-8846-e891ec14fdce`\n\n2) Next concrete action in 48h  \nRun a minimal prompt matrix (`spoderman`, `spider-man`, repo URL, neutral repo names), capture block reason and logs, then attach results to #77902 and add a regression test for benign repository references.\n\n3) Blocker  \nNo access to Claude\u2019s moderation decision payload/model policy or the referenced repository, so root-cause attribution is currently impossible.\n\n4) Gate command  \n`cargo test --all --locked -- arachnophobia_spiderman`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "oven-sh/bun",
@@ -176,7 +215,10 @@
       "status": "open",
       "tier": "oss",
       "labels": [],
-      "snippet": "### Crash report  Bun printed:  ```text panic(main thread): Segmentation fault at address 0x431D45D0 oh no: Bun has crashed. This indicates a bug in Bun, not your code. ```  ### Bun report link  https://bun.report/1.3.13/B_1743d2a4mgggkEuhogC49ohmF+ypRy9kt4F20y07Fiq3srFm42y6F____"
+      "snippet": "### Crash report  Bun printed:  ```text panic(main thread): Segmentation fault at address 0x431D45D0 oh no: Bun has crashed. This indicates a bug in Bun, not your code. ```  ### Bun report link  https://bun.report/1.3.13/B_1743d2a4mgggkEuhogC49ohmF+ypRy9kt4F20y07Fiq3srFm42y6F____",
+      "next_action_pack": "1) Axes  \n- Reproducibility: deterministic minimal trigger  \n- Diagnosis: native stack/core dump and regression range  \n- Mitigation: safe workaround or fixed Bun build  \n- Upstream readiness: complete report with environment and repro  \n\n2) Next concrete action in 48h  \nRe-run the smallest available repro on Bun 1.3.13 and latest nightly; attach the complete `bun.report`, command, OS/CPU, and a native backtrace. If reproducible, bisect to the first failing build and update issue #29488.\n\n3) Blocker  \nThe supplied report has no reproducer, stack trace, environment, or accessible report contents, so ownership and regression scope are unknown.\n\n4) Gate command  \n```sh\nbun --version && bun run repro.ts\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/aaronplug",
@@ -188,7 +230,10 @@
       "status": "open",
       "tier": "oss",
       "labels": [],
-      "snippet": "Swap the current codebase to the simplified sandbox version (headless-only, TUI removed) and wire it into the Claude Code integration surface.  Reference: sandbox at `/home/vhpnk/ClaudeCode/epublicdomain2186311` and execution report in private vault.  - [ ] Review sandbox diffs a"
+      "snippet": "Swap the current codebase to the simplified sandbox version (headless-only, TUI removed) and wire it into the Claude Code integration surface.  Reference: sandbox at `/home/vhpnk/ClaudeCode/epublicdomain2186311` and execution report in private vault.  - [ ] Review sandbox diffs a",
+      "next_action_pack": "1) Axes  \n- Headless parity: behavior matches `/home/vhpnk/ClaudeCode/epublicdom`.  \n- Claude surface: stable command/API wiring and protocol compatibility.  \n- Build hygiene: TUI/dead dependencies removed.  \n- Verification: deterministic tests and CI gate.\n\n2) Next concrete action in 48h  \nPort the sandbox\u2019s headless entrypoint into the repository, delete TUI modules/dependencies, add the Claude adapter, and add an end-to-end headless invocation test.\n\n3) Blocker  \nThe reference sandbox and Claude integration contract are external to this checkout; access/API details must be available to validate parity.\n\n4) Gate command  \n```rust\ncargo test --workspace --all-features\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/inv-hxh-v2",
@@ -200,7 +245,10 @@
       "status": "active internal",
       "tier": "internal",
       "labels": [],
-      "snippet": "## Evidence collected  ### Proven (data-level) - [x] \"Saidas OMIE\" column = in-house Saidas PDF data (100% match, 5 periods, 140 data points) - [x] Three-way identity: Acct \"OMIE\" = Saidas PDF = Acomp exits = PEDIDOS Qtd.CX Liq - [x] Zero differences were structural (same source "
+      "snippet": "## Evidence collected  ### Proven (data-level) - [x] \"Saidas OMIE\" column = in-house Saidas PDF data (100% match, 5 periods, 140 data points) - [x] Three-way identity: Acct \"OMIE\" = Saidas PDF = Acomp exits = PEDIDOS Qtd.CX Liq - [x] Zero differences were structural (same source ",
+      "next_action_pack": "Axes:\n1. Data integrity\n2. Cross-source identity\n3. Period/coverage completeness\n4. Auditability and independence\n\nNext concrete action (within 48h):\n- Recompute all 140 points across the five periods from source PDFs.\n- Preserve hashes, extraction output, and a signed reconciliation table.\n- Obtain one independent export/source for external corroboration.\n\nBlocker:\n- Current proof is entirely in-house; independent corroboration and reproducible extraction artifacts are not yet evidenced.\n\nGate command:\n`cargo test --workspace --all-targets --locked`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/inv-hxh-v2",
@@ -212,7 +260,10 @@
       "status": "active internal",
       "tier": "internal",
       "labels": [],
-      "snippet": "## Context Need a proper visualization tool for the owner to review reconciliation results. Current diff-viewer.html is a prototype.  ## Tasks - [ ] Side-by-side comparison: pipeline output vs accountant reference - [ ] Period navigation across all 5 weeks - [ ] Drill-down from s"
+      "snippet": "## Context Need a proper visualization tool for the owner to review reconciliation results. Current diff-viewer.html is a prototype.  ## Tasks - [ ] Side-by-side comparison: pipeline output vs accountant reference - [ ] Period navigation across all 5 weeks - [ ] Drill-down from s",
+      "next_action_pack": "Axes:\n- Reconciliation correctness: matched/added/removed/changed/unresolved counts.\n- Review efficiency: filters, search, \u201cnext unresolved,\u201d bulk triage.\n- Explainability: provenance, matching key, normalization rationale, timestamps.\n- Safety/accessibility: reversible decisions, audit reasons, keyboard/contrast support.\n\nNext action (within 48h): implement summary counts, filterable side-by-side source/account diff, and accept/merge/ignore actions with undo and audit reason.\n\nBlocker: execution host is disabled, so `diff-viewer.html` and repository tests could not be inspected or changed.\n\nGate command: `cargo test --all`",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/inv-hxh-v2",
@@ -224,7 +275,10 @@
       "status": "active internal",
       "tier": "internal",
       "labels": [],
-      "snippet": "## Context Actual Omie ERP exits (CFOP 5.405) show ~23,900 unit gap vs control system across 5 periods. Gap grows from 7.9% (Feb) to 96.5% (Mar). Need to understand and adjust.  ## Two approaches (pending owner decision) 1. **Fix at ERP source** \u2014 adjust Omie data before export ("
+      "snippet": "## Context Actual Omie ERP exits (CFOP 5.405) show ~23,900 unit gap vs control system across 5 periods. Gap grows from 7.9% (Feb) to 96.5% (Mar). Need to understand and adjust.  ## Two approaches (pending owner decision) 1. **Fix at ERP source** \u2014 adjust Omie data before export (",
+      "next_action_pack": "1. Axes: reconciliation error; period completeness; CFOP 5.405 semantic fidelity; duplicate/cancellation handling; auditability; processing latency.\n\n2. Next concrete action (48h): build a Rust reconciliation fixture from the five periods, joining Omie exits to control rows by document/item, normalizing dates/units, and reporting deltas by period, branch, SKU, and document status. Quantify whether the 23,900-unit gap is timing, duplication, returns, or classification before changing logic.\n\n3. Keep the adjustment only if it reduces every period\u2019s absolute delta without increasing unmatched or duplicate rows; preserve raw Omie identifiers and an explainable adjustment reason.\n\n4. Blocker: no agreed canonical extract/schema and no authoritative mapping for cancellations, returns, transfers, and unit conversions; without these, either proposed approach can merely relocate the gap.\n\n5. Gate command:\n\n```bash\ncargo test --workspace --all-features reconciliation\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     },
     {
       "repo": "VeigaPunk/inv-hxh-v2",
@@ -238,7 +292,18 @@
       "labels": [
         "enhancement"
       ],
-      "snippet": "## Context Currently using Playwright-driven web GUI exports (provisional). API access will provide: - Per-movement `devolucao`/`cancelamento` flags - Date-specific stock positions (`dDataPosicao`) - `PesquisarLancamentos` for Notas Acertadas mapping - Full CFOP granularity witho"
+      "snippet": "## Context Currently using Playwright-driven web GUI exports (provisional). API access will provide: - Per-movement `devolucao`/`cancelamento` flags - Date-specific stock positions (`dDataPosicao`) - `PesquisarLancamentos` for Notas Acertadas mapping - Full CFOP granularity witho",
+      "next_action_pack": "Axes: API fidelity, data coverage, reliability, security, and migration latency.\n\nNext 48h: implement a typed Rust Omie client with authenticated JSON-RPC calls, pagination, retries, and fixtures; ingest per-movement `devolucao`/`cancelamento` plus `dDataPosicao`; run parity diffs against current Playwright exports.\n\nBlocker: Omie credentials/scopes and confirmed method/schema for movement history and date-specific stock positions.\n\nGate command:\n\n```rust\nstd::process::Command::new(\"cargo\")\n    .args([\"test\", \"--all\", \"--locked\"])\n    .status()\n    .expect(\"gate failed\")\n    .success()\n    .then_some(())\n    .expect(\"tests failed\");\n```",
+      "swarm_status": "ok",
+      "godspeed_injected": true
     }
-  ]
+  ],
+  "swarm": {
+    "model": "gpt-5.6-luna",
+    "tier": "fast",
+    "effort": "low",
+    "inject_lines": 19,
+    "ok": 19,
+    "tmux": "sekhmet:bounties-godspeed"
+  }
 }

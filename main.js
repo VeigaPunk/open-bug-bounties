@@ -77,6 +77,7 @@
         <h3><a href="${escapeAttr(href)}" rel="noopener noreferrer">${escapeHtml(title)}</a></h3>
         <div class="repo">${escapeHtml(b.repo)}#${escapeHtml(String(b.number ?? ""))}</div>
         <p class="snippet">${escapeHtml(b.snippet || "")}</p>
+        ${b.next_action_pack ? `<pre class="directive" style="margin-top:.65rem;font-size:.72rem">${escapeHtml(b.next_action_pack.slice(0,900))}</pre>` : ""}
         <div class="card-foot">
           <span>updated ${escapeHtml((b.updated || "").slice(0, 10) || "—")}</span>
           <a href="${escapeAttr(href)}" rel="noopener noreferrer">open issue →</a>
