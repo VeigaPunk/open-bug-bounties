@@ -1,0 +1,2 @@
+sekhmet: godspeed directive INJECTED spark_id=sp-rb-spark-h1-export (read in/godspeed.md + in/task.md head)
+sekhmet: model gpt-5.3-codex-spark hit usage_limit; falling back to gpt-5.6-luna (reasoning_effort=low)
