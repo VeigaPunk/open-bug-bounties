@@ -1,0 +1,5 @@
+Summarize Bugcrowd Q-BC auth readiness for Aiven (aiven-mbb-og): join status from ENROLL, @bugcrowdninja email rule, console.aiven.io free tier, Authorization aivenv1. Output JSON keys: program,join_status,email_rule,console,api,blockers[]. No secrets. No exploitation.
+Document Auth0 by Okta Bugcrowd Get Credentials path: manage.cic-bug-bounty.auth0app.com only, 3 users/3 tenants, rate ≤5 rps. Output JSON: env_url,credential_flow,oos_production,blockers[]. No secrets.
+Document Okta Bugcrowd org Set5 at bugcrowd-pam-5335.oktapreview.com: SPA login, op vault item title only, MFA enforce for testing class, Get Credentials 2 org sets. Output JSON: org_host,form_type,op_item_title,mfa_note,blockers[]. No secrets no passwords.
+Atlassian bugbounty-test-* cloud site create readiness: engagement joined, next human step create bugbounty-test-<user>.atlassian.net. Output JSON: program,site_pattern,status,blockers[].
+OpenAI Bugcrowd security-impact-only STOP notes: model/jailbreak OOS, sandbox not RCE unless outside indicators, TAC verified note. Output JSON: program,allowed,oos_critical[],blockers[].
