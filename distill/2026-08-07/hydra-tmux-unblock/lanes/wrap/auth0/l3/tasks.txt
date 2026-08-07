@@ -1,0 +1,4 @@
+Summarize Auth0 CIC bounty credential gate in 10 bullets: requested vs assigned, op vault only, no manage.auth0.com, CIC tenant only.
+Draft 8 unauth door checks for Auth0 CIC manage + FGA (status codes only). No exploit, no credential use.
+Write first 5 post-cred Auth0 CIC tests as numbered lines: actor, endpoint class, expected outcome. Own CIC tenant only.
+Produce ship checklist for wrap lane Auth0: files present, secret gate, milestone-ship label, CRED-STATE update after assign.

@@ -1,0 +1,4 @@
+[v3] List 8 passive Aiven console/API first-hop doors (method path purpose). Policy-safe only.
+[v3] 12-line free-tier dual-account setup checklist for Aiven bug bounty (ninja emails only, no secrets).
+[v3] 10-row authz matrix labels for A owner vs B member on Aiven project APIs (endpoint, actor, expected deny).
+[v3] Safety gates: when to FAIL-CLOSED active Aiven probes (5 bullets).

@@ -1,0 +1,4 @@
+[v3] Auth0 CIC gate: REQUESTED vs ASSIGNED ops checklist (10 bullets, op vault only).
+[v3] Unauth door summary for manage.cic-bug-bounty.auth0app.com (labels only).
+[v3] FIRST-5 risk order for Auth0 CIC after creds land (titles only).
+[v3] Ship checklist wrap lane: files, secret gate, CRED-STATE transition, no manage.auth0.com.
