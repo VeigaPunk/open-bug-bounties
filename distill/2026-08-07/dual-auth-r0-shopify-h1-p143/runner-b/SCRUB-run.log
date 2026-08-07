@@ -1,0 +1,67 @@
+=== scrub 2026-08-07T14:12:20+00:00 ===
+--- high-signal secret patterns ---
+NONE
+--- assignment dumps ---
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB.md:10:rg -n 'password=|api_key=|secret=|Bearer [A-Za-z0-9._-]{20,}|cookie:' runner-b/ || true
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB.md:17:- `password=` / `Bearer …` assignment dumps: **none**
+--- op refs (expected labels only) ---
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/REPORT.md:16:| secret_hygiene | op:// only | no credential values in distill |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB.md:4:**Policy:** fail closed on live secrets; allow intentional `op://` labels and the word password in policy prose.
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB.md:11:rg -n 'op://' runner-b/ || true
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB.md:18:- `op://` refs: only inventory-style paths (no expanded secrets)
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/AUTH-READINESS.md:10:| HackerOne session | `op://Personal/HackerOne/…` — titles only; browser profile preferred |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/AUTH-READINESS.md:11:| Intigriti session | `op://Personal/Intigriti/…` |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/AUTH-READINESS.md:12:| TinyFish | `op://Personal/TinyFish API/credential` |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/AUTH-READINESS.md:94:- No secret material in this file (op:// titles only).
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md:3:**Generated:** 2026-08-07 · **Secrets in this file:** none (op:// labels only)  
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md:8:| Title | Purpose | op:// field refs (do not expand into distill) |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md:10:| HackerOne | H1 session / Shopify submit | `op://Personal/HackerOne/username` · `op://Personal/HackerOne/user[password]` |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md:11:| Intigriti | Dropbox join / Inti session | `op://Personal/Intigriti/Input.Username` · `op://Personal/Intigriti/Input.Password` |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md:12:| TinyFish API | Public recon search/fetch | `op://Personal/TinyFish API/credential` |
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/spark.ndjson:3:{"id": "sp-rb06-auth-map", "task": "AUTH READINESS MAP ONLY. No secrets. Write /home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md listing: HackerOne item title in 1Password Personal + refs op://Personal/HackerOne/username and op://Personal/HackerOne/user[password] (labels only); Intigriti op://Personal/Intigriti/Input.Username and Input.Password; TinyFish op://Personal/TinyFish API/credential for recon search; platform status from ACCOUNTS.md authed; Google Bug Hunters authed; MSRC needs_profile_on_submit; Proton needs_report_channel; Shopify via H1. Never paste credential values. Session re-auth path: browser profile + 1Password desktop integrate."}
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/policy-recon.ndjson:6:{"id": "sp-rb06-auth-map", "task": "AUTH READINESS MAP ONLY. No secrets. Write /home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md listing: HackerOne item title in 1Password Personal + refs op://Personal/HackerOne/username and op://Personal/HackerOne/user[password] (labels only); Intigriti op://Personal/Intigriti/Input.Username and Input.Password; TinyFish op://Personal/TinyFish API/credential for recon search; platform status from ACCOUNTS.md authed; Google Bug Hunters authed; MSRC needs_profile_on_submit; Proton needs_report_channel; Shopify via H1. Never paste credential values. Session re-auth path: browser profile + 1Password desktop integrate."}
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-swarm.ndjson:8:{"spark_id":"sp-rb06-auth-map","content_hash":"63a8b86cb0e83c61e249efa579cc78079681287441c5e00145b7e958d46de239","status":"ok","result_path":"/run/user/1000/xbrd-spark-spark/sp-rb06-auth-map/out/result.json","artifacts":["/run/user/1000/xbrd-spark-spark/sp-rb06-auth-map/out/artifacts/2a381b2317d3e4e3b35450a300eb343c41217208ee8a80c14d833b6857be0c8d","/run/user/1000/xbrd-spark-spark/sp-rb06-auth-map/out/artifacts/8e430d1d376f9ef6a3d5a54ab70304b5bbe0b42f35aa4e994a89a3d64a0f9af0","/run/user/1000/xbrd-spark-spark/sp-rb06-auth-map/out/artifacts/834342e542a496248a25901e13b1c96bdf2aa0bed7c4b87749057d58b06c41e5","/run/user/1000/xbrd-spark-spark/sp-rb06-auth-map/out/artifacts/5cb1194548dc291452cf82b0019982ba2a6935cf7302805347152cf72f4984c9"],"usage_tokens":17781,"provenance":{"spark_id":"sp-rb06-auth-map","started_at":"2026-08-07T14:09:02.246865073+00:00","finished_at":"2026-08-07T14:09:54.708368139+00:00","duration_ms":52461,"model":"gpt-5.6-luna","cmdline":["/home/vgpnk1337/.local/bin/codex-titanium","exec","-m","gpt-5.6-luna","-c","model_reasoning_effort=low","-c","service_tier=fast","--ephemeral","--skip-git-repo-check","--color","never","--sandbox","danger-full-access","-c","approval_policy=never","You are Godspeed-enabled.\n1. Name the axes.\n2. Iterate cheap, in parallel.\n3. Keep moves that improve any axis and harm none.\n4. Don't aim — let the frontier walk itself.\nIMMEDIATELY STOP ASKING CLARIFYING QUESTIONS.\nExecute tool calls concurrently in large batches. Do not serialize what can run in parallel.\nDo not output philosophical reasoning or verbose plans. Act directly via tool calls.\nLanguage lock: only Rust. No Python.\n\n---\n\nAUTH READINESS MAP ONLY. No secrets. Write /home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md listing: HackerOne item title in 1Password Personal + refs op://Personal/HackerOne/username and op://Personal/HackerOne/user[password] (labels only); Intigriti op://Personal/Intigriti/Input.Username and Input.Password; TinyFish op://Personal/TinyFish API/credential for recon search; platform status from ACCOUNTS.md authed; Google Bug Hunters authed; MSRC needs_profile_on_submit; Proton needs_report_channel; Shopify via H1. Never paste credential values. Session re-auth path: browser profile + 1Password desktop integrate."],"status":"ok","exit_code":0,"content_hash":"63a8b86cb0e83c61e249efa579cc78079681287441c5e00145b7e958d46de239","task_hash":"a2892ac1dc07d6d7fad9e13b15fb708a7c275494c894ecade4a1197e5ac4e27d","invoker":"vgpnk1337","scope":null,"ro":false,"timeout_secs":180,"direct":false,"dry_run":false,"root":"/run/user/1000/xbrd-spark-spark/sp-rb06-auth-map","usage_tokens":17781,"model_fallback_from":"gpt-5.3-codex-spark"}}
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/F4-dropbox-xor.md:43:- Intigriti: `op://Personal/Intigriti/Input.Username` · `op://Personal/Intigriti/Input.Password`
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/H1-shopify-criteria.md:11:HackerOne program **Shopify** only (do not dual-submit invent first-party). Account status: **H1 authed** (ACCOUNTS.md). Vault: title **HackerOne** in Personal (`op://Personal/HackerOne/username`, `op://Personal/HackerOne/user[password]` — never expand).
+--- tree ---
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/auth/AUTH-READINESS.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/AUTH-READINESS.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/F1-google-authz-map.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/F2-msrc-authz-map.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/F3-proton-dual-account.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/F4-dropbox-xor.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/findings/H1-shopify-criteria.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/luna-f1-google-authz.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/luna-h1-shopify-ready.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/luna-swarm-20260807T140834Z.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/luna-swarm-20260807T140850Z.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/luna-swarm-keep-20260807T141004Z.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/luna-swarm.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/PROVENANCE.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-f2-msrc-obb.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-f3-f4-xor.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-swarm-20260807T140834Z.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-swarm-20260807T140850Z.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-swarm-keep-20260807T141004Z.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/spark-swarm.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-luna-f1-google-meta.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-luna-f1-google-result.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-luna-h1-shopify-meta.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-luna-h1-shopify-result.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-spark-f2-msrc-meta.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-spark-f2-msrc-result.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-spark-f3-f4-xor-meta.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/l3/sp-rb-spark-f3-f4-xor-result.json
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/LANE.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/raw-tf/SEARCH-INDEX.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/REPORT.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SCRUB-run.log
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SEKHMET-dry-run.raw.txt
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SEKHMET-dry-run-root.raw.txt
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/SEKHMET.md
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/luna.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/luna-tasks.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/policy-recon.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/spark.ndjson
+/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/tasks/spark-tasks.ndjson
