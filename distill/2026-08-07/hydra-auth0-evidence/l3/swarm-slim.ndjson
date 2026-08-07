@@ -1,0 +1,4 @@
+{"spark_id":"sp-auth0-t1-checklist","status":"ok","usage_tokens":4435,"content_hash":"2a8da6a6335242de09546234c0eeb31a99790453b5e7d3fdaf79b45c7a444bcf","result_path":"sp-auth0-t1-checklist/out/result.json","fail_reason":null}
+{"spark_id":"sp-auth0-t2-vault","status":"ok","usage_tokens":4559,"content_hash":"1c183dba7d0f1e7692862522a545de4b6a0f4c36a56ebb94bc5a256b372d03c5","result_path":"sp-auth0-t2-vault/out/result.json","fail_reason":null}
+{"spark_id":"sp-auth0-t4-ev","status":"ok","usage_tokens":7765,"content_hash":"b64252a6a587c0f6252fcb30e441c3305afb614ea1cc45027d2353af62c8d91b","result_path":"sp-auth0-t4-ev/out/result.json","fail_reason":null}
+{"spark_id":"sp-auth0-t3-doors","status":"ok","usage_tokens":6139,"content_hash":"2bddff301730fed186eece9b32685bcbaf6769e2ddbd2484552ec20b6624d5f8","result_path":"sp-auth0-t3-doors/out/result.json","fail_reason":"auth"}
