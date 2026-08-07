@@ -1,0 +1,4 @@
+Write a 12-line checklist for Aiven free-tier own-project setup (console.aiven.io) for bug bounty: project name pattern, service type Postgres, no secrets in files, two research emails only. Output plain bullets.
+Draft a 10-line authz/IDOR test matrix for Aiven Console/API using two own-project memberships (A owner, B member). No exploit payloads, labels only: endpoint class, actor, expected deny.
+List 8 passive HTTP first-hop doors for Aiven console + public docs (no auth). Format: method path purpose. Policy-safe recon only.
+Write Bugcrowd Aiven report skeleton sections as markdown headers only (Summary, Impact, Steps, Evidence, Remediation) with one-line placeholders for own-project IDs redacted.
