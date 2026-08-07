@@ -1,0 +1,7 @@
+{
+  "spark_id": null,
+  "status": "ok",
+  "usage_tokens": 6139,
+  "duration_ms": 16819,
+  "fail_reason": "auth"
+}

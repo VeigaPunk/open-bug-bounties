@@ -31,10 +31,16 @@
 - Storage: **op:// only** after assign.  
 - Blocked for: Management API authz matrix, cross-tenant PoCs, enterprise connection tests.
 
-## Sekhmet
+## Sekhmet (luna-b, j=4, direct, ~10–17s each)
 
-- Driver: `~/.xbgst/scripts/sekhmet-luna-b.sh`  
-- Four short tasks under `l3/` (policy-safe / no exploit payloads).
+| Spark id | Status | Tokens | Artifact |
+|----------|--------|--------|----------|
+| sp-auth0-t1-checklist | ok | 4435 | `l3/out-t1-checklist.md` |
+| sp-auth0-t2-vault | ok | 4559 | `l3/out-t2-vault.md` |
+| sp-auth0-t3-doors | ok (fail_reason=auth metadata only) | 6139 | `l3/out-t3-doors.md` |
+| sp-auth0-t4-ev | ok | 7765 | `l3/out-t4-ev.md` |
+
+L3 EV ranking (post-cred): **cross-tenant isolation → OAuth misbinding → member priv-esc → SAML own IdP → FGA**.
 
 ## Risk / compliance
 
@@ -54,4 +60,4 @@
 
 ## Status
 
-**partial → done for wrap map** once L3 tasks land and milestone-ship succeeds. Authenticated hunt **blocked** on CRED assignment.
+**done** for wrap map + L3 pack + unauth matrix. Authenticated hunt **blocked** on CRED assignment.
