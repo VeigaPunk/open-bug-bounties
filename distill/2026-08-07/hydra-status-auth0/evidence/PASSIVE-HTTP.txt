@@ -1,0 +1,4 @@
+200 https://bugcrowd.com/engagements/auth0-okta
+400 https://manage.cic-bug-bounty.auth0app.com/
+200 https://config.cic-bug-bounty.auth0app.com/.well-known/openid-configuration
+000ERR https://api.fga.dev/
