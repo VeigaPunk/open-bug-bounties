@@ -14,12 +14,12 @@ Worker: codex-titanium. Host Grok subagents ≤16. Tmux: sekhmet {substrate,orch
 ~/.xbgst/scripts/sekhmet-spark.sh swarm -j 16 -f tasks.txt --timeout 180 --no-keep
 ```
 
-## STATUS (2026-08-07T14:07:07Z)
+## STATUS (2026-08-07T22:34:49Z)
 
 | Pool | Dry-run | Exit | Model (provenance) | result.json |
 |------|---------|------|--------------------|-------------|
-| LUNA | dual-luna-wf-health | 0 | gpt-5.6-luna | `/run/user/1000/xbrd-spark-luna/sp-580341ab-06cc-4838-929d-a345d709f0be/out/result.json` |
-| SPARK | dual-spark-wf-health | 0 | gpt-5.6-luna (dry-run label; wrapper primary gpt-5.3-codex-spark) | `/run/user/1000/xbrd-spark-spark/sp-c1e57b7c-60d6-43bf-b786-d698b0ac2b04/out/result.json` |
+| LUNA | dual-luna-wf-health | 0 | gpt-5.6-luna | `/run/user/1000/xbrd-spark-luna/sp-c2b8cf9a-bb07-4af4-bd73-56dc586c02bc/out/result.json` |
+| SPARK | dual-spark-wf-health | 0 | gpt-5.3-codex-spark | `/run/user/1000/xbrd-spark-spark/sp-f92f715b-cce8-4971-a8ce-cc3e55d75642/out/result.json` |
 
 - **STATUS:** dual pools healthy (both dry-run exit 0, status=ok)
 - **CODEX auth:** ChatGPT login live (`codex login status`)

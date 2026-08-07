@@ -47,3 +47,13 @@ Note: swarm JSON `id` must match `sp-*` or omit; custom `ra-*` ids rejected.
 ~/.xbgst/scripts/sekhmet-luna.sh swarm -j 16 -f tasks.jsonl --timeout 180
 ~/.xbgst/scripts/sekhmet-spark.sh swarm -j 16 -f tasks.jsonl --timeout 180
 ```
+
+## Q-BC deepen pulse (2026-08-07T14:19Z) — dual dry recon
+
+| Pool | Wrapper | Model (dry provenance) | spark_id | dry_run | root |
+|------|---------|------------------------|----------|---------|------|
+| LUNA | `sekhmet-luna.sh` | gpt-5.6-luna | `sp-844ed783-b444-4590-a9f2-83133ce33871` | true | `/run/user/1000/xbrd-spark-luna/...` |
+| SPARK | `sekhmet-spark.sh` | gpt-5.3-codex-spark | `sp-2913bf06-cb2f-4c11-9686-40b98b7e0ccc` | true | `/run/user/1000/xbrd-spark-spark/...` |
+
+Task: public enroll gates only (Aiven ninja + Auth0 Get Credentials). `--dry-run --no-keep --timeout 30`.  
+Evidence: `l3/qbc-luna-dry.json`, `l3/qbc-spark-dry.json`. Both status=ok, exit 0.

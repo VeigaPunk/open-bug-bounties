@@ -146,3 +146,61 @@ The race was never “who finds a bug first.” It was **who collapses false cer
 ---
 
 **Return path:** `/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/CONNECTOR.md`
+
+---
+
+# Pulse continuation
+
+**UTC:** 2026-08-07T14:17–14:18Z (post-final CONNECT / mid godspeed loop)  
+**Axes:** `auth_ready↑` `hunt_throughput↑` `evidence_fidelity↑` `dual_substrate_up↑` `secret_hygiene↑`  
+**Godspeed:** **119s self-inject schedule ACTIVE** — `GODSPEED-PULSE.log` shows `PULSE-0` (14:17:11Z) + `PULSE-1` (14:17:22Z); inject ON every tick. Passive doors: `shared/PULSE-HTTP.md` (all Q-BC + Shopify H1 + Dropbox Inti **200**).
+
+## Link: A advances × B advances
+
+| A (Q-BC) advance | B (Q-FP/H1) advance | Cross-link |
+|------------------|---------------------|------------|
+| **Aiven** `l3/checklist-aiven.md` — free-tier dual-ninja gates, first own-asset probes after instance | **F1** `findings/F1-google-authz-map.md` FULL — Drive/ACL dual-account classes | Both are **own-asset dual-account IDOR templates**; A needs human free project first, B can start with existing Google authed accounts |
+| **Auth0** identity-day `checklist-identity-day.md` + `auth0-okta` join + CIC manage host | **H1** `findings/H1-shopify-criteria.md` — partners store criteria, PARTIAL SPA export gap | Auth0 = **Get Creds / CIC sandbox**; Shopify = **H1 session + store**. Different platform auth, same bottleneck: **human browser profile** |
+| Okta Set5 form/runbook (non-durable AUTHENTICATED) | **F3** `findings/F3-proton-dual-account.md` densest methodology | Set5 is vaulted preview SPA; Proton is free dual mail — B stays unblocked while A waits MFA |
+| Atlassian/OpenAI STOP checklist | **F4** XOR Dropbox DEEP / GitLab PARK + **F2** MSRC map | Slot-8 discipline on B pairs with A’s OpenAI security-impact wall — both thrash preventers |
+
+**Strange angle:** A’s Aiven/Auth0 path and B’s F1/F3/H1 path are **complementary latency profiles** — A is instance-gated (high value once unlocked), B is session-ready on free/first-party programs. Pulse should not force equal j=64 on both; feed human clicks to A’s Aiven dual-ninja + Auth0 Get Creds while auto-swarm only deepens B’s F1/F3 methodology and H1 criteria until SPA export lands.
+
+## Mid-pulse race score (new files since ~14:11 CONNECT)
+
+New/expanded vs connector final inventory:
+
+| Class | A | B |
+|-------|---|---|
+| Findings pack | still **0** under `findings/` | **F1 F2 F3 F4 H1** (5 files; was F3-only at CONNECT) |
+| L3 checklists | Aiven + identity-day + Atlassian/OpenAI + Okta runbook | luna/spark meta+result JSON + structured l3 plans |
+| Shared | CLAIMS merge, GATES-dual, PULSE-HTTP, GODSPEED-INJECT-SHIP | SCRUB + VAULT-REFS |
+| REPORT | REPORT.md | REPORT.md now present |
+| Godspeed pulse | shared consumer | tick advanced claims/sanitize |
+
+### Axis pulse (0–10)
+
+| Axis | A | B | Δ vs CONNECT final |
+|------|---|---|--------------------|
+| auth_ready | 8 | 7 | flat — still human MFA/Get Creds/Aiven free |
+| dual_substrate_up | 9 roots / 4 models | 7 roots / 4 models | flat — usage_limit still collapses spark→luna |
+| hunt_throughput | 7 | **9** | **B↑** full F1–F4+H1 pack shipped |
+| evidence_fidelity | 8 | **9** | **B↑** FULL tags + scrub gate |
+| safety_in_policy | 9 | 9 | flat |
+
+**Mid-pulse winner: Runner B** — full multi-program findings pack (F1/F3/H1 spine + F2/F4) closed the “only one finding file” gap; A still leads pure BC auth plumbing but did not add parallel `findings/` volume this window.  
+**Composite race (CONNECT final + pulse content): still A for dual-auth race name** (auth_ready + substrate patch) — see `COMPARE.md` (tie 23–23, A break). Pulse **content velocity** awards **B**.
+
+## Five next moves (human vs auto)
+
+| # | Move | Human? | Axes |
+|---|------|--------|------|
+| 1 | **Aiven dual free project** @bugcrowdninja → own-service IDOR probe list from checklist only | **human** | auth_ready↑ hunt_throughput↑ |
+| 2 | **Auth0 CIC Get Creds** → vault op:// only; ≤5 rps; never prod manage.auth0.com | **human** | auth_ready↑ safety_in_policy↑ |
+| 3 | **H1 Shopify SPA policy export** (logged-in) → lift H1 from PARTIAL; partners bugbounty store only | **human** | evidence_fidelity↑ hunt_throughput↑ |
+| 4 | **Passive keep-alive:** 119s pulse continues HTTP doors + CLAIMS/sanitize; no exploit tasks; luna-only until spark quota returns | **auto** | dual_substrate_up↑ secret_hygiene↑ |
+| 5 | **F1 Google dual-account Drive ACL map** (read-only own files) + **F3 Proton** dual free setup notes — methodology only until human accounts exist | **auto** plan / **human** account create | hunt_throughput↑ evidence_fidelity↑ |
+
+---
+
+**Pulse stamp:** connector pulse continuation · godspeed 119s ON · mid-pulse content winner **B** · race composite still **A** (COMPARE).

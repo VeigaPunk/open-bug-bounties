@@ -25,3 +25,8 @@ Passive recon + auth readiness only. Own accounts/tenants/stores. No live exploi
 |---|---|---|
 | LUNA | sekhmet-luna.sh | sp-rb01,02,03 |
 | SPARK | sekhmet-spark.sh | sp-rb04,05,06 (model fallback to luna when usage_limit) |
+
+## Godspeed inject + ship (mandatory)
+
+Every spawn/prompt must include full godspeed inject (`~/.xbgst/rules/godspeed-inject-ship.md`).
+After each APPROVED milestone: `~/.xbgst/scripts/milestone-ship.sh --label <slug> --src <dir> --msg '...'` → commit + push `origin main`.

@@ -1,26 +1,26 @@
-# Sekhmet dual-pool harvest (runner-a)
+# Sekhmet harvest — Runner A auth-ready swarm (2026-08-07T22:36Z)
 
-Both wrappers used: `sekhmet-luna.sh` + `sekhmet-spark.sh` (`--timeout 180 --no-keep`).
+Both pools: `--timeout 180 --no-keep`, tasks in `tasks-auth-ready.txt`.
 
-`--no-keep` deleted runtime trees after ok; evidence = swarm logs + l3/*.md checklists.
+## LUNA (`sekhmet-luna.sh`) — all status=ok
 
+| spark_id | notes |
+|----------|-------|
+| sp-1d59d225-2155-4c06-824e-7eda0cc8c9b3 | identity-day (rate_limit fail_reason but status ok) |
+| sp-53c48b9e-ff55-4373-ba96-74770fd0b87f | Q-BC-AUTH-GATES |
+| sp-d1c59eea-285e-429e-a19e-2c84bce9e670 | okta runbook |
+| sp-276a02c4-1cde-43ff-9aba-c84505b43e7a | aiven checklist |
+| sp-f90b70b7-1ed4-4e84-af15-4ff2c0dbd0b5 | atlassian-openai |
 
-## Auth-ready swarm (5 tasks × 2 pools)
+## SPARK (`sekhmet-spark.sh`) — all status=ok; codex-spark usage_limit → luna fallback
 
-- `sp-b8ac28b8-cf39-4947-922f-92a5e3c6250e` pool=luna status=ok model=gpt-5.6-luna tokens=8317 ms=11914
-- `sp-fc5c85da-38b7-40a6-bae8-234159619ea0` pool=luna status=ok model=gpt-5.6-luna tokens=10119 ms=17170
-- `sp-a2c40094-a832-4ac8-a5a4-a1784700e4b6` pool=luna status=ok model=gpt-5.6-luna tokens=5321 ms=22275
-- `sp-d5ce7cf1-26e3-490c-84f0-4267c1b73d3a` pool=luna status=ok model=gpt-5.6-luna tokens=6760 ms=24778
-- `sp-4b6dd3de-92b0-4b73-ad65-492e1a4528fd` pool=luna status=ok model=gpt-5.6-luna tokens=16109 ms=31537
-- `sp-1f3f6e44-e21e-4da4-91ac-8f804cb163ff` pool=spark status=ok model=gpt-5.6-luna tokens=4373 ms=9362
-- `sp-0cfc871d-b746-4507-a73c-7532eca715b8` pool=spark status=ok model=gpt-5.6-luna tokens=7602 ms=15970
-- `sp-eb07f0e8-1c32-4bc7-8319-a02320281bd9` pool=spark status=ok model=gpt-5.6-luna tokens=6011 ms=17122
-- `sp-06c71d6c-855f-4fbd-92ba-e3f3b920e43a` pool=spark status=ok model=gpt-5.6-luna tokens=9538 ms=18273
-- `sp-689d7da6-9240-4cda-90d7-e8c2f0a91071` pool=spark status=ok model=gpt-5.6-luna tokens=10145 ms=23380
+| spark_id | notes |
+|----------|-------|
+| sp-be205186-6106-4fba-aa89-3c9382968e8b | identity-day |
+| sp-7c58a15e-4ae4-4a5a-8dbb-42beb902b5bb | aiven |
+| sp-6f66c9a5-17ed-4082-b75c-bbf3032169d8 | okta runbook |
+| sp-38942c86-5027-4403-995a-a45c2b370518 | atlassian-openai |
+| sp-79f52837-a2d0-4834-8aaa-567217d340aa | Q-BC-AUTH-GATES |
 
-## Prior L3 checklist swarm (l3/)
-
-- `sp-4a889319-1410-48fc-bd8a-3d0b9a9a1e62` pool=luna artifact=`l3/sp-4a889319-1410-48fc-bd8a-3d0b9a9a1e62.md` or checklist_*
-- `sp-87b44661-fa17-4335-80cb-db91ebef4ec5` pool=luna artifact=`l3/sp-87b44661-fa17-4335-80cb-db91ebef4ec5.md` or checklist_*
-- `sp-b5d2237b-932b-4406-ab64-0ab2caf6428b` pool=spark artifact=`l3/sp-b5d2237b-932b-4406-ab64-0ab2caf6428b.md` or checklist_*
-- `sp-d32f7b5e-8ad3-43cc-bf9e-17ed79835282` pool=spark artifact=`l3/sp-d32f7b5e-8ad3-43cc-bf9e-17ed79835282.md` or checklist_*
+Durable copies: `l3/*-r2.md` (host filled where dual-write race left thin).
+Logs: `sekhmet-luna-swarm.log`, `sekhmet-spark-swarm.log`, `sekhmet-ids.json`.

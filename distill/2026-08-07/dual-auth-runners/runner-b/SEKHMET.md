@@ -58,3 +58,15 @@ Raw dry-run logs: `SEKHMET-dry-run.raw.txt`, `SEKHMET-dry-run-root.raw.txt`.
 | sp-rb-spark-f3-f4-xor | spark | ok | xbrd-spark-spark | fallback luna |
 
 **FS write from spark:** blocked (`code-mode host is disabled`). Host materialized `l3/*.md` + copied `*-result.json`. Dual dispatch + dual root still **green**.
+
+## Pulse advance swarm (2026-08-07T14:18–14:20Z)
+
+| spark_id | pool | status | root | model | notes |
+|----------|------|--------|------|-------|-------|
+| sp-rb-luna-f1-first-target | luna | ok | xbrd-spark-luna | gpt-5.6-luna | ~30s; F1 Drive first-target confirm |
+| sp-rb-spark-h1-export | spark | ok | xbrd-spark-spark | fallback luna (spark usage_limit) | ~66s; H1 export checklist |
+
+**Tasks:** `tasks/pulse-luna.ndjson`, `tasks/pulse-spark.ndjson`  
+**Logs:** `l3/pulse-luna-20260807T141831Z.log`, `l3/pulse-spark-20260807T141831Z.log`  
+**Host files:** `l3/luna-f1-first-target.md`, `l3/spark-h1-export-steps.md`  
+**Dual root dispatch:** green. Prefer `--keep` next pulse if artifact harvest needed before GC.

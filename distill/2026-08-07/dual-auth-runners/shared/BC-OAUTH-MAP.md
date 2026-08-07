@@ -16,3 +16,13 @@ Notes:
 - Set5 PAM org is a separate okta preview tenant for org/engagement workflows.
 - Vault: `op://Personal/Bugcrowd Org (Set 5) Okta/*` and `Bugcrowd` item for platform creds.
 - Do not store authorize `state`/`nonce` — ephemeral.
+
+
+## Set5 admin host (passive 2026-08-07T14:19Z)
+
+| Signal | Value |
+|--------|-------|
+| admin host | https://bugcrowd-pam-5335-admin.oktapreview.com |
+| unauth path | OIDC authorize → `/admin/sso/callback` (PKCE S256, scope openid) |
+| durable session via curl | **no** |
+| detail | `runner-a/BC-OKTA-ADMIN-PASSIVE.md` |

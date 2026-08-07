@@ -92,3 +92,178 @@ Revisit H2 only after F4 first-2h scored or F4 abandoned.
 - No live exploit under freeze.  
 - No other-user data access.  
 - No secret material in this file (op:// titles only).
+## Tick artifacts
+
+- Passive F4 prep: `auth/F4-DROPBOX-PASSIVE.md` (policy recon only).
+- Shared HTTP: `../shared/PULSE-HTTP.md`.
+
+- Passive H1 Shopify HTTP: `auth/H1-SHOPIFY-PASSIVE.md`
+
+- F2 MSRC passive portals: `auth/F2-MSRC-PASSIVE.md`
+
+- F3 Proton passive product map: `auth/F3-PROTON-PASSIVE.md`
+
+- F1 Google VRP passive portals: `auth/F1-GOOGLE-PASSIVE.md`
+
+- F4 Dropbox API passive HTTP: `auth/F4-DROPBOX-HTTP.md`
+
+### H2 GitLab — PULSE-21 doors (passive)
+- Unauth curl: `sign_in` **403** (browser UA/challenge), `sign_up` **200**, OIDC discovery **200**.
+- API: `/api/v4/user` + `/version` **401**; public `projects` list **200**.
+- OAuth authorize/token → sign_in → **403** under this UA.
+- H1 `hackerone.com/gitlab` **200** public shell; still need logged-in asset export for FULL fidelity.
+- Artifact: `auth/GITLAB-AUTH-DOORS.md`
+
+### F4 / Intigriti — PULSE-23 platform doors
+- Public shells: `app.intigriti.com/auth/login`, `/login`, `/programs`, Dropbox detail **200**.
+- Auth gate: `/researcher` → `login.intigriti.com/connect/authorize` (OIDC-style).
+- API: bare/core **404**; `external/researcher` **400** unauth (endpoint exists, needs session).
+- Artifact: `auth/INTI-PLATFORM-AUTH-DOORS.md` — still need human Inti join + @intigriti.me for F4 deep.
+
+### H1 platform — PULSE-25 doors
+- Curl: sign_in/sign_up **403** (challenge); directory/programs & opportunities **200**.
+- API: bare **200**; `/v1/hackers/me` and `/programs` **401** unauth.
+- Program shells Shopify/GitLab still **200** public.
+- Artifact: `auth/H1-PLATFORM-AUTH-DOORS.md` — browser session still required for asset export.
+
+### F2 MSRC — PULSE-27 MS identity doors
+- Public: `login.microsoftonline.com` OIDC discovery + authorize shell **200**.
+- Graph `/me` **401** unauth; portals Azure/Entra/admin **200** SPA shells.
+- Bounty policy: msrc bounty + online-services **200**.
+- Artifact: `auth/MS-IDENTITY-AUTH-DOORS.md` — still need own tenant + MSRC profile for live.
+
+### F1 Google VRP — PULSE-29 doors
+- Portal: bughunters home/report/VRP rules **200**; short links → bughunters.
+- Product shells Drive/Docs/Mail → Google accounts login.
+- OAuth userinfo **401** unauth.
+- Artifact: `auth/GOOGLE-VRP-AUTH-DOORS.md`
+
+### F3 / Inti — PULSE-41 path refresh
+- F3 SSoT still `proton.me/security/bug-bounty` **200**; bare security/support paths **404**.
+- Dual free doors: account login+signup **200**.
+- Inti: researcher → OIDC authorize; Dropbox program detail **200**; API bare **404**.
+- Artifact: `auth/PROTON-INTI-PATH-REFRESH.md`
+
+### F1 / H1 — PULSE-44 path refresh
+- Bughunters home/report/VRP rules **200**; appsecurity.google.com **ERR** this tick.
+- H1: sign_in/up **403** curl; Shopify/GitLab shells **200**; hackers API **401**.
+- Artifact: `auth/GOOGLE-H1-PATH-REFRESH.md`
+
+### F2 / F4 — PULSE-46 path refresh
+- MSRC policy pages **200**; portal researcher/report **404** (re-locate submit UI).
+- Dropbox: login/register **200**; BB via Inti program detail; first-party /bug-bounty **404**.
+- Artifact: `auth/MSRC-DROPBOX-PATH-REFRESH.md`
+
+### F2 MSRC — PULSE-47 submit recovery
+- Submit UI: `msrc.microsoft.com/report` and `/report/vulnerability/new` **200**.
+- Portal root still update-guide only; old portal/en-us report paths stay **404**.
+- Artifact: `auth/MSRC-SUBMIT-PATH-RECOVERY.md` — profile-on-submit still likely.
+
+### H1 Shopify / H2 GitLab — PULSE-49
+- H1 Shopify + criteria **200**; admin root **403**; partners signup **200** this tick.
+- GitLab H1 shell **200**; sign_in **403**; still PARK under XOR vs F4.
+- Artifact: `auth/SHOPIFY-GITLAB-PATH-REFRESH.md`
+
+## PULSE-51 (2026-08-07T16:02Z)
+- H1-SHOPIFY-OAUTH-PASSIVE: accounts+lookup+admin 200; partners/orgs OAuth bounce; identity 404.
+- H1 oauth → sign_in 403 curl; api me 401.
+- GitLab oauth → sign_in; v4/user 401.
+- Still human: H1/Shopify sessions; no automated creds.
+
+## PULSE-53 (2026-08-07T16:06Z)
+- INTI-DROPBOX-OAUTH-P53: Inti app bare→www; Dropbox OAuth missing_client_id; program shells 200.
+- API gates unchanged 404/400. Human: Inti+Dropbox sessions.
+
+## PULSE-55 (2026-08-07T16:10Z)
+- GOOGLE-VRP-OAUTH-P55: VRP shells 200; rules id drift; OAuth userinfo 401; appsecurity host err.
+- Human Google account still required for report auth paths.
+
+## PULSE-57 (2026-08-07T16:14Z)
+- MSRC-ENTRA-DOORS-P57: portal host consolidates to msrc.microsoft.com; Entra OIDC + Graph gates.
+- MSA/AAD human only.
+
+## PULSE-59 (2026-08-07T16:18Z)
+- H1-GITLAB-DOORS-P59: H1/GitLab curl gates stable; BC /h gitlab SSoT; version 401 this tick.
+- XOR H2 park vs F4 Dropbox unchanged; sessions human.
+
+### H1 Shopify — PULSE-61 door refresh
+- accounts.shopify.com root/lookup/signup **200**; login→lookup.
+- admin root **200**; /store **403**.
+- partners orgs/signup OAuth bounce (scopes openid+org+shop.create).
+- H1 shopify shell **200**; sign_in **403** curl; API me **401**.
+- BC /h/engagements/shopify **200** (bare 404). Artifact: `SHOPIFY-H1-OAUTH-P61.md`
+- Still human: H1 + own store; no automated creds.
+
+### F4 Dropbox/Inti — PULSE-63 door refresh
+- app root 307→www; detail 200; login IdP 200.
+- Dropbox BB path 404; OAuth missing_client_id; API 404/400.
+- BC dropbox shells 200 — join still Inti. Artifact: `INTI-DROPBOX-DOORS-P63.md`
+- XOR H2 park unchanged; sessions human.
+
+### F2 MSRC/Entra — PULSE-65 door refresh
+- Submit SSoT /report + /vulnerability/new 200; en-us paths 404.
+- portal collapsed; OIDC+Graph gates; OBB policy 200.
+- Artifact: `MSRC-ENTRA-DOORS-P65.md` — MSA/AAD human.
+
+### F1 Google VRP — PULSE-67 door refresh
+- bughunters report+rules 200; appsecurity ERR; OAuth gates.
+- Artifact: `GOOGLE-VRP-DOORS-P67.md` — dual own accounts human.
+
+### F3 Proton — PULSE-69 door refresh
+- BB SSoT /security/bug-bounty 200; account login/signup 200; H1/BC not join SSoT.
+- Artifact: `PROTON-F3-DOORS-P69.md` — dual free human.
+
+### H1 / GitLab — PULSE-71 door refresh
+- H1 sign_in/up still **403** curl; password/new + directory/opportunities **200**; shopify+gitlab SPA shells **200**.
+- Bare SSO paths `users/auth/google_oauth2` + `github` **404** this tick.
+- API me/programs **401**; docs /en/ **200**.
+- GitLab OIDC+JWKS **200**; sign_up **200**; api v4 user/version **401**; public projects **200**.
+- BC **/h/engagements/gitlab** + brief **200** (soft); bare + programs **404**.
+- Artifact: `H1-GITLAB-DOORS-P71.md` — H2 park; H1 Shopify session human.
+
+### F4 Dropbox / Inti — PULSE-73 door refresh
+- Inti login shells 200; researcher → login.intigriti.com authorize (bff-init).
+- dropbox detail **200** F4 SSoT; first-party BB 404; H1 dropbox 404.
+- OAuth missing_client_id; API get_current_account 400 unauth.
+- Artifact: `INTI-DROPBOX-DOORS-P73.md` — join + headers still human.
+
+### F2 MSRC / Entra — PULSE-75 door refresh
+- submit SSoT `/report/vulnerability/new` 200; OBB policy 200.
+- Entra OIDC+authorize 200; Graph /me 401.
+- Artifact: `MSRC-ENTRA-DOORS-P75.md` — profile-on-submit human.
+
+### F1 Google VRP — PULSE-77 door refresh
+- bughunters report+learn+VRP rules 200; g.co/vulnz → hub.
+- userinfo 401; Drive/Docs → ServiceLogin.
+- Artifact: `GOOGLE-VRP-DOORS-P77.md` — dual Google accounts human.
+
+### F3 Proton — PULSE-79 door refresh
+- First-party BB 200; dual free account doors 200; product shells 200.
+- Artifact: `PROTON-F3-DOORS-P79.md` — dual free accounts human.
+
+### PULSE-81 H1+GitLab doors
+- Artifact: `H1-GITLAB-DOORS-P81.md` — sign_up **400** (delta); OIDC/JWKS 200; H1 SPA shells 200; XOR PARK H2 unchanged.
+
+### PULSE-83 MSRC+Entra doors
+- Artifact: `MSRC-ENTRA-DOORS-P83.md` — submit SSoT 200; CVRF HEAD/GET delta; researcher portal path 404; Entra OIDC green.
+
+### PULSE-85 Google VRP doors
+- Artifact: `GOOGLE-VRP-DOORS-P85.md` — VRP SSoT + OIDC 200; Drive/Docs→login; dual accounts human.
+
+### PULSE-87 Proton F3 doors
+- Artifact: `PROTON-F3-DOORS-P87.md` — first-party BB 200; free login/signup 200; API samples 400; dual accounts human.
+
+### PULSE-89 H1+GitLab doors
+- Artifact: `H1-GITLAB-DOORS-P89.md` — sign_up HEAD/GET split; OIDC 200; XOR PARK H2.
+
+### PULSE-103 MSRC+Entra doors
+- Artifact: `MSRC-ENTRA-DOORS-P103.md` — AAD OIDC 200; Graph me 401; MSRC report 200; BC /h soft; H1 404.
+
+### PULSE-105 Google VRP doors
+- Artifact: `GOOGLE-VRP-DOORS-P105.md` — bughunters 200; OIDC+JWKS; H1 google 200; human login.
+
+### PULSE-107 Proton F3 doors
+- Artifact: `PROTON-F3-DOORS-P107.md` — OIDC 200; Inti SSoT; dual signup human.
+
+### PULSE-109 H1+GitLab doors
+- Artifact: `H1-GITLAB-DOORS-P109.md` — OIDC maps stable; H1 login browser-only.

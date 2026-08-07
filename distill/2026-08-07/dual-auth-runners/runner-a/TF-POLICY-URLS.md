@@ -1,19 +1,15 @@
-# TinyFish public policy / engagement URLs (runner-a)
+# TinyFish public policy / engagement URLs (2026-08-07)
 
-## Okta / Auth0 (bugcrowd.com)
-- https://bugcrowd.com/engagements/okta
-- https://bugcrowd.com/engagements/okta/announcements
-- https://bugcrowd.com/engagements/auth0-okta
-- https://bugcrowd.com/engagements/auth0-okta/changelog
-- https://bugcrowd.com/engagements/auth0-okta/crowdstream
+| Program | URL |
+|---------|-----|
+| Aiven MBB | https://bugcrowd.com/engagements/aiven-mbb-og |
+| Auth0/Okta (BC) | https://bugcrowd.com/engagements/auth0-okta |
+| Okta | https://bugcrowd.com/engagements/okta |
+| Atlassian | https://bugcrowd.com/engagements/atlassian |
+| OpenAI | https://bugcrowd.com/engagements/openai |
+| Aiven console | https://console.aiven.io/ |
+| Okta Set5 enduser | https://bugcrowd-pam-5335.oktapreview.com/ |
+| Okta Set5 admin | https://bugcrowd-pam-5335-admin.oktapreview.com/ |
+| Aiven security | https://aiven.io/security-compliance |
 
-## Aiven
-- https://bugcrowd.com/engagements/aiven-mbb-og
-- https://bugcrowd.com/engagements/aiven-mbb-og/changelog
-- https://bugcrowd.com/engagements/aiven-mbb-og/announcements
-
-## Shared prior TF (parent dual-auth shared)
-- See `../shared/TF-BC-OKTA-SEARCH.md`
-
-## Distill scopes (FULL fidelity, re-verify live)
-- scopes/aiven.md, scopes/auth0.md, scopes/okta.md, scopes/atlassian.md, scopes/openai.md
+HTTP doors all 200 at 2026-08-07T22:36Z (see ENGAGEMENT-HTTP.txt).
