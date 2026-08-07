@@ -1,0 +1,70 @@
+=== dual sekhmet dry-run runner-b 2026-08-07T14:06:56+00:00 ===
+--- LUNA ---
+sekhmet: godspeed directive INJECTED spark_id=sp-e74815f9-f23f-491f-a001-8fd8f98b6401 (read in/godspeed.md + in/task.md head)
+{"spark_id":"sp-e74815f9-f23f-491f-a001-8fd8f98b6401","content_hash":"fa08bd6640a0db564fa7ed72ed115df07e9b965379d842277de1ee7fabdea933","status":"ok","result_path":"/run/user/1000/xbrd-spark/sp-e74815f9-f23f-491f-a001-8fd8f98b6401/out/result.json","artifacts":["/run/user/1000/xbrd-spark/sp-e74815f9-f23f-491f-a001-8fd8f98b6401/out/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","/run/user/1000/xbrd-spark/sp-e74815f9-f23f-491f-a001-8fd8f98b6401/out/artifacts/25d33183d01ca7827df2eac040cbc6b605e44890bb878b56993f3d08e432c551","/run/user/1000/xbrd-spark/sp-e74815f9-f23f-491f-a001-8fd8f98b6401/out/artifacts/945fdca05395f6a2765cdba7f67b272e61dd7e696d8ed815405bcc6d11c4fa6e","/run/user/1000/xbrd-spark/sp-e74815f9-f23f-491f-a001-8fd8f98b6401/out/artifacts/f5d83e646eef89e64bcc60df25516c9711fe424180485b766c964d3777580998"],"provenance":{"spark_id":"sp-e74815f9-f23f-491f-a001-8fd8f98b6401","started_at":"2026-08-07T14:06:56.320264621+00:00","finished_at":"2026-08-07T14:06:56.320291521+00:00","duration_ms":0,"model":"gpt-5.6-luna","cmdline":["dry-run"],"status":"ok","exit_code":0,"content_hash":"fa08bd6640a0db564fa7ed72ed115df07e9b965379d842277de1ee7fabdea933","task_hash":"ad8d96b641683c37ce77f57bbd2c264a5016990534dfd4882418fb03face3932","invoker":"vgpnk1337","scope":null,"ro":false,"timeout_secs":120,"direct":false,"dry_run":true,"root":"/run/user/1000/xbrd-spark/sp-e74815f9-f23f-491f-a001-8fd8f98b6401"}}
+LUNA_EXIT:0
+XBRD after luna wrapper would set: (check env from subshell)
+MODEL=gpt-5.6-luna ROOT=/run/user/1000/xbrd-spark-luna
+total 0
+drwxr-xr-x  4 vgpnk1337 vgpnk1337  80 Aug  7 11:06 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:02 sp-d7d7919f-964c-446a-8778-b68a88eb73ec
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:06 sp-fe0afdb8-21b7-48c5-8c2d-520e0782ee2a
+--- SPARK ---
+sekhmet: godspeed directive INJECTED spark_id=sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a (read in/godspeed.md + in/task.md head)
+{"spark_id":"sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a","content_hash":"fa08bd6640a0db564fa7ed72ed115df07e9b965379d842277de1ee7fabdea933","status":"ok","result_path":"/run/user/1000/xbrd-spark/sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a/out/result.json","artifacts":["/run/user/1000/xbrd-spark/sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a/out/artifacts/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","/run/user/1000/xbrd-spark/sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a/out/artifacts/25d33183d01ca7827df2eac040cbc6b605e44890bb878b56993f3d08e432c551","/run/user/1000/xbrd-spark/sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a/out/artifacts/f6bbc3a87dbbaf980f5c74ea887531a1310c01f8bc9362375575da373eee891d","/run/user/1000/xbrd-spark/sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a/out/artifacts/f5d83e646eef89e64bcc60df25516c9711fe424180485b766c964d3777580998"],"provenance":{"spark_id":"sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a","started_at":"2026-08-07T14:06:56.324722446+00:00","finished_at":"2026-08-07T14:06:56.324740726+00:00","duration_ms":0,"model":"gpt-5.6-luna","cmdline":["dry-run"],"status":"ok","exit_code":0,"content_hash":"fa08bd6640a0db564fa7ed72ed115df07e9b965379d842277de1ee7fabdea933","task_hash":"ad8d96b641683c37ce77f57bbd2c264a5016990534dfd4882418fb03face3932","invoker":"vgpnk1337","scope":null,"ro":false,"timeout_secs":120,"direct":false,"dry_run":true,"root":"/run/user/1000/xbrd-spark/sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a"}}
+SPARK_EXIT:0
+MODEL=gpt-5.3-codex-spark ROOT=/run/user/1000/xbrd-spark-spark
+total 0
+drwxr-xr-x  3 vgpnk1337 vgpnk1337  60 Aug  7 11:06 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:02 sp-cf694b51-afd6-4d59-931d-96adaa963a09
+--- runtime dirs ---
+/run/user/1000/xbrd-spark:
+total 0
+drwxr-xr-x  8 vgpnk1337 vgpnk1337 160 Aug  7 11:06 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:06 sp-0c908291-e85b-4024-b68a-034275c8e82e
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:03 sp-0d8b4522-02d2-4312-a12f-aff75cb3c6ea
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:03 sp-2ecd26f8-26f2-4e04-8af3-6464df56c75c
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:06 sp-8f30bb75-5145-4bae-8ec6-12bad88de9dc
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:06 sp-c1a74f92-e1f8-460d-a1af-38ab1c5dcd9a
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:06 sp-e74815f9-f23f-491f-a001-8fd8f98b6401
+
+/run/user/1000/xbrd-spark-luna:
+total 0
+drwxr-xr-x  4 vgpnk1337 vgpnk1337  80 Aug  7 11:06 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:02 sp-d7d7919f-964c-446a-8778-b68a88eb73ec
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:06 sp-fe0afdb8-21b7-48c5-8c2d-520e0782ee2a
+
+/run/user/1000/xbrd-spark-rA:
+total 0
+drwxr-xr-x  2 vgpnk1337 vgpnk1337  40 Aug  7 11:02 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+
+/run/user/1000/xbrd-spark-rB:
+total 0
+drwxr-xr-x  2 vgpnk1337 vgpnk1337  40 Aug  7 11:02 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+
+/run/user/1000/xbrd-spark-spark:
+total 0
+drwxr-xr-x  3 vgpnk1337 vgpnk1337  60 Aug  7 11:06 .
+drwx------ 24 vgpnk1337 vgpnk1337 780 Aug  7 11:02 ..
+drwx------ 13 vgpnk1337 vgpnk1337 280 Aug  7 11:02 sp-cf694b51-afd6-4d59-931d-96adaa963a09
+Sekhmet — always-available swarm dispatch substrate (xbreed L3). Up to 64 concurrent runners.
+
+Usage: sekhmet <COMMAND>
+
+Commands:
+  run      Run a single spark execution in an isolated namespace
+  collect  Collect structured records from one or more spark ids for distiller (NDJSON)
+  gc       Garbage-collect old spark namespaces
+  status   Print status / meta for a spark id
+  swarm    Run many tasks with a bounded pool of concurrent runners (max 64)
+  help     Print this message or the help of the given subcommand(s)
+
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
