@@ -1,34 +1,51 @@
-# REPORT — hydra lane stack/aiven
+# REPORT — hydra lane stack / Aiven
 
-**UTC:** 2026-08-07T22:35:52Z  
-**State:** IN_PROGRESS (not COMPLETE)  
-**Orch:** whip tick labrat substitute (spawn failed to land files)
+**UTC:** 2026-08-07  
+**Program:** https://bugcrowd.com/engagements/aiven-mbb-og  
+**Lane OUT:** `/home/vgpnk1337/.xbgst/hydra-bounty/lanes/stack/aiven`
 
-## Axes this tick
-- scope clarity ↑ (live BC brief distilled)
-- own-asset safety ↑ (checklist)
-- report skeleton quality ↑ (DRAFT template)
-- evidence paths ↑ (this dir)
+## Status: PARTIAL — mapped; **blocked on free-tier product signup**
 
-## Delivered
-| File | Path |
-|------|------|
-| SCOPE.md | /home/vgpnk1337/.xbgst/hydra-bounty/lanes/stack/aiven/SCOPE.md |
-| OWN-ASSET.md | /home/vgpnk1337/.xbgst/hydra-bounty/lanes/stack/aiven/OWN-ASSET.md |
-| DRAFT-REPORT.md | /home/vgpnk1337/.xbgst/hydra-bounty/lanes/stack/aiven/DRAFT-REPORT.md |
-| REPORT.md | /home/vgpnk1337/.xbgst/hydra-bounty/lanes/stack/aiven/REPORT.md |
+Axes: bounty_complete↑ (map+tests drafted) · evidence_fidelity↑ (401 boundary live) · safety_in_policy↑ (own-only, ninja, no CC)
 
-## Success criteria vs TASK
-- [x] SCOPE.md from live brief bullets
-- [x] OWN-ASSET checklist
-- [x] Draft report template (finding class authz/IDOR on own project)
-- [ ] Live free-tier service provisioned + first authz probe notes (next)
+## Deliverables
 
-## Next actions
-1. Ensure BC ninja account + free service (Postgres) under op-managed creds
-2. Fill OWN-ASSET checkboxes with real IDs (local/op, not secrets in files)
-3. Run first two-account membership/token matrix; update REPORT when evidence exists
-4. Mark COMPLETE only with evidence paths of tests (still own-only)
+| Artifact | Path |
+|----------|------|
+| SCOPE.md | …/aiven/SCOPE.md |
+| ATTACK-SURFACE.md | …/aiven/ATTACK-SURFACE.md |
+| FIRST-5-TESTS.md | …/aiven/FIRST-5-TESTS.md |
+| OWN-ASSET.md | …/aiven/OWN-ASSET.md |
+| DRAFT-REPORT.md | …/aiven/DRAFT-REPORT.md |
+| L3 checklists | …/aiven/l3/01–04-*.md |
+| Swarm NDJSON | …/aiven/l3/swarm-ndjson.jsonl |
+
+## Evidence (live, unauth)
+
+- `GET https://api.aiven.io/v1/project` → **401**  
+  `{"errors":[{"message":"No valid client certificate presented","status":401}],…}`
+- Console `https://console.aiven.io/` → 200 CF SPA (headers logged in recon)
+- Free tier services (docs): Kafka, MySQL, OpenSearch, PostgreSQL, Valkey — **no CC**
+
+## Blocker
+
+**Free-tier console signup with @bugcrowdninja.com mailbox not completed** in this environment.  
+Per playbook FAIL-CLOSED: no authenticated authz IDOR probes until OWN projects A/B exist.
 
 ## Sekhmet
-luna-a pane healthy (prior dry-run ok). Swarm optional next tick for probe cards.
+
+```
+sekhmet-luna-a.sh swarm -f tasks/swarm-lines.txt -j 4 --timeout 120 --no-keep --scope OUT
+```
+Exit 0; 4 CollectRecords in `l3/swarm-ndjson.jsonl` (namespaces GC’d; durable checklists materialised host-side).
+
+## Tracker recommendation
+
+Mark H1 Aiven row: **mapped + blocked free-tier signup** (not complete bounty).
+
+## Next (human)
+
+1. Ninja mailbox → two console accounts  
+2. Free PG (+ optional Kafka)  
+3. Execute FIRST-5-TESTS.md  
+4. File BC report only with real evidence  
