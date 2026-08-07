@@ -1,0 +1,4 @@
+[v3] Google VRP Drive-only scope reminders (10 bullets).
+[v3] 5 Drive ACL/IDOR test titles two own accounts A/B (labels only).
+[v3] Submit checklist headers for bughunters.google.com Drive authz report.
+[v3] Forbidden automated Google VRP activities (8 lines).

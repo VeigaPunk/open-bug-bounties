@@ -1,0 +1,4 @@
+Write markdown checklist to stdout only: Aiven free-tier OWN-ASSET setup for Bugcrowd aiven-mbb-og. @bugcrowdninja only; no CC; accounts A/B; free PG or Kafka; never other customers. Numbered steps + checkboxes. Max 40 lines. No secrets.
+Write authz/IDOR test matrix markdown for Aiven api.aiven.io between two OWN accounts. Columns: endpoint, method, expected deny, severity if open. Rows: project get, service list, users, invite, kafka acl, permissions. Own free project only. Max 50 lines.
+Write Bugcrowd report skeleton for hypothetical Aiven project IDOR (cross-account GET with foreign aivenv1). Sections title summary steps impact remediation scope aiven-mbb-og. PLACEHOLDER evidence. No tokens. Max 45 lines.
+Write FAIL-CLOSED safety gates checklist for Aiven bounty. Include: slug aiven-mbb-og only; ninja email; free tier no CC; own aivencloud only; no DoS; token replay not a bug; free-tier signup blocker. Checkboxes. Max 35 lines.
