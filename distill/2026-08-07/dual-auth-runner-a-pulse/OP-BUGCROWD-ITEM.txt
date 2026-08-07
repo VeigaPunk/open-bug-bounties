@@ -1,0 +1,3 @@
+title Bugcrowd
+  [STRING] username=jpveigao10@gmail.com
+  [CONCEALED] password=<REDACTED>
