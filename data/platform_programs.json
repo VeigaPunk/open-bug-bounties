@@ -1,19 +1,27 @@
 {
   "snapshot_at_utc": "2026-08-06T00:44:32Z",
-  "last_permitted_check_at_utc": "2026-08-06T13:07:23Z",
+  "last_permitted_check_at_utc": "2026-08-07T03:19:46Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-08-06T13:07:23Z",
-      "status": "content_changed_inventory_unchanged",
-      "etag": "W/\"1786015827\"",
-      "last_modified": "Thu, 06 Aug 2026 11:30:27 GMT",
+      "checked_at_utc": "2026-08-07T03:19:46Z",
+      "status": "reachable_last_good_inventory_retained",
+      "etag": "W/\"1786068134\"",
+      "last_modified": "Fri, 07 Aug 2026 02:02:14 GMT",
       "included": 224,
       "consecutive_misses": 0
     },
-    "Bugcrowd": { "status": "snapshot_reuse_permission_pending" },
-    "Intigriti": { "status": "snapshot_reuse_review_pending" },
-    "YesWeHack": { "status": "snapshot_reuse_permission_pending" },
-    "HackenProof": { "status": "snapshot_reuse_permission_pending" }
+    "Bugcrowd": {
+      "status": "snapshot_reuse_permission_pending"
+    },
+    "Intigriti": {
+      "status": "snapshot_reuse_review_pending"
+    },
+    "YesWeHack": {
+      "status": "snapshot_reuse_permission_pending"
+    },
+    "HackenProof": {
+      "status": "snapshot_reuse_permission_pending"
+    }
   },
   "programs": [
     {
@@ -6160,5 +6168,6 @@
       "directory_url": "https://yeswehack.com/programs",
       "industry": "Marketing Tech"
     }
-  ]
+  ],
+  "last_attempted_check_at_utc": "2026-08-07T03:19:46Z"
 }

@@ -1,15 +1,19 @@
 {
   "generated_at": "2026-08-06T00:40:25.117Z",
-  "last_permitted_check_at_utc": "2026-08-06T13:07:23Z",
+  "last_permitted_check_at_utc": "2026-08-07T03:19:46Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-08-06T13:07:23Z",
-      "status": "unchanged",
+      "checked_at_utc": "2026-08-07T03:19:46Z",
+      "status": "reachable_last_good_inventory_retained",
       "included": 35,
       "consecutive_misses": 0
     },
-    "Immunefi": { "status": "snapshot_crawl_permission_required" },
-    "Cantina": { "status": "snapshot_crawl_permission_required" }
+    "Immunefi": {
+      "status": "snapshot_crawl_permission_required"
+    },
+    "Cantina": {
+      "status": "snapshot_crawl_permission_required"
+    }
   },
   "counts": {
     "Cantina": 51,
@@ -2202,5 +2206,6 @@
       "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
       "kyc_required": null
     }
-  ]
+  ],
+  "last_attempted_check_at_utc": "2026-08-07T03:19:46Z"
 }
