@@ -2,80 +2,79 @@
 
 **runner_id:** B  
 **lane:** Q-FP-H1  
-**ts:** 2026-08-07T14:11Z  
+**ts:** 2026-08-07T22:38Z  
 **OUT_DIR:** `/home/vgpnk1337/.xbgst/bounty-distill/2026-08-07/dual-auth-runners/runner-b/`
 
 ## Axes
 
 | Axis | Move | Result |
 |---|---|---|
-| auth_ready | AUTH-READINESS + vault titles/refs | H1/Inti/TF mapped; MSRC profile-on-submit; Proton email channel |
-| hunt_throughput | dual sekhmet 6 tasks + TinyFish | 6/6 sparks status=ok; findings written |
-| evidence_fidelity | scopes FULL/PARTIAL tags preserved | Google/MSRC/Proton/Dropbox FULL; Shopify PARTIAL; GitLab STUB |
-| safety_in_policy | recon-only tasks | no exploit payloads; own-asset language only |
-| secret_hygiene | op:// only | no credential values in distill |
+| auth_ready↑ | vault labels + AUTH-READINESS-p240 | H1/Inti/TF READY; platforms PARTIAL |
+| hunt_throughput↑ | dual sekhmet 6 live + 2 dry + TinyFish | 6/6 ok; both pools invoked |
+| evidence_fidelity↑ | TF criteria + security.txt + host packs | Shopify domain table expanded; H1 login still PARTIAL |
+| safety_in_policy↑ | recon-only task text | no exploit; own-store language |
+| secret_hygiene↑ | op:// refs only | titles + labels only |
 
-## Moves
+## Moves (P240 pulse)
 
-1. **tmp-sanitize + OUT mkdir** — sanitize ran; dual dry-run roots correct (`xbrd-spark-luna` / `xbrd-spark-spark`).
-2. **TinyFish public recon** — Google VRP rules, MSRC Online Services, Proton bounty, Shopify criteria/getting-started, Dropbox Intigriti discovery.
-3. **Vault field inventory (labels)** — HackerOne `username`/`user[password]`; Intigriti `Input.Username`/`Input.Password`; TinyFish `credential`.
-4. **Dual sekhmet live swarm** — luna: F1/F2/F3; spark: H1/F4/AUTH (spark usage_limit → luna fallback; **both wrappers used**).
-5. **XOR F4** — Dropbox DEEP, GitLab STUB documented.
-6. **Finding packs** — F1–F4, H1, AUTH-READINESS, LANE.md.
-7. **Leakage gate** — post-write `rg` (see evidence).
+1. **tmp-sanitize** — ran before pulse.
+2. **TinyFish search+fetch** — Google rules, Shopify criteria/bugbounty, Dropbox security.txt, Intigriti Dropbox URLs.
+3. **Vault field inventory** — HackerOne: username, user[password]; Intigriti: Input.Username, Input.Password; TinyFish API: credential (+ username).
+4. **Dual sekhmet** — luna tasks F1/F2/H1; spark tasks F3/F4/AUTH; dry both pools.
+5. **XOR F4** — Dropbox DEEP documented; GitLab STUB.
+6. **Host durable packs** — findings/*-p240.md, AUTH-READINESS-p240, SHOPIFY-H1-OAUTH-P240.
+7. **Secret gate + milestone ship** — see end.
 
-## Sekhmet IDs
+## Sekhmet IDs (P240)
 
-| spark_id | pool root | status | notes |
-|---|---|---|---|
-| sp-rb01-f1-google | xbrd-spark-luna | ok | gpt-5.6-luna |
-| sp-rb02-f2-msrc | xbrd-spark-luna | ok | gpt-5.6-luna |
-| sp-rb03-f3-proton | xbrd-spark-luna | ok | gpt-5.6-luna; host file landed by worker |
-| sp-rb04-h1-shopify | xbrd-spark-spark | ok | fallback from gpt-5.3-codex-spark |
-| sp-rb05-f4-dropbox | xbrd-spark-spark | ok | fallback luna |
-| sp-rb06-auth-map | xbrd-spark-spark | ok | fallback luna |
-| sp-46fc7b49-… (dry) | luna | ok | empty swarm health |
-| sp-4fcc7bd8-… (dry) | spark | ok | model label spark |
+| spark_id | pool wrapper | root | status | notes |
+|---|---|---|---|---|
+| sp-rb-dry-luna | sekhmet-luna.sh | xbrd-spark-luna | ok | dry-run |
+| sp-rb-dry-spark | sekhmet-spark.sh | xbrd-spark-spark | ok | dry; model label spark |
+| sp-rb-p240-f1-google | sekhmet-luna.sh | xbrd-spark-luna | ok | rate_limit flag; tokens 21015 |
+| sp-rb-p240-f2-msrc | sekhmet-luna.sh | xbrd-spark-luna | ok | |
+| sp-rb-p240-h1-shopify | sekhmet-luna.sh | xbrd-spark-luna | ok | |
+| sp-rb-p240-f3-proton | sekhmet-spark.sh | xbrd-spark-spark | ok | fallback gpt-5.6-luna |
+| sp-rb-p240-f4-dropbox | sekhmet-spark.sh | xbrd-spark-spark | ok | fallback; rate_limit note |
+| sp-rb-p240-auth-map | sekhmet-spark.sh | xbrd-spark-spark | ok | fallback luna |
 
-NDJSON: `l3/luna-swarm.ndjson`, `l3/spark-swarm.ndjson`
+NDJSON: `l3/luna-swarm-p240.ndjson`, `l3/spark-swarm-p240.ndjson`, dry-*-p240.ndjson  
+Note: --no-keep deleted namespaces; durable content host-written from TF + provenance.
 
 ## Evidence paths
 
-- findings/F1-google-authz-map.md  
-- findings/F2-msrc-authz-map.md  
-- findings/F3-proton-dual-account.md  
-- findings/H1-shopify-criteria.md  
-- findings/F4-dropbox-xor.md  
-- auth/AUTH-READINESS.md  
-- LANE.md  
-- tasks/policy-recon.ndjson  
+- findings/F1-google-authz-map-p240.md
+- findings/F2-msrc-authz-map-p240.md
+- findings/F3-proton-dual-p240.md
+- findings/F4-dropbox-xor-p240.md
+- findings/H1-shopify-criteria-p240.md
+- auth/AUTH-READINESS-p240.md
+- SHOPIFY-H1-OAUTH-P240.md
+- tasks/policy-recon-p240-*.ndjson
+- shared/CLAIMS-runner-b.md
 
 ## Blockers
 
-1. **gpt-5.3-codex-spark usage_limit** — spark pool ran via luna fallback (substrate dual still proven).  
-2. **Shopify H1 asset table PARTIAL** — needs logged-in H1 policy export.  
-3. **MSRC profile** — create at first submit.  
-4. **GitLab deep blocked by XOR** — intentional while Dropbox deep.  
-5. Some sekhmet workers returned ok but only F3 initially persisted; host backfill completed missing maps for fidelity.
+1. **gpt-5.3-codex-spark usage_limit** — spark pool falls back to luna (dual wrappers still proven).
+2. **Shopify H1 asset export PARTIAL** — needs logged-in H1 browser session.
+3. **MSRC profile** — create at first submit.
+4. **GitLab deep XOR-blocked** — intentional.
+5. **--no-keep** — agent result bodies not retained; host packs are SSoT for content.
 
 ## Next
 
-1. Browser: H1 Shopify policy export → lift fidelity; create partners bugbounty store with `@wearehackerone.com`.  
-2. Intigriti: confirm Dropbox program join; set UA/header; free trial + own-file API authz (human session).  
-3. Google: dual own accounts + one product (Drive share ACL) passive map.  
-4. Proton: two free accounts; email channel prep (PGP).  
-5. MSRC: register researcher profile when first report ready; MSOBB tenant.  
-6. Re-run spark pool when usage_limit clears for true model diversity.  
-7. Compare with Runner A via `shared/COMPARE.md` (titles only).
+1. Human browser: H1 Shopify policy export → FULL asset fidelity; partners store with @wearehackerone.com.
+2. Intigriti: join Dropbox; capture UA/header; own-file API authz map.
+3. Google: dual accounts + Drive share ACL passive map.
+4. Proton: two free accounts + PGP channel prep.
+5. MSRC: profile when first report ready.
+6. Re-run spark primary when usage_limit clears.
+7. Compare Runner A via shared/COMPARE (titles only).
 
 ## Policy attestation
 
-No live exploit. No secrets written. Own accounts only language. TinyFish used for public pages only.
+No live exploit. No secrets in distill. Own accounts only. TinyFish for public pages. GODSPEED inject on all sekhmet tasks.
 
-## Pulse expand (2026-08-07T14:20Z)
+## Prior pulse lineage
 
-- findings/F1-FIRST-TARGET.md
-- findings/F3-SETUP.md
-- findings/H1-EXPORT-STEPS.md
-- sekhmet pulse: sp-rb-luna-f1-first-target + sp-rb-spark-h1-export
+Earlier REPORT content (14:11–14:20Z, door packs P53–P232) retained as files in OUT_DIR; this REPORT is the SSoT pulse head for P240 ship.
