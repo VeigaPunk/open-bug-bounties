@@ -1,9 +1,8 @@
-200 https://bugcrowd.com/engagements/aiven-mbb-og  <- https://bugcrowd.com/engagements/aiven-mbb-og
-200 https://bugcrowd.com/engagements/auth0-okta  <- https://bugcrowd.com/engagements/auth0-okta
-200 https://bugcrowd.com/engagements/okta  <- https://bugcrowd.com/engagements/okta
-200 https://bugcrowd.com/engagements/atlassian  <- https://bugcrowd.com/engagements/atlassian
-200 https://bugcrowd.com/engagements/openai  <- https://bugcrowd.com/engagements/openai
-200 https://tracker.bugcrowd.com/user/sign_in  <- https://login.bugcrowd.com/
-200 https://console.aiven.io/  <- https://console.aiven.io/
-400 https://config.cic-bug-bounty.auth0app.com/u/login?state=hKFo2SBncndILUpud3ZyaUFWYnNmQ2VRSkM4emZPMDBqZjFWY6Fur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHdFUDFqQlJJTXdsT2JRUUtkbzdlYldnT3JyOUZzQ3d4o2NpZNkgSkFtaVY2UGx5M0RJdE15WjZWeXhZUmZzeXFydHJyTG8  <- https://manage.cic-bug-bounty.auth0app.com/
-200 https://bugcrowd-pam-5335.oktapreview.com/app/UserHome?iss=https%3A%2F%2Fbugcrowd-pam-5335.oktapreview.com&session_hint=AUTHENTICATED  <- https://bugcrowd-pam-5335.oktapreview.com/
+200 https://bugcrowd.com/engagements/aiven-mbb-og
+200 https://bugcrowd.com/engagements/auth0-okta
+200 https://bugcrowd.com/engagements/okta
+200 https://bugcrowd.com/engagements/atlassian
+200 https://bugcrowd.com/engagements/openai
+200 https://console.aiven.io/
+200 https://bugcrowd-pam-5335.oktapreview.com/
+200 https://bugcrowd-pam-5335-admin.oktapreview.com/
