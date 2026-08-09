@@ -1,0 +1,9 @@
+ID,Area,Severity,Location,Summary,Evidence,Tier
+B70,PCB,Critical,D3 pad1 +3.3V,Common anode copper island: pad1 assigned +3.3V but only 3-node track/via island not connected to main +3.3V rail — LED unpowered,PCB BFS net5 from D3@158.1/32.9 size=3 vs multi-component rail,IRONCLAD
+B71,Schematic/PCB,Critical,U5 MAX2679 VCC,MAX2679 VCC tied to NEO-M8N VCC_RF (~3.2V) exceeding ~2.2V abs max,PCB U5 pad A1 = Net-(U3-VCC_RF); C6 on same net,IRONCLAD
+B72,PCB,High,D3 ASMB-KTF0 pads,Red/blue cathode nets swapped: pad2=LED_B pad4=LED_R (Broadcom pad2=red pad4=blue),PCB D3 pads,IRONCLAD
+B73,Schematic,High,D2 on Q1 G-S,D2 is PMEG10020ELR Schottky not VGS Zener; placed source-gate where transient clamp needed,sch Value PMEG10020ELR; PCB D2 +12V to gate net,IRONCLAD
+B74,PCB/Schematic,Critical,U4 footprint,Land pattern TQFP-100_12x12mm_P0.4mm incompatible with CY8C9560A-24AXIT real 14x14mm 0.50mm pitch (not 68-pin myth),footprint string on sch+pcb; Infineon PG-TQFP-100 body,IRONCLAD
+B50,Firmware,Critical,loop compare,No 40-bit mask on values vs EXPECTED; bits 40-63 poison equality,firmware.ino:148-156,IRONCLAD
+B52,Firmware,High,EXPECTED matrix,Matrix non-closure / bit-order conflict vs undirected harness,firmware.ino:20-61,IRONCLAD
+B53,Driver/PCB,High,I2C addr vs A1/A2,Addr 0x20 assumes A1=A2=0 but A1=CBL_19 A2=CBL_17,CY8C9560.h + U4 pads,IRONCLAD
