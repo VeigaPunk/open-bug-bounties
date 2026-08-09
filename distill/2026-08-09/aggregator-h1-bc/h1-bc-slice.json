@@ -1,0 +1,14 @@
+{
+  "n": 465,
+  "h1": 224,
+  "bc": 241,
+  "fields": [
+    "directory_url",
+    "id",
+    "industry",
+    "name",
+    "platform",
+    "url"
+  ],
+  "industry_fill": 221
+}

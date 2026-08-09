@@ -1,0 +1,28 @@
+{
+  "snapshot_at_utc": "2026-08-06T00:44:32Z",
+  "last_permitted_check_at_utc": "2026-08-08T13:15:46Z",
+  "last_attempted_check_at_utc": "2026-08-08T13:15:46Z",
+  "n": 768,
+  "by_platform": [
+    {
+      "platform": "Bugcrowd",
+      "n": 241
+    },
+    {
+      "platform": "HackerOne",
+      "n": 224
+    },
+    {
+      "platform": "HackenProof",
+      "n": 159
+    },
+    {
+      "platform": "Intigriti",
+      "n": 82
+    },
+    {
+      "platform": "YesWeHack",
+      "n": 62
+    }
+  ]
+}
