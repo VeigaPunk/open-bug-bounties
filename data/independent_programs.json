@@ -1,12 +1,12 @@
 {
-  "last_permitted_check_at_utc": "2026-08-13T03:03:04Z",
+  "last_permitted_check_at_utc": "2026-08-13T13:52:26Z",
   "source_check": {
     "status": "partial_last_good_retained",
     "checked": 47,
-    "reachable": 40,
+    "reachable": 39,
     "robots_disallowed": 0,
     "missing": 0,
-    "errors": 7,
+    "errors": 8,
     "retention": "No listing is removed automatically after a failed or missing check."
   },
   "programs": [
@@ -904,5 +904,5 @@
       }
     }
   ],
-  "last_attempted_check_at_utc": "2026-08-13T03:03:04Z"
+  "last_attempted_check_at_utc": "2026-08-13T13:52:26Z"
 }
