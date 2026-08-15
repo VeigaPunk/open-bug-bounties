@@ -1,12 +1,12 @@
 {
   "snapshot_at_utc": "2026-08-06T00:44:32Z",
-  "last_permitted_check_at_utc": "2026-08-15T01:52:49Z",
+  "last_permitted_check_at_utc": "2026-08-15T13:02:26Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-08-15T01:52:49Z",
+      "checked_at_utc": "2026-08-15T13:02:26Z",
       "status": "reachable_last_good_inventory_retained",
-      "etag": "W/\"1786757145\"",
-      "last_modified": "Sat, 15 Aug 2026 01:25:45 GMT",
+      "etag": "W/\"1786780204\"",
+      "last_modified": "Sat, 15 Aug 2026 07:50:04 GMT",
       "included": 224,
       "consecutive_misses": 0
     },
@@ -6169,5 +6169,5 @@
       "industry": "Marketing Tech"
     }
   ],
-  "last_attempted_check_at_utc": "2026-08-15T01:52:49Z"
+  "last_attempted_check_at_utc": "2026-08-15T13:02:26Z"
 }

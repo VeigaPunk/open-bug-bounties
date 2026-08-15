@@ -1,9 +1,9 @@
 {
   "generated_at": "2026-08-06T00:40:25.117Z",
-  "last_permitted_check_at_utc": "2026-08-15T01:52:49Z",
+  "last_permitted_check_at_utc": "2026-08-15T13:02:26Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-08-15T01:52:49Z",
+      "checked_at_utc": "2026-08-15T13:02:26Z",
       "status": "reachable_last_good_inventory_retained",
       "included": 35,
       "consecutive_misses": 0
@@ -2207,5 +2207,5 @@
       "kyc_required": null
     }
   ],
-  "last_attempted_check_at_utc": "2026-08-15T01:52:49Z"
+  "last_attempted_check_at_utc": "2026-08-15T13:02:26Z"
 }
