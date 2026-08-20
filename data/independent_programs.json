@@ -1,5 +1,5 @@
 {
-  "last_permitted_check_at_utc": "2026-08-20T01:54:51Z",
+  "last_permitted_check_at_utc": "2026-08-20T13:15:05Z",
   "source_check": {
     "status": "partial_last_good_retained",
     "checked": 47,
@@ -904,5 +904,5 @@
       }
     }
   ],
-  "last_attempted_check_at_utc": "2026-08-20T01:54:51Z"
+  "last_attempted_check_at_utc": "2026-08-20T13:15:05Z"
 }
