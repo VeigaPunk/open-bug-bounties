@@ -36,6 +36,9 @@ yarn-error.log*
 # typescript
 next-env.d.ts
 /dist/
+
+# non-site research archive (kept out of the repo; see git history)
+/distill/
 /.wrangler/
 /.sites-runtime/
 /outputs/

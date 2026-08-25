@@ -1,8 +1,0 @@
-- **Appspot:** Out-of-scope unless explicitly authorized; own accounts only.
-- **Sandbox XSS:** No testing outside approved sandbox; no exploit payloads.
-- **Redirects:** Exclude unauthorized open-redirect or cross-tenant flows.
-- **Logout CSRF:** Exclude logout-only CSRF impacts.
-- **User enumeration:** Exclude account-discovery findings without material security impact.
-- **SMS quota:** Exclude rate-limit/abuse testing against shared or third-party resources.
-- **Acquisition blackout:** Exclude acquisition, referral, or growth-flow testing during blackout periods.
-- **Safety:** No secrets, live attacks, or testing accounts/data not owned by you.

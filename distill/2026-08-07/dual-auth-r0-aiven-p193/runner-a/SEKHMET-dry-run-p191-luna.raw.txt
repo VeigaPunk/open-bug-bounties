@@ -1,5 +1,0 @@
-error: unexpected argument '-j' found
-
-Usage: sekhmet run [OPTIONS]
-
-For more information, try '--help'.

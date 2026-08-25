@@ -1,1 +1,0 @@
-Godspeed. Act as hydra judge. Read ~/.xbgst/hydra-bounty/tracker/HYDRA.md and three lane STATUS/REPORT files. Write ~/.xbgst/hydra-bounty/tracker/JUDGE-idle-tick.md scoring axes: evidence, blocker_clarity, ship_readiness. No COMPLETE without evidence. Pareto next 3 actions only.

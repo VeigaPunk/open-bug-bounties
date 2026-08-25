@@ -1,8 +1,0 @@
-200 https://bugcrowd.com/engagements/aiven-mbb-og
-200 https://bugcrowd.com/engagements/auth0-okta
-200 https://bugcrowd.com/engagements/okta
-200 https://bugcrowd.com/engagements/atlassian
-200 https://bugcrowd.com/engagements/openai
-200 https://console.aiven.io/
-200 https://bugcrowd-pam-5335.oktapreview.com/
-200 https://bugcrowd-pam-5335-admin.oktapreview.com/

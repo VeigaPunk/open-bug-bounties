@@ -1,4 +1,0 @@
-2026-08-07T14:17:11Z | PULSE-0 | axes=tmp_headroom,dual_substrate,auth_ready | godspeed inject ON 119s loop
-2026-08-07T14:17:22Z | PULSE-1 | axes=sanitize,auth_ready,claims,passive_http | tick advance runner-b + shared CLAIMS | godspeed ON
-2026-08-07T14:17:11Z | PULSE-0 done
-2026-08-07T14:17:36Z | PULSE-lite | axes=auth_ready | HTTP map + human pack

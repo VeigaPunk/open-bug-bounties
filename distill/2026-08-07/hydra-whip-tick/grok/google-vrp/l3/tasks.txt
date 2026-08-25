@@ -1,4 +1,0 @@
-[v2] List Google VRP Drive-only scope reminders in 10 bullets: own accounts, no DoS, no phishing, no customer appspot.
-[v2] Draft 5 Drive ACL/IDOR test titles for two own Google accounts (A owner B collaborator). Labels only no payloads.
-[v2] Write submit checklist for bughunters.google.com Drive authz report as markdown section headers only.
-[v2] Policy gate: list forbidden Google VRP activities for automated agents in 8 short lines.

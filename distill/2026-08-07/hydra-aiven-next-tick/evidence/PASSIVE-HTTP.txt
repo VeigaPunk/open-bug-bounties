@@ -1,5 +1,0 @@
-200 https://console.aiven.io/
-200 https://api.aiven.io/
-401 https://api.aiven.io/v1/me
-200 https://bugcrowd.com/engagements/aiven-mbb-og
-200 https://docs.aiven.io/
