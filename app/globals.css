@@ -59,6 +59,26 @@ select {
   width: 1px;
 }
 
+.skip-link {
+  background: var(--acid);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  left: 16px;
+  padding: 10px 14px;
+  position: fixed;
+  top: -64px;
+  transition: top 150ms ease;
+  z-index: 100;
+}
+
+.skip-link:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  top: 12px;
+}
+
 .topbar {
   align-items: center;
   background: var(--ink);
@@ -102,11 +122,22 @@ select {
 }
 
 .pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
   background: var(--acid);
   border-radius: 50%;
   box-shadow: 0 0 0 4px rgba(201, 255, 72, 0.12);
   height: 7px;
   width: 7px;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(201, 255, 72, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(201, 255, 72, 0);
+  }
 }
 
 .method-link {
@@ -379,7 +410,7 @@ select {
 }
 
 .search-field input::placeholder {
-  color: #7b7d73;
+  color: #6d6f66;
 }
 
 .search-field kbd {
@@ -414,6 +445,19 @@ select {
   font-size: 10px;
   min-height: 35px;
   padding: 0 12px;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.filter-row select {
+  appearance: none;
+  background: var(--paper-bright)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='6'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23171912' fill='none'/%3E%3C/svg%3E")
+    no-repeat right 10px center;
+  padding-right: 26px;
+}
+
+.filter-row select:hover {
+  border-color: var(--ink);
 }
 
 .segmented button:hover,
@@ -427,9 +471,29 @@ select {
 .segmented button:focus-visible,
 .load-more:focus-visible,
 .primary-button:focus-visible,
-.program-row a:focus-visible {
+.program-row a:focus-visible,
+.search-field input:focus-visible,
+.text-button:focus-visible,
+.source-card:focus-visible,
+.method-link:focus-visible,
+.wordmark:focus-visible,
+.empty-state button:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 2px;
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.load-more:active,
+.empty-state button:active {
+  transform: translateY(1px);
+}
+
+.text-button:hover {
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .sort-select {
@@ -490,7 +554,7 @@ select {
 }
 
 .row-number {
-  color: #8b8d83;
+  color: #6f7168;
   font-family: var(--mono);
   font-size: 9px;
   width: 24px;
@@ -677,7 +741,7 @@ select {
 }
 
 .source-index {
-  color: #777a70;
+  color: #9a9d90;
   font-family: var(--mono);
   font-size: 10px;
 }
@@ -707,7 +771,7 @@ select {
 }
 
 .source-count span {
-  color: #8d9086;
+  color: #a6a99c;
   font-family: var(--mono);
   font-size: 8px;
   text-transform: uppercase;
@@ -778,7 +842,8 @@ select {
 
 footer {
   align-items: flex-end;
-  background: var(--blue);
+  background: var(--ink);
+  border-top: 4px solid var(--acid);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -793,6 +858,7 @@ footer > div:first-child {
 }
 
 .footer-mark {
+  color: var(--acid);
   font-family: var(--mono);
   font-size: 62px;
   font-weight: 800;
@@ -843,6 +909,41 @@ footer p {
 
   .method-intro {
     position: static;
+  }
+}
+
+@media (max-width: 900px) {
+  .program-header {
+    display: none;
+  }
+
+  .program-table {
+    border-top-width: 1px;
+  }
+
+  .program-row {
+    align-items: start;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 20px 0;
+  }
+
+  .program-name {
+    grid-column: 1 / -1;
+  }
+
+  .reward-cell {
+    align-self: center;
+    justify-self: end;
+  }
+
+  .row-arrow {
+    display: none;
+  }
+
+  .segmented button,
+  .filter-row select {
+    min-height: 44px;
   }
 }
 
@@ -1011,6 +1112,47 @@ footer p {
     align-items: flex-start;
     flex-direction: column;
   }
+}
+
+@media (min-width: 1600px) {
+  .topbar,
+  .hero,
+  .directory-section,
+  .sources-section,
+  .method-section,
+  footer {
+    padding-left: calc((100% - 1440px) / 2);
+    padding-right: calc((100% - 1440px) / 2);
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(40px, 8vw, 120px);
+}
+
+.not-found h1 {
+  font-size: clamp(44px, 7vw, 96px);
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  margin: 0;
+  max-width: 800px;
+}
+
+.not-found > p:not(.section-kicker) {
+  color: var(--muted-ink);
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 520px;
+}
+
+.not-found .primary-button {
+  align-self: flex-start;
 }
 
 @media (prefers-reduced-motion: reduce) {

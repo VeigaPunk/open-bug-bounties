@@ -65,12 +65,26 @@ export default function Home() {
     const ticker = window.setInterval(() => setNow(Date.now()), 60000);
     const cycle = latestCycle(lastVerifiedAt, Date.now());
     const next = cycle + TWELVE_HOURS;
-    const refresh = window.setTimeout(() => window.location.reload(), Math.max(1000, next - Date.now()));
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const refresh = prefersReduced
+      ? undefined
+      : window.setTimeout(() => window.location.reload(), Math.max(1000, next - Date.now()));
     return () => {
       window.clearTimeout(initialTick);
       window.clearInterval(ticker);
-      window.clearTimeout(refresh);
+      if (refresh) window.clearTimeout(refresh);
     };
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        document.querySelector<HTMLInputElement>("input[type='search']")?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   const platforms = useMemo(
@@ -167,7 +181,7 @@ export default function Home() {
             <p className="section-kicker">01 / DIRECTORY</p>
             <h2>Find your next scope.</h2>
           </div>
-          <p>{filtered.length} matching {filtered.length === 1 ? "program" : "programs"}</p>
+          <p role="status" aria-live="polite">{filtered.length} matching {filtered.length === 1 ? "program" : "programs"}</p>
         </div>
 
         <div className="filter-shell">
@@ -175,6 +189,7 @@ export default function Home() {
             <span className="sr-only">Search programs</span>
             <span aria-hidden="true">⌕</span>
             <input
+              aria-keyshortcuts="Control+K Meta+K"
               value={query}
               onChange={(event) => { setQuery(event.target.value); setLimit(PAGE_SIZE); }}
               placeholder="Search organization, source, or surface"
@@ -187,6 +202,7 @@ export default function Home() {
             <div className="segmented" aria-label="Evidence source filter">
               {(["All", "First-party", "Platform"] as const).map((value) => (
                 <button
+                  aria-pressed={sourceKind === value}
                   className={sourceKind === value ? "active" : ""}
                   key={value}
                   onClick={() => { setSourceKind(value); setLimit(PAGE_SIZE); }}
@@ -242,7 +258,7 @@ export default function Home() {
               <div className="program-name" role="cell">
                 <span className="row-number">{String(index + 1).padStart(3, "0")}</span>
                 <div>
-                  <a href={program.url} target="_blank" rel="noreferrer">{program.name}</a>
+                  <a href={program.url} target="_blank" rel="noopener noreferrer">{program.name}</a>
                   {program.note && <small>{program.note}</small>}
                 </div>
               </div>
@@ -251,7 +267,7 @@ export default function Home() {
                   className={`platform-badge ${platformClass(program.platform)}`}
                   href={program.evidenceUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   title={`Open official evidence for ${program.name}`}
                 >
                   {program.sourceKind === "First-party" ? "FIRST-PARTY" : program.platform.toUpperCase()}
@@ -259,7 +275,7 @@ export default function Home() {
               </div>
               <div className="surface-cell" role="cell">{program.surface}</div>
               <div className="reward-cell" role="cell">{rewardLabel(program)}</div>
-              <a className="row-arrow" href={program.url} target="_blank" rel="noreferrer" aria-label={`Open ${program.name} program`}>↗︎</a>
+              <a className="row-arrow" href={program.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${program.name} program`}>↗︎</a>
             </article>
           ))}
 
@@ -292,7 +308,7 @@ export default function Home() {
         </div>
         <div className="source-grid">
           {platformCounts.map((source, index) => (
-            <a href={source.url} target="_blank" rel="noreferrer" className="source-card" key={source.name}>
+            <a href={source.url} target="_blank" rel="noopener noreferrer" className="source-card" key={source.name}>
               <span className="source-index">{String(index + 1).padStart(2, "0")}</span>
               <div>
                 <h3>{source.name}</h3>

@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://veigapunk.github.io/open-bug-bounties/sitemap.xml
