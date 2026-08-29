@@ -1,6 +1,7 @@
 import independentProgramSeed from "./independent_programs.json";
 import platformProgramSeed from "./platform_programs.json";
 import web3ProgramSeed from "./web3_programs.json";
+import refreshEvidenceSeed from "./refresh_evidence.json";
 
 export type SourceKind = "Platform" | "First-party";
 export type Surface = "Web & cloud" | "Web3" | "Products" | "Open source" | "Mixed";
@@ -19,8 +20,37 @@ export type Program = {
   note?: string;
 };
 
+type RefreshSourceEvidence = {
+  source_id: string;
+  name: string;
+  directory_url: string;
+  access_mode: string;
+  status: string;
+  complete: boolean;
+  attempted_at_utc: string;
+  inventory_at_utc: string | null;
+  count: number;
+  configured_count?: number;
+  checked_count?: number;
+  reachable_count?: number;
+  raw_count: number | null;
+  deduplicated_count: number;
+  duplicates_removed: number | null;
+  failure_codes: string[];
+};
+
+type RefreshEvidence = {
+  run_id: string;
+  attempted_at_utc: string;
+  status: "complete" | "partial";
+  evidence_id: string;
+  datasets: Array<{ id: string; path: string; records: number; sha256: string }>;
+  sources: RefreshSourceEvidence[];
+};
+
 type PlatformSeed = {
   snapshot_at_utc: string;
+  refresh_run_id: string;
   last_permitted_check_at_utc?: string;
   programs: Array<{
     id: string;
@@ -33,8 +63,6 @@ type PlatformSeed = {
 };
 
 const platformSeed = platformProgramSeed as PlatformSeed;
-const independentVerifiedAt = (independentProgramSeed as { last_permitted_check_at_utc?: string })
-  .last_permitted_check_at_utc;
 
 function platformSurface(program: PlatformSeed["programs"][number]): Surface {
   if (program.platform === "HackenProof") return "Web3";
@@ -58,6 +86,7 @@ const platformPrograms: Program[] = platformSeed.programs.map((program) => ({
 
 type Web3Seed = {
   generated_at: string;
+  refresh_run_id: string;
   last_permitted_check_at_utc?: string;
   records: Array<{
     id: string;
@@ -70,13 +99,6 @@ type Web3Seed = {
 };
 
 const web3Seed = web3ProgramSeed as Web3Seed;
-const verifiedAt = new Date(
-  Math.max(
-    new Date(platformSeed.last_permitted_check_at_utc ?? platformSeed.snapshot_at_utc).getTime(),
-    new Date(web3Seed.last_permitted_check_at_utc ?? web3Seed.generated_at).getTime(),
-    independentVerifiedAt ? new Date(independentVerifiedAt).getTime() : 0,
-  ),
-).toISOString();
 
 const web3Programs: Program[] = web3Seed.records.map((program) => ({
   id: program.id,
@@ -90,6 +112,7 @@ const web3Programs: Program[] = web3Seed.records.map((program) => ({
 }));
 
 type IndependentSeed = {
+  refresh_run_id: string;
   programs: Array<{
     id: string;
     name: string;
@@ -103,6 +126,41 @@ type IndependentSeed = {
   }>;
 };
 
+const independentSeed = independentProgramSeed as IndependentSeed;
+const refreshEvidence = refreshEvidenceSeed as RefreshEvidence;
+const actualSeedCounts: Record<string, number> = {
+  "data/independent_programs.json": independentSeed.programs.length,
+  "data/platform_programs.json": platformSeed.programs.length,
+  "data/web3_programs.json": web3Seed.records.length,
+};
+const seedRunIds = new Set([
+  independentSeed.refresh_run_id,
+  platformSeed.refresh_run_id,
+  web3Seed.refresh_run_id,
+]);
+if (
+  seedRunIds.size !== 1 ||
+  !seedRunIds.has(refreshEvidence.run_id) ||
+  refreshEvidence.datasets.length !== 3 ||
+  refreshEvidence.datasets.some(
+    (dataset) => actualSeedCounts[dataset.path] !== dataset.records,
+  )
+) {
+  throw new Error("Bounty datasets do not match the committed refresh evidence generation.");
+}
+const configuredSourceIds = new Set(
+  refreshEvidence.sources.map((source) => source.source_id),
+);
+if (configuredSourceIds.size !== 9 || refreshEvidence.sources.length !== 9) {
+  throw new Error("Refresh evidence does not cover all nine configured source groups.");
+}
+for (const source of refreshEvidence.sources) {
+  const url = new URL(source.directory_url);
+  if (url.protocol !== "https:" || url.username || url.password) {
+    throw new Error(`Unsafe source URL in refresh evidence: ${source.source_id}`);
+  }
+}
+
 function independentSurface(category: string): Surface {
   if (category === "open_source") return "Open source";
   if (["hardware", "mobile_hardware", "browser", "gaming", "software", "security_software"].includes(category)) {
@@ -111,7 +169,7 @@ function independentSurface(category: string): Surface {
   return "Web & cloud";
 }
 
-const independent: Program[] = (independentProgramSeed as IndependentSeed).programs
+const independent: Program[] = independentSeed.programs
   .filter(
     (program) =>
       program.status === "active" &&
@@ -814,28 +872,101 @@ const manual: Program[] = [
   },
 ];
 
-const deduped = new Map<string, Program>();
-for (const program of [
+const candidates: Program[] = [
   ...platformPrograms,
   ...web3Programs,
   ...independent,
   ...manual.filter((program) => program.sourceKind === "First-party"),
-]) {
-  const key = program.url.toLocaleLowerCase().replace(/[?#].*$/, "").replace(/\/$/, "");
+];
+
+function canonicalProgramUrl(value: string) {
+  const url = new URL(value);
+  if (url.protocol !== "https:" || url.username || url.password) {
+    throw new Error(`Unsafe program URL: ${value}`);
+  }
+  url.hash = "";
+  url.hostname = url.hostname.toLowerCase();
+  if (url.pathname !== "/") url.pathname = url.pathname.replace(/\/+$/, "");
+  return url.toString();
+}
+
+const deduped = new Map<string, Program>();
+for (const program of candidates) {
+  const key = canonicalProgramUrl(program.url);
   const existing = deduped.get(key);
   if (!existing || program.sourceKind === "First-party") deduped.set(key, program);
 }
 
 export const programs = [...deduped.values()].sort((a, b) => a.name.localeCompare(b.name));
-export const lastVerifiedAt = verifiedAt;
+export const lastRefreshAttemptAt = refreshEvidence.attempted_at_utc;
+export const refreshEvidenceId = refreshEvidence.evidence_id;
+export const refreshHealth = refreshEvidence.status === "complete" ? "HEALTHY" : "PARTIAL";
 
-export const sourceDirectoryLinks = [
-  { name: "HackerOne", url: "https://www.hackerone.com/bug-bounty-programs", note: "Official index · 12-hour checks" },
-  { name: "Bugcrowd", url: "https://bugcrowd.com/engagements", note: "Official directory · reuse permission pending" },
-  { name: "Intigriti", url: "https://www.intigriti.com/researchers/bug-bounty-programs", note: "Official directory · reuse review pending" },
-  { name: "YesWeHack", url: "https://yeswehack.com/programs", note: "Official directory · reuse permission pending" },
-  { name: "HackenProof", url: "https://hackenproof.com/programs", note: "Official directory · reuse permission pending" },
-  { name: "Immunefi", url: "https://immunefi.com/bug-bounty/", note: "Verified snapshot · crawl permission required" },
-  { name: "Cantina", url: "https://cantina.xyz/opportunities/bounties", note: "Verified snapshot · crawl permission required" },
-  { name: "Sherlock", url: "https://audits.sherlock.xyz/bug-bounties", note: "Official directory · 12-hour checks" },
-];
+export type SourceCoverage = {
+  id: string;
+  name: string;
+  url: string;
+  note: string;
+  count: number;
+  status: string;
+  completeness: "complete" | "partial" | "retained_permission_limited";
+  inventoryAt: string | null;
+  attemptedAt: string;
+  failures: number;
+};
+
+
+function sourceNote(source: RefreshSourceEvidence) {
+  if (source.source_id === "first-party") {
+    return `${source.count}/${source.configured_count ?? source.count} eligible · ${source.reachable_count ?? 0} reachable · ${source.failure_codes.length} failure types`;
+  }
+  const date = source.inventory_at_utc?.slice(0, 10) ?? "date unavailable";
+  if (source.access_mode === "retained_permission_limited") {
+    return `Snapshot ${date} · permission-limited`;
+  }
+  if (source.complete) {
+    const dedupe =
+      source.duplicates_removed && source.raw_count !== null
+        ? ` · ${source.raw_count} raw → ${source.deduplicated_count} unique`
+        : "";
+    return `Live directory ${date}${dedupe}`;
+  }
+  return `Last good ${date} · refresh incomplete`;
+}
+
+export const sourceCoverage: SourceCoverage[] = refreshEvidence.sources.map((source) => {
+  const count =
+    source.source_id === "first-party"
+      ? programs.filter((program) => program.sourceKind === "First-party").length
+      : programs.filter(
+          (program) =>
+            program.sourceKind === "Platform" && program.platform === source.name,
+        ).length;
+  const completeness: SourceCoverage["completeness"] =
+    source.access_mode === "retained_permission_limited"
+      ? "retained_permission_limited"
+      : source.complete
+        ? "complete"
+        : "partial";
+  return {
+    id: source.source_id,
+    name: source.name,
+    url: source.directory_url,
+    note: sourceNote(source),
+    count,
+    status: source.status,
+    completeness,
+    inventoryAt: source.inventory_at_utc,
+    attemptedAt: source.attempted_at_utc,
+    failures: source.failure_codes.length,
+  };
+});
+
+export const boardEvidence = {
+  runId: refreshEvidence.run_id,
+  evidenceId: refreshEvidence.evidence_id,
+  rawCandidates: candidates.length,
+  displayedPrograms: programs.length,
+  duplicatesRemoved: candidates.length - programs.length,
+  sourceCounts: Object.fromEntries(sourceCoverage.map((source) => [source.id, source.count])),
+};

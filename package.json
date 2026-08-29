@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "refresh": "node scripts/refresh-data.mjs",
-    "test": "npm run lint && npm run build && node --test tests/static-site.test.mjs",
+    "verify:data": "node scripts/refresh-data.mjs --verify",
+    "test:unit": "node --test tests/refresh-data.test.mjs tests/agent-contract.test.mjs",
+    "test": "npm run lint && npm run test:unit && npm run verify:data && npm run build && node --test tests/static-site.test.mjs",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out"
   },
   "dependencies": {
@@ -25,6 +27,7 @@
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
+    "parse5": "7.3.0",
     "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3"

@@ -1,28 +1,5 @@
 {
   "snapshot_at_utc": "2026-08-06T00:44:32Z",
-  "last_permitted_check_at_utc": "2026-08-29T16:46:56Z",
-  "source_checks": {
-    "HackerOne": {
-      "checked_at_utc": "2026-08-29T16:46:56Z",
-      "status": "reachable_last_good_inventory_retained",
-      "etag": "W/\"1788010502\"",
-      "last_modified": "Sat, 29 Aug 2026 13:35:02 GMT",
-      "included": 224,
-      "consecutive_misses": 0
-    },
-    "Bugcrowd": {
-      "status": "snapshot_reuse_permission_pending"
-    },
-    "Intigriti": {
-      "status": "snapshot_reuse_review_pending"
-    },
-    "YesWeHack": {
-      "status": "snapshot_reuse_permission_pending"
-    },
-    "HackenProof": {
-      "status": "snapshot_reuse_permission_pending"
-    }
-  },
   "programs": [
     {
       "id": "bugcrowd:twentyminuten",
@@ -3433,14 +3410,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:brave",
-      "platform": "HackerOne",
-      "name": "Brave Software",
-      "url": "https://hackerone.com/brave",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:braze_inc",
       "platform": "HackerOne",
       "name": "Braze, Inc.",
@@ -3859,7 +3828,7 @@
     {
       "id": "hackerone:freshworks",
       "platform": "HackerOne",
-      "name": "Freshworks ",
+      "name": "Freshworks",
       "url": "https://hackerone.com/freshworks",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -3961,17 +3930,9 @@
       "industry": null
     },
     {
-      "id": "hackerone:homebargains",
-      "platform": "HackerOne",
-      "name": "Home Bargains",
-      "url": "https://hackerone.com/homebargains",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:hostinger",
       "platform": "HackerOne",
-      "name": "hostinger ",
+      "name": "hostinger",
       "url": "https://hackerone.com/hostinger",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -4043,7 +4004,7 @@
     {
       "id": "hackerone:judgeme",
       "platform": "HackerOne",
-      "name": "Judge.me ",
+      "name": "Judge.me",
       "url": "https://hackerone.com/judgeme",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -4117,14 +4078,6 @@
       "platform": "HackerOne",
       "name": "Lark Technologies",
       "url": "https://hackerone.com/lark_technologies",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
-      "id": "hackerone:lightspark_bbp",
-      "platform": "HackerOne",
-      "name": "Lightspark BBP",
-      "url": "https://hackerone.com/lightspark_bbp",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -4243,7 +4196,7 @@
     {
       "id": "hackerone:moonpay",
       "platform": "HackerOne",
-      "name": "MoonPay ",
+      "name": "MoonPay",
       "url": "https://hackerone.com/moonpay",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -4301,6 +4254,14 @@
       "platform": "HackerOne",
       "name": "Newegg",
       "url": "https://hackerone.com/newegg",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
+      "id": "hackerone:nextcloud",
+      "platform": "HackerOne",
+      "name": "Nextcloud",
+      "url": "https://hackerone.com/nextcloud",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -4593,14 +4554,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:sidefx",
-      "platform": "HackerOne",
-      "name": "SideFX",
-      "url": "https://hackerone.com/sidefx",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:six-group",
       "platform": "HackerOne",
       "name": "SIX Group",
@@ -4787,7 +4740,7 @@
     {
       "id": "hackerone:truecaller",
       "platform": "HackerOne",
-      "name": "Truecaller ",
+      "name": "Truecaller",
       "url": "https://hackerone.com/truecaller",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -4865,6 +4818,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:vercel_sandbox",
+      "platform": "HackerOne",
+      "name": "Vercel Sandbox",
+      "url": "https://hackerone.com/vercel_sandbox",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:verily_life_sciences",
       "platform": "HackerOne",
       "name": "Verily Life Sciences",
@@ -4893,6 +4854,14 @@
       "platform": "HackerOne",
       "name": "Visa",
       "url": "https://hackerone.com/visa",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
+      "id": "hackerone:vodafone_oman",
+      "platform": "HackerOne",
+      "name": "Vodafone Oman",
+      "url": "https://hackerone.com/vodafone_oman",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6169,5 +6138,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "last_attempted_check_at_utc": "2026-08-29T16:46:56Z"
+  "refresh_run_id": "refresh-20260829T184019519Z",
+  "last_attempted_check_at_utc": "2026-08-29T18:40:19.519Z",
+  "source_checks": {
+    "HackerOne": {
+      "checked_at_utc": "2026-08-29T18:40:19.519Z",
+      "status": "live_inventory_promoted",
+      "inventory_at_utc": "2026-08-29T18:40:19.519Z",
+      "included": 223,
+      "raw_count": 223,
+      "duplicates_removed": 0,
+      "pages": 1,
+      "failure_codes": [],
+      "consecutive_failures": 0
+    }
+  },
+  "last_permitted_check_at_utc": "2026-08-29T18:40:19.519Z"
 }

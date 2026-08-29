@@ -1,26 +1,5 @@
 {
   "generated_at": "2026-08-06T00:40:25.117Z",
-  "last_permitted_check_at_utc": "2026-08-29T16:46:56Z",
-  "source_checks": {
-    "Sherlock": {
-      "checked_at_utc": "2026-08-29T16:46:56Z",
-      "status": "reachable_last_good_inventory_retained",
-      "included": 35,
-      "consecutive_misses": 0
-    },
-    "Immunefi": {
-      "status": "snapshot_crawl_permission_required"
-    },
-    "Cantina": {
-      "status": "snapshot_crawl_permission_required"
-    }
-  },
-  "counts": {
-    "Cantina": 51,
-    "HackenProof": 159,
-    "Immunefi": 187,
-    "Sherlock": 35
-  },
   "records": [
     {
       "id": "cantina:d558609e-d378-446b-a69d-2a577533f333",
@@ -2079,18 +2058,18 @@
       "kyc_required": null
     },
     {
-      "id": "sherlock:247",
-      "name": "Phoenix",
-      "platform": "Sherlock",
-      "program_url": "https://audits.sherlock.xyz/bug-bounties/247",
-      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
-      "kyc_required": null
-    },
-    {
       "id": "sherlock:221",
       "name": "Pinto",
       "platform": "Sherlock",
       "program_url": "https://audits.sherlock.xyz/bug-bounties/221",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
+      "id": "sherlock:355",
+      "name": "Puffer",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/355",
       "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
       "kyc_required": null
     },
@@ -2207,5 +2186,25 @@
       "kyc_required": null
     }
   ],
-  "last_attempted_check_at_utc": "2026-08-29T16:46:56Z"
+  "refresh_run_id": "refresh-20260829T184019519Z",
+  "last_attempted_check_at_utc": "2026-08-29T18:40:19.519Z",
+  "source_checks": {
+    "Sherlock": {
+      "checked_at_utc": "2026-08-29T18:40:19.519Z",
+      "status": "live_inventory_promoted",
+      "inventory_at_utc": "2026-08-29T18:40:19.519Z",
+      "included": 35,
+      "raw_count": 37,
+      "duplicates_removed": 2,
+      "pages": 1,
+      "failure_codes": [],
+      "consecutive_failures": 0
+    }
+  },
+  "last_permitted_check_at_utc": "2026-08-29T18:40:19.519Z",
+  "counts": {
+    "Cantina": 51,
+    "Immunefi": 187,
+    "Sherlock": 35
+  }
 }

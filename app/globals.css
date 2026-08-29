@@ -295,6 +295,11 @@ select {
   padding: 5px 7px;
 }
 
+.status-partial {
+  background: var(--orange);
+  color: white;
+}
+
 .status-number {
   font-size: clamp(78px, 9vw, 136px);
   font-weight: 720;

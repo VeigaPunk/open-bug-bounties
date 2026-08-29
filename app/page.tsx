@@ -2,15 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
-  lastVerifiedAt,
+  lastRefreshAttemptAt,
   programs,
-  sourceDirectoryLinks,
+  refreshEvidenceId,
+  refreshHealth,
+  sourceCoverage,
   type Program,
   type SourceKind,
   type Surface,
 } from "@/data/programs";
 
-const TWELVE_HOURS = 12 * 60 * 60 * 1000;
 const PAGE_SIZE = 48;
 
 type SortMode = "name" | "reward" | "source";
@@ -33,11 +34,6 @@ function rewardLabel(program: Program) {
   return "Paid — see policy";
 }
 
-function latestCycle(reference: string, now: number) {
-  const base = new Date(reference).getTime();
-  if (now <= base) return base;
-  return base + Math.floor((now - base) / TWELVE_HOURS) * TWELVE_HOURS;
-}
 
 function relativeTime(timestamp: number, now: number) {
   const minutes = Math.max(0, Math.floor((now - timestamp) / 60000));
@@ -58,21 +54,14 @@ export default function Home() {
   const [surface, setSurface] = useState<"All" | Surface>("All");
   const [sort, setSort] = useState<SortMode>("name");
   const [limit, setLimit] = useState(PAGE_SIZE);
-  const [now, setNow] = useState(() => new Date(lastVerifiedAt).getTime());
+  const [now, setNow] = useState(() => new Date(lastRefreshAttemptAt).getTime());
 
   useEffect(() => {
     const initialTick = window.setTimeout(() => setNow(Date.now()), 0);
     const ticker = window.setInterval(() => setNow(Date.now()), 60000);
-    const cycle = latestCycle(lastVerifiedAt, Date.now());
-    const next = cycle + TWELVE_HOURS;
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const refresh = prefersReduced
-      ? undefined
-      : window.setTimeout(() => window.location.reload(), Math.max(1000, next - Date.now()));
     return () => {
       window.clearTimeout(initialTick);
       window.clearInterval(ticker);
-      if (refresh) window.clearTimeout(refresh);
     };
   }, []);
 
@@ -116,14 +105,7 @@ export default function Home() {
   }, [platform, query, sort, sourceKind, surface]);
 
   const firstPartyCount = programs.filter((program) => program.sourceKind === "First-party").length;
-  const currentCycle = latestCycle(lastVerifiedAt, now);
-  const nextCycle = currentCycle + TWELVE_HOURS;
-  const platformCounts = sourceDirectoryLinks.map((source) => ({
-    ...source,
-    count: programs.filter(
-      (program) => program.platform === source.name && program.sourceKind === "Platform",
-    ).length,
-  }));
+  const completeSourceCount = sourceCoverage.filter((source) => source.completeness === "complete").length;
 
   return (
     <main>
@@ -134,7 +116,7 @@ export default function Home() {
         </a>
         <div className="topbar-status" aria-label="Update status">
           <span className="pulse-dot" aria-hidden="true" />
-          <span>12H SOURCE-CHECK LOOP</span>
+          <span>12H REFRESH · {refreshHealth}</span>
         </div>
         <a className="method-link" href="#method">METHOD ↓</a>
       </header>
@@ -148,9 +130,10 @@ export default function Home() {
           </div>
           <h1>Bug bounties,<br /><span>without the dead ends.</span></h1>
           <p className="hero-deck">
-            A living index of publicly open, paid vulnerability programs. Every listing points to an
-            official platform or the organization’s own policy—not a copied aggregator page. Sources
-            eligible for automated access are rechecked every 12 hours.
+            A source-linked record of vulnerability programs last observed as public and paid. Every
+            listing points to an official platform or the organization’s own policy—not a copied
+            aggregator page. Live-permitted sources are rechecked every 12 hours; retained snapshots
+            stay visibly dated.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#directory">Explore {programs.length} programs <span>→</span></a>
@@ -161,16 +144,16 @@ export default function Home() {
         <div className="status-card">
           <div className="status-card-head">
             <span>INDEX HEALTH</span>
-            <span className="status-open">HEALTHY</span>
+            <span className={`status-open ${refreshHealth === "PARTIAL" ? "status-partial" : ""}`}>{refreshHealth}</span>
           </div>
           <div className="status-number">{programs.length}</div>
-          <div className="status-label">verified public listings</div>
+          <div className="status-label">source-linked public listings</div>
           <div className="status-rule" />
           <dl className="status-list">
             <div><dt>First-party policies</dt><dd>{firstPartyCount}</dd></div>
-            <div><dt>Official directories</dt><dd>{sourceDirectoryLinks.length}</dd></div>
-            <div><dt>Last cycle</dt><dd>{relativeTime(currentCycle, now)}</dd></div>
-            <div><dt>Next cycle</dt><dd>{new Date(nextCycle).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "UTC" })} UTC</dd></div>
+            <div><dt>Source groups</dt><dd>{sourceCoverage.length}</dd></div>
+            <div><dt>Last attempt</dt><dd>{relativeTime(new Date(lastRefreshAttemptAt).getTime(), now)}</dd></div>
+            <div><dt>Complete live inventories</dt><dd>{completeSourceCount} / {sourceCoverage.length}</dd></div>
           </dl>
         </div>
       </section>
@@ -307,14 +290,14 @@ export default function Home() {
           <p>No community aggregator is accepted as evidence.</p>
         </div>
         <div className="source-grid">
-          {platformCounts.map((source, index) => (
-            <a href={source.url} target="_blank" rel="noopener noreferrer" className="source-card" key={source.name}>
+          {sourceCoverage.map((source, index) => (
+            <a href={source.url} target="_blank" rel="noopener noreferrer" className="source-card" key={source.id}>
               <span className="source-index">{String(index + 1).padStart(2, "0")}</span>
               <div>
                 <h3>{source.name}</h3>
                 <p>{source.note}</p>
               </div>
-              <div className="source-count"><strong>{source.count}</strong><span>indexed here</span></div>
+              <div className="source-count"><strong>{source.count}</strong><span>{source.completeness === "complete" ? "live" : "retained / partial"}</span></div>
               <span className="source-arrow">↗︎</span>
             </a>
           ))}
@@ -361,8 +344,8 @@ export default function Home() {
           <p>Verify the current scope and rules on the linked program page before testing.</p>
         </div>
         <div className="footer-meta">
-          <span>SNAPSHOT {new Date(lastVerifiedAt).toISOString().slice(0, 10)}</span>
-          <span>REFRESH / 12 HOURS · PERMITTED SOURCES</span>
+          <span>ATTEMPT {new Date(lastRefreshAttemptAt).toISOString().slice(0, 10)}</span>
+          <span>EVIDENCE {refreshEvidenceId.slice(0, 12)} · 12H SCHEDULE</span>
         </div>
       </footer>
     </main>
