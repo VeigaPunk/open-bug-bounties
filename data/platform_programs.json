@@ -4978,6 +4978,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:zabbix",
+      "platform": "HackerOne",
+      "name": "Zabbix",
+      "url": "https://hackerone.com/zabbix",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:zooplus",
       "platform": "HackerOne",
       "name": "Zooplus",
@@ -6138,20 +6146,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260831T054430181Z",
-  "last_attempted_check_at_utc": "2026-08-31T05:44:30.181Z",
+  "refresh_run_id": "refresh-20260831T190926374Z",
+  "last_attempted_check_at_utc": "2026-08-31T19:09:26.374Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-08-31T05:44:30.181Z",
+      "checked_at_utc": "2026-08-31T19:09:26.374Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-08-31T05:44:30.181Z",
-      "included": 223,
-      "raw_count": 223,
+      "inventory_at_utc": "2026-08-31T19:09:26.374Z",
+      "included": 224,
+      "raw_count": 224,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-08-31T05:44:30.181Z"
+  "last_permitted_check_at_utc": "2026-08-31T19:09:26.374Z"
 }
