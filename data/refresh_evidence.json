@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "run_id": "refresh-20260831T190926374Z",
-  "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+  "run_id": "refresh-20260901T051742433Z",
+  "attempted_at_utc": "2026-09-01T05:17:42.433Z",
   "status": "partial",
   "coverage": {
     "configured_sources": 9,
@@ -12,13 +12,13 @@
     "complete_sources": 2
   },
   "totals": {
-    "records": 1088,
-    "canonical_urls": 1088,
+    "records": 1089,
+    "canonical_urls": 1089,
     "duplicate_urls": 0,
     "independent_configured": 60,
     "independent_eligible": 47,
-    "live_raw_candidates": 261,
-    "live_deduplicated_candidates": 259,
+    "live_raw_candidates": 262,
+    "live_deduplicated_candidates": 260,
     "live_duplicates_removed": 2
   },
   "datasets": [
@@ -26,19 +26,19 @@
       "id": "independent",
       "path": "data/independent_programs.json",
       "records": 60,
-      "sha256": "d0a34e55c54744f5d95fbbe487f90dcd7be28a0bf86c0d1329bf24723da4156a"
+      "sha256": "3e50d4ddd659a967f41abe28c1b55dda5b4abc1c0d48889acd15b0e2d298ef92"
     },
     {
       "id": "platform",
       "path": "data/platform_programs.json",
-      "records": 768,
-      "sha256": "b27eea4c7a0ae96c521890840dd9e457816a2d01991723dedf19290ca899eec9"
+      "records": 769,
+      "sha256": "a1ea60b103d3b29ad6e7d4c40392f8079f66e9bee41c5f5a69985351d012855d"
     },
     {
       "id": "web3",
       "path": "data/web3_programs.json",
       "records": 273,
-      "sha256": "657761ce5f99678461606703d61068bc2e3f644e248833d66779dabe8f946170"
+      "sha256": "c16ed4b23b53d15f59cb95a30494dfbd10e98fd5588054506875af206eb57708"
     }
   ],
   "sources": [
@@ -50,30 +50,30 @@
       "parser_version": "hackerone-cards/v1",
       "status": "live_inventory_promoted",
       "complete": true,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
-      "checked_at_utc": "2026-08-31T19:09:26.374Z",
-      "inventory_at_utc": "2026-08-31T19:09:26.374Z",
-      "count": 224,
-      "raw_count": 224,
-      "deduplicated_count": 224,
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
+      "checked_at_utc": "2026-09-01T05:17:42.433Z",
+      "inventory_at_utc": "2026-09-01T05:17:42.433Z",
+      "count": 225,
+      "raw_count": 225,
+      "deduplicated_count": 225,
       "duplicates_removed": 0,
-      "directory_items_seen": 381,
+      "directory_items_seen": 382,
       "pages": [
         {
           "index": 1,
           "url": "https://www.hackerone.com/bug-bounty-programs",
-          "fetched_at_utc": "2026-08-31T19:09:26.374Z",
+          "fetched_at_utc": "2026-09-01T05:17:42.433Z",
           "http_status": 200,
-          "bytes": 1017749,
-          "sha256": "f846ebd67974d964ef6306a503d48e85efe8a547931d84603ce7925fd5d94875"
+          "bytes": 1019533,
+          "sha256": "3a4c5574f4c833979742e95d47038996b69f71a1a054424bf0576126d738492d"
         }
       ],
       "drift": {
         "added": [
-          "https://hackerone.com/zabbix"
+          "https://hackerone.com/brave"
         ],
         "removed": [],
-        "churn": 0.004464285714285714
+        "churn": 0.0044444444444444444
       },
       "failure_codes": [],
       "retention": null
@@ -85,7 +85,7 @@
       "access_mode": "retained_permission_limited",
       "status": "policy_limited_snapshot_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
       "checked_at_utc": null,
       "inventory_at_utc": "2026-08-06T00:44:32Z",
       "count": 241,
@@ -105,7 +105,7 @@
       "access_mode": "retained_permission_limited",
       "status": "policy_limited_snapshot_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
       "checked_at_utc": null,
       "inventory_at_utc": "2026-08-06T00:44:32Z",
       "count": 82,
@@ -125,7 +125,7 @@
       "access_mode": "retained_permission_limited",
       "status": "policy_limited_snapshot_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
       "checked_at_utc": null,
       "inventory_at_utc": "2026-08-06T00:44:32Z",
       "count": 62,
@@ -145,7 +145,7 @@
       "access_mode": "retained_permission_limited",
       "status": "policy_limited_snapshot_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
       "checked_at_utc": null,
       "inventory_at_utc": "2026-08-06T00:44:32Z",
       "count": 159,
@@ -165,7 +165,7 @@
       "access_mode": "retained_permission_limited",
       "status": "policy_limited_snapshot_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
       "checked_at_utc": null,
       "inventory_at_utc": "2026-08-06T00:40:25.117Z",
       "count": 187,
@@ -185,7 +185,7 @@
       "access_mode": "retained_permission_limited",
       "status": "policy_limited_snapshot_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
       "checked_at_utc": null,
       "inventory_at_utc": "2026-08-06T00:40:25.117Z",
       "count": 51,
@@ -206,9 +206,9 @@
       "parser_version": "sherlock-cards/v1",
       "status": "live_inventory_unchanged",
       "complete": true,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
-      "checked_at_utc": "2026-08-31T19:09:26.374Z",
-      "inventory_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
+      "checked_at_utc": "2026-09-01T05:17:42.433Z",
+      "inventory_at_utc": "2026-09-01T05:17:42.433Z",
       "count": 35,
       "raw_count": 37,
       "deduplicated_count": 35,
@@ -218,10 +218,10 @@
         {
           "index": 1,
           "url": "https://audits.sherlock.xyz/bug-bounties",
-          "fetched_at_utc": "2026-08-31T19:09:26.374Z",
+          "fetched_at_utc": "2026-09-01T05:17:42.433Z",
           "http_status": 200,
-          "bytes": 388510,
-          "sha256": "0a4bd72aa5928160dcb2bae8bd603f415c3ca5268d3b265bae89ecc164effdb9"
+          "bytes": 388189,
+          "sha256": "cfc4eb9a22e3ba3fa8e4d0385192237d767b6645bec1dbe06da721a7e221881d"
         }
       ],
       "drift": {
@@ -239,8 +239,8 @@
       "access_mode": "public_policy_checks",
       "status": "partial_last_good_retained",
       "complete": false,
-      "attempted_at_utc": "2026-08-31T19:09:26.374Z",
-      "checked_at_utc": "2026-08-31T19:09:26.374Z",
+      "attempted_at_utc": "2026-09-01T05:17:42.433Z",
+      "checked_at_utc": "2026-09-01T05:17:42.433Z",
       "inventory_at_utc": null,
       "count": 47,
       "configured_count": 60,
@@ -254,61 +254,61 @@
         {
           "id": "google-vrp-family",
           "url": "https://bughunters.google.com/about/rules/google-friends/google-and-alphabet-vulnerability-reward-program-vrp-rules",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "microsoft-bounty-family",
           "url": "https://www.microsoft.com/en-us/msrc/bounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "apple-security-bounty",
           "url": "https://security.apple.com/bounty/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "robots_unavailable"
         },
         {
           "id": "meta-bug-bounty",
           "url": "https://bugbounty.meta.com/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "mozilla-security-bounties",
           "url": "https://www.mozilla.org/en-US/security/bug-bounty/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "github-bug-bounty",
           "url": "https://bounty.github.com/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "intel-bug-bounty",
           "url": "https://www.intel.com/content/www/us/en/security/security-practices/vulnerability-management/bug-bounty-program.html",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "samsung-mobile-security-rewards",
           "url": "https://security.samsungmobile.com/rewardsProgram.smsb",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "robots_unavailable"
         },
         {
           "id": "synology-security-bounty",
           "url": "https://www.synology.com/security/bounty_program",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "redirect_or_path_not_allowed"
         },
         {
@@ -328,14 +328,14 @@
         {
           "id": "proton-bug-bounty",
           "url": "https://proton.me/security/bug-bounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "expressvpn-bug-bounty",
           "url": "https://www.expressvpn.com/bug-bounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
@@ -363,7 +363,7 @@
         {
           "id": "wordpress-security-bounty",
           "url": "https://make.wordpress.org/core/handbook/testing/reporting-security-vulnerabilities/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
@@ -377,63 +377,63 @@
         {
           "id": "gitlab-public-bug-bounty",
           "url": "https://about.gitlab.com/blog/inside-the-gitlab-public-bug-bounty-program/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "elastic-bug-bounty",
           "url": "https://www.elastic.co/product-security",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "atlassian-public-bug-bounty",
           "url": "https://www.atlassian.com/trust/security/report-a-vulnerability",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "cloudflare-public-bug-bounty",
           "url": "https://blog.cloudflare.com/cloudflare-bug-bounty-program/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "vercel-oss-bug-bounty",
           "url": "https://vercel.com/blog/the-vercel-oss-bug-bounty-program-is-now-available",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "digitalocean-paid-bug-bounty",
           "url": "https://www.digitalocean.com/blog/digitalocean-bug-bounty-program",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "glia-security-bounty",
           "url": "https://www.glia.com/security-bounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "shopify-bug-bounty",
           "url": "https://www.shopify.com/bugbounty/about",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "discord-bug-bounty",
           "url": "https://discord.com/security",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
@@ -447,60 +447,60 @@
         {
           "id": "stripe-bug-bounty",
           "url": "https://docs.stripe.com/security",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "paypal-bug-bounty",
           "url": "https://www.paypal.com/us/webapps/mpp/security-tools/reporting-security-issues",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "redirect_or_path_not_allowed"
         },
         {
           "id": "onepassword-bug-bounty",
           "url": "https://support.1password.com/security-assessments/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "dashlane-bug-bounty",
           "url": "https://www.dashlane.com/security/researchers",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "keeper-bugcrowd-bounty",
           "url": "https://www.keepersecurity.com/vulnerability-disclosure-policy/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "riot-games-bug-bounty",
           "url": "https://www.riotgames.com/en/reporting-a-security-vulnerability",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "epic-games-bug-bounty",
           "url": "https://www.epicgames.com/site/security",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "redirect_or_path_not_allowed"
         },
         {
           "id": "roblox-bug-bounty",
           "url": "https://en.help.roblox.com/hc/en-us/articles/360038516512-How-to-Report-Security-Exploits",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "access_denied"
         },
         {
           "id": "nintendo-product-security-bounty",
           "url": "https://www.nintendo.com/au/support/product-security/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
@@ -514,53 +514,53 @@
         {
           "id": "rockstar-games-public-bounty",
           "url": "https://support.rockstargames.com/articles/36Vh3bq19eTNSDWOsh9kIx/rockstar-games-public-hackerone-bug-bounty-program",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "network_request_timeout"
         },
         {
           "id": "nvidia-bug-bounty",
           "url": "https://www.nvidia.com/en-us/product-security/report-vulnerability/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "amd-bug-bounty",
           "url": "https://www.amd.com/en/resources/product-security.html",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "network_request_timeout"
         },
         {
           "id": "cisco-public-bounty-subprograms",
           "url": "https://sec.cloudapps.cisco.com/security/center/resources/cisco_bug_bounty_faq.html",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "redirect_or_path_not_allowed"
         },
         {
           "id": "palo-alto-networks-product-bounty",
           "url": "https://security.paloaltonetworks.com/bugbounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "sophos-bug-bounty",
           "url": "https://www.sophos.com/en-us/trust/responsible-disclosure",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "okta-auth0-public-bounties",
           "url": "https://www.okta.com/content/dam/okta---digital/en_us/legal/okta-vulnerability-disclosure-policy_v2.0.pdf",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 206
         },
         {
           "id": "trend-micro-zdi",
           "url": "https://www.zerodayinitiative.com/about/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
@@ -574,14 +574,14 @@
         {
           "id": "xiaomi-security-reward",
           "url": "https://trust.mi.com/security",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "oppo-security-bounty",
           "url": "https://security.oppo.com/en/report",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "redirect_or_path_not_allowed"
         },
         {
@@ -601,31 +601,31 @@
         {
           "id": "openai-security-bug-bounty",
           "url": "https://openai.com/policies/coordinated-vulnerability-disclosure-policy/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "access_denied"
         },
         {
           "id": "openai-safety-bug-bounty",
           "url": "https://openai.com/index/safety-bug-bounty/",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "access_denied"
         },
         {
           "id": "telegram-bug-bounty",
           "url": "https://core.telegram.org/bug-bounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "robots_unavailable"
         },
         {
           "id": "dropbox-bug-bounty",
           "url": "https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "robots_unavailable"
         },
         {
           "id": "reddit-bug-bounty",
           "url": "https://redditinc.com/policies/bug-bounty-program",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "redirect_or_path_not_allowed"
         },
         {
@@ -645,14 +645,14 @@
         {
           "id": "swiss-post-bug-bounty",
           "url": "https://site.post.ch/en/about-us/security/bug-bounty",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "reachable",
           "http_status": 200
         },
         {
           "id": "tesla-product-security-bounty",
           "url": "https://www.tesla.com/legal/security",
-          "attempted_at_utc": "2026-08-31T19:09:26.374Z",
+          "attempted_at_utc": "2026-09-01T05:17:42.433Z",
           "status": "robots_unavailable"
         }
       ],
@@ -665,5 +665,5 @@
       "retention": "Failed or missing checks never remove a listing automatically."
     }
   ],
-  "evidence_id": "a6e472ae96a4416195865878b1222706b7dcc5bb3f6eeda437b6008692f53ac1"
+  "evidence_id": "f818a77b32d5b7a1de5b547bb1ed12a98c5ed92da7514ee6d021928cccd56b2b"
 }
