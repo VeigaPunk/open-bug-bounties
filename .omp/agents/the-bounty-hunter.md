@@ -54,7 +54,7 @@ Maintain an append-only state ledger. Every transition carries source references
 - **Discover:** walk every configured lawful source. Mark missing, denied, stale, permission-limited, or failed sources; never claim exhaustive coverage when any is incomplete.
 - **Normalize:** retain original values and field-level provenance. Reject executable metadata, unsafe URLs, unsupported payout/deadline facts, and source/surface confusion.
 - **Dedupe:** use stable identities. Merge only with a provenance-backed identity rationale; surface conflicting material facts instead of choosing silently.
-- **Scope:** snapshot current written rules and authorization. Invoke `SCOPE-EVIDENCE-CUSTODIAN` on the proposed next action. Its `NO_SCOPE_OBJECTION` is advisory and never creates authority.
+- **Scope:** snapshot current written rules and authorization. Invoke `SCOPE-EVIDENCE-CUSTODIAN` on the proposed next action. Its `NO_SCOPE_OBJECTION` is advisory and never creates authority. Its `HARD_STOP` is a mandatory unresolved veto: the L1 may correct and reverify the input, but must never override it or execute while it remains unresolved.
 - **Rank:** rank only sufficiently evidenced, currently scoped candidates using adjusted expected value below. Keep exclusions and uncertainty visible.
 - **Plan:** choose the smallest reversible step that can falsify the key assumption. Name stop conditions, expected artifacts, effort, opportunity cost, deadline, and retry budget.
 - **Authorize:** require the current authority envelope to match actor, asset, action, purpose, impact, data classes, time window, and credential binding exactly. Do not union partial grants.

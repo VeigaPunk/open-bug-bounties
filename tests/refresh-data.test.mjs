@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import test from "node:test";
 
 import {
+  CONFIGURED_SOURCE_IDS,
   SOURCE_DEFINITIONS,
   RefreshError,
   crawlPaginatedInventory,
@@ -24,6 +26,60 @@ function hackerOneCard({ index, handle, name, offers = true }) {
     <span class="bug-bounty-list-item-name">${name}</span>
     <span class="bug-bounty-list-item-meta-item ${offers ? "bounties" : "disclosure"}">${offers ? "Offers bounties" : "Disclosure only"}</span>
   </a>`;
+}
+function sha256(value) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+function generationFixture() {
+  const runId = "refresh-20260829T120000000Z";
+  const independent = { refresh_run_id: runId, programs: [] };
+  const platform = { refresh_run_id: runId, programs: [] };
+  const web3 = { refresh_run_id: runId, records: [] };
+  const serialized = Object.fromEntries(
+    Object.entries({ independent, platform, web3 }).map(([id, value]) => [
+      id,
+      `${JSON.stringify(value)}\n`,
+    ]),
+  );
+  const evidence = {
+    run_id: runId,
+    status: "partial",
+    totals: {
+      records: 0,
+      canonical_urls: 0,
+      duplicate_urls: 0,
+      independent_configured: 0,
+      independent_eligible: 0,
+    },
+    datasets: [
+      {
+        id: "independent",
+        path: "data/independent_programs.json",
+        records: 0,
+        sha256: sha256(serialized.independent),
+      },
+      {
+        id: "platform",
+        path: "data/platform_programs.json",
+        records: 0,
+        sha256: sha256(serialized.platform),
+      },
+      {
+        id: "web3",
+        path: "data/web3_programs.json",
+        records: 0,
+        sha256: sha256(serialized.web3),
+      },
+    ],
+    sources: CONFIGURED_SOURCE_IDS.map((source_id) => ({
+      source_id,
+      count: 0,
+      complete: false,
+    })),
+  };
+  evidence.evidence_id = sha256(JSON.stringify(evidence));
+  return { input: { independent, platform, web3, evidence }, serialized };
 }
 
 test("HackerOne parser keeps only source-valid bounty cards", () => {
@@ -54,6 +110,13 @@ test("HackerOne parser rejects off-source links and incomplete card sequences", 
      ${hackerOneCard({ index: 3, handle: "gamma", name: "Gamma" })}`,
   );
   assert.throws(() => parseHackerOnePage(gap), (error) => error.code === "hackerone_card_index_gap");
+  const bidi = document(
+    hackerOneCard({ index: 1, handle: "bidi", name: "Safe\u202Eevil" }),
+  );
+  assert.throws(
+    () => parseHackerOnePage(bidi),
+    (error) => error.code === "text_contains_control_character",
+  );
 });
 
 test("Sherlock parser exposes responsive duplicates for deterministic collapse", () => {
@@ -146,6 +209,18 @@ Crawl-delay: 2
   });
   assert.equal(robotsDecision(text, "/private/other").allowed, false);
   assert.equal(robotsDecision(text, "/public").allowed, true);
+  assert.equal(
+    robotsDecision("User-agent: *\nDisallow: /a*b*c$", "/axbyc").allowed,
+    false,
+  );
+  assert.throws(
+    () =>
+      robotsDecision(
+        `User-agent: *\nDisallow: /${"*a".repeat(65)}`,
+        "/aaaaaaaa",
+      ),
+    (error) => error.code === "robots_invalid",
+  );
 });
 
 test("network boundary rejects schemes, credentials, IP literals, and private resolutions", () => {
@@ -155,13 +230,25 @@ test("network boundary rejects schemes, credentials, IP literals, and private re
     "https://user:secret@example.com/security",
     "https://127.0.0.1/security",
     "https://[::1]/security",
+    "https://example.com:444/security",
   ]) {
     assert.throws(() => validateNetworkUrl(value), RefreshError);
   }
-  for (const address of ["127.0.0.1", "10.0.0.1", "169.254.169.254", "::1", "fc00::1", "2001:db8::1"]) {
+  for (const address of [
+    "127.0.0.1",
+    "10.0.0.1",
+    "169.254.169.254",
+    "::1",
+    "fc00::1",
+    "2001:2::1",
+    "2001:db8::1",
+    "2002:7f00:1::",
+    "3fff::1",
+  ]) {
     assert.equal(isPublicAddress(address), false, address);
   }
   assert.equal(isPublicAddress("1.1.1.1"), true);
+  assert.equal(isPublicAddress("2001:4860:4860::8888"), true);
   assert.equal(isPublicAddress("2606:4700:4700::1111"), true);
 });
 
@@ -180,22 +267,50 @@ test("first-party eligibility is explicit and never inferred from reachability",
   assert.equal(independentEligibilityReason({ ...eligible, paid_status: "unpaid" }), "paid_reward_not_explicit");
 });
 
-test("generation verifier rejects mixed runs and incomplete source coverage", () => {
-  const sources = Array.from({ length: 9 }, (_, index) => ({ source_id: `source-${index}` }));
-  const valid = {
-    independent: { refresh_run_id: "run-1" },
-    platform: { refresh_run_id: "run-1" },
-    web3: { refresh_run_id: "run-1" },
-    evidence: { run_id: "run-1", sources, datasets: [] },
-  };
-  assert.equal(verifyGeneration(valid), true);
+test("generation verifier rejects mixed, substituted, and unbound evidence", () => {
+  const { input, serialized } = generationFixture();
+  assert.equal(verifyGeneration(input, serialized), true);
   assert.throws(
-    () => verifyGeneration({ ...valid, web3: { refresh_run_id: "run-2" } }),
+    () =>
+      verifyGeneration(
+        { ...input, web3: { ...input.web3, refresh_run_id: "refresh-20260829T120000001Z" } },
+        serialized,
+      ),
     (error) => error.code === "generation_id_mismatch",
   );
+  const substitutedSources = input.evidence.sources.map((source) => ({ ...source }));
+  substitutedSources[0].source_id = "shadow-source";
   assert.throws(
-    () => verifyGeneration({ ...valid, evidence: { ...valid.evidence, sources: sources.slice(1) } }),
+    () =>
+      verifyGeneration(
+        { ...input, evidence: { ...input.evidence, sources: substitutedSources } },
+        serialized,
+      ),
     (error) => error.code === "source_coverage_mismatch",
+  );
+  assert.throws(
+    () =>
+      verifyGeneration(
+        {
+          ...input,
+          evidence: {
+            ...input.evidence,
+            datasets: [
+              input.evidence.datasets[0],
+              input.evidence.datasets[0],
+              input.evidence.datasets[2],
+            ],
+          },
+        },
+        serialized,
+      ),
+    (error) => error.code === "dataset_coverage_mismatch",
+  );
+  const missingDigest = { ...input.evidence };
+  delete missingDigest.evidence_id;
+  assert.throws(
+    () => verifyGeneration({ ...input, evidence: missingDigest }, serialized),
+    (error) => error.code === "evidence_hash_mismatch",
   );
 });
 

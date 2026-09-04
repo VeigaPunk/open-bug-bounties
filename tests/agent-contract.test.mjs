@@ -43,6 +43,8 @@ test("bounty hunter contract keeps one L1, strict Pareto judgment, and full miss
     "adjusted_ev = gross_value - total_cost",
     "best among observed candidates",
     "SCOPE-EVIDENCE-CUSTODIAN",
+    "mandatory unresolved veto",
+    "must never override it or execute",
   ]) {
     assert.ok(body.includes(required), `primary contract is missing: ${required}`);
   }
@@ -75,9 +77,20 @@ test("selected helper is advisory, closed, fail-closed, and unable to act", asyn
     "Never union partial grants",
     "Raw credentials or ambiguous ownership stop immediately",
     "Destructive or irreversible impact",
-    "passed redaction scan with zero findings",
+    "passed policy-bound scan with zero findings",
     "EXTERNAL_ACTION_NOT_PREAPPROVED",
     "next_owner: primary_agent_id",
+    "grant_id",
+    "credential_policy",
+    "ownership_status: verified",
+    "prior_sequence, next_sequence",
+    "prior_negative_artifact_ids[]",
+    "negative_evidence_manifest_sha256",
+    "scanned_artifact_sha256",
+    "verifier_agent_id",
+    "recipient_id, channel_id, action_id",
+    "RFC 8785 JSON Canonicalization Scheme",
+    "Hard-stop reason precedence",
   ]) {
     assert.ok(body.includes(required), `helper contract is missing: ${required}`);
   }

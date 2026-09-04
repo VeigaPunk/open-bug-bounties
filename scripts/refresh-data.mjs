@@ -18,6 +18,10 @@ const MAX_PAGES_PER_SOURCE = 20;
 const MAX_BYTES_PER_PAGE = 5 * 1024 * 1024;
 const MAX_BYTES_PER_SOURCE = 20 * 1024 * 1024;
 const MAX_ROBOTS_BYTES = 512 * 1024;
+const MAX_ROBOTS_RULES = 10_000;
+const MAX_ROBOTS_PATTERN_LENGTH = 2_048;
+const MAX_ROBOTS_WILDCARDS = 64;
+const MAX_ROBOTS_TARGET_LENGTH = 8_192;
 const MAX_INVENTORY_CHURN = 0.35;
 const MAX_REQUESTS_PER_ORIGIN = 25;
 
@@ -89,6 +93,24 @@ const RETAINED_SOURCES = [
     inventoryField: "generated_at",
   },
 ];
+export const CONFIGURED_SOURCE_IDS = Object.freeze([
+  "hackerone",
+  "bugcrowd",
+  "intigriti",
+  "yeswehack",
+  "hackenproof",
+  "immunefi",
+  "cantina",
+  "sherlock",
+  "first-party",
+]);
+const DATASET_BINDINGS = Object.freeze([
+  { id: "independent", path: "data/independent_programs.json" },
+  { id: "platform", path: "data/platform_programs.json" },
+  { id: "web3", path: "data/web3_programs.json" },
+]);
+const RUN_ID_PATTERN = /^refresh-\d{8}T\d{9}Z$/u;
+const SHA256_PATTERN = /^[a-f0-9]{64}$/u;
 
 export class RefreshError extends Error {
   constructor(code, details = {}) {
@@ -116,7 +138,10 @@ function compareAscii(left, right) {
 }
 
 function normalizeWhitespace(value) {
-  if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/u.test(value)) {
+  if (
+    /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/u.test(value) ||
+    /\p{Bidi_Control}/u.test(value)
+  ) {
     throw new RefreshError("text_contains_control_character");
   }
   return value.normalize("NFC").replace(/\s+/gu, " ").trim();
@@ -537,8 +562,17 @@ export function isPublicAddress(address) {
   if (family === 6) {
     const normalized = address.toLowerCase();
     if (normalized.startsWith("::ffff:")) return isPublicAddress(normalized.slice(7));
-    if (normalized === "::" || normalized === "::1" || normalized.startsWith("2001:db8:")) return false;
-    const first = Number.parseInt(normalized.split(":", 1)[0] || "0", 16);
+    if (normalized === "::" || normalized === "::1") return false;
+    const [firstText, secondText = "0"] = normalized.split(":");
+    const first = Number.parseInt(firstText || "0", 16);
+    const second = Number.parseInt(secondText || "0", 16);
+    if (
+      first === 0x2002 ||
+      first === 0x3fff ||
+      (first === 0x2001 && (second <= 0x01ff || second === 0x0db8))
+    ) {
+      return false;
+    }
     return first >= 0x2000 && first <= 0x3fff;
   }
   return false;
@@ -744,6 +778,7 @@ async function requestWithoutRobots(value, context, options, policy) {
 function parseRobots(text) {
   if (text.includes("\0")) throw new RefreshError("robots_invalid");
   const groups = [];
+  let ruleCount = 0;
   let group = { agents: [], rules: [], crawlDelay: null };
   let sawRule = false;
   const flush = () => {
@@ -767,7 +802,18 @@ function parseRobots(text) {
     if (!group.agents.length) continue;
     if (field === "allow" || field === "disallow") {
       sawRule = true;
-      if (value) group.rules.push({ kind: field, pattern: value });
+      if (value) {
+        ruleCount += 1;
+        const wildcards = value.match(/\*/gu)?.length ?? 0;
+        if (
+          ruleCount > MAX_ROBOTS_RULES ||
+          value.length > MAX_ROBOTS_PATTERN_LENGTH ||
+          wildcards > MAX_ROBOTS_WILDCARDS
+        ) {
+          throw new RefreshError("robots_invalid");
+        }
+        group.rules.push({ kind: field, pattern: value });
+      }
     } else if (field === "crawl-delay") {
       sawRule = true;
       const seconds = Number(value);
@@ -781,17 +827,47 @@ function parseRobots(text) {
 
 function robotsPattern(pattern) {
   const anchored = pattern.endsWith("$");
-  const source = (anchored ? pattern.slice(0, -1) : pattern)
-    .split("*")
-    .map((part) => part.replace(/[|\\{}()[\]^$+?.]/gu, "\\$&"))
-    .join(".*");
   return {
-    expression: new RegExp(`^${source}${anchored ? "$" : ""}`, "u"),
+    source: anchored ? pattern.slice(0, -1) : pattern,
+    anchored,
     specificity: pattern.replace(/[\*$]/gu, "").length,
   };
 }
 
+function wildcardPrefixMatches(pattern, target, anchored) {
+  let patternIndex = 0;
+  let targetIndex = 0;
+  let starIndex = -1;
+  let retryIndex = 0;
+  while (targetIndex <= target.length) {
+    if (patternIndex === pattern.length) {
+      if (!anchored || targetIndex === target.length) return true;
+      if (starIndex < 0 || retryIndex >= target.length) return false;
+      patternIndex = starIndex + 1;
+      targetIndex = ++retryIndex;
+      continue;
+    }
+    if (pattern[patternIndex] === "*") {
+      starIndex = patternIndex++;
+      retryIndex = targetIndex;
+      continue;
+    }
+    if (targetIndex < target.length && pattern[patternIndex] === target[targetIndex]) {
+      patternIndex += 1;
+      targetIndex += 1;
+      continue;
+    }
+    if (starIndex < 0 || retryIndex >= target.length) return false;
+    patternIndex = starIndex + 1;
+    targetIndex = ++retryIndex;
+  }
+  return false;
+}
+
 export function robotsDecision(text, targetPath, userAgent = ROBOTS_AGENT) {
+  if (targetPath.length > MAX_ROBOTS_TARGET_LENGTH) {
+    throw new RefreshError("robots_invalid");
+  }
   const groups = parseRobots(text);
   const matches = [];
   for (const group of groups) {
@@ -810,7 +886,9 @@ export function robotsDecision(text, targetPath, userAgent = ROBOTS_AGENT) {
     if (group.crawlDelay !== null) crawlDelaySeconds = Math.max(crawlDelaySeconds, group.crawlDelay);
     for (const rule of group.rules) {
       const compiled = robotsPattern(rule.pattern);
-      if (compiled.expression.test(targetPath)) rules.push({ ...rule, ...compiled });
+      if (wildcardPrefixMatches(compiled.source, targetPath, compiled.anchored)) {
+        rules.push({ ...rule, ...compiled });
+      }
     }
   }
   rules.sort(
@@ -1188,29 +1266,90 @@ function evidenceDigest(evidence) {
 }
 
 export function verifyGeneration({ independent, platform, web3, evidence }, serialized = {}) {
-  const runIds = new Set([
+  const runIds = [
     independent.refresh_run_id,
     platform.refresh_run_id,
     web3.refresh_run_id,
     evidence.run_id,
-  ]);
-  if (runIds.size !== 1 || runIds.has(undefined)) throw new RefreshError("generation_id_mismatch");
-  if (evidence.sources.length !== 9 || new Set(evidence.sources.map((source) => source.source_id)).size !== 9) {
+  ];
+  if (
+    runIds.some((runId) => typeof runId !== "string" || !RUN_ID_PATTERN.test(runId)) ||
+    new Set(runIds).size !== 1
+  ) {
+    throw new RefreshError("generation_id_mismatch");
+  }
+
+  const sourceIds = evidence.sources?.map((source) => source.source_id);
+  if (
+    !Array.isArray(sourceIds) ||
+    sourceIds.length !== CONFIGURED_SOURCE_IDS.length ||
+    sourceIds.some((id, index) => id !== CONFIGURED_SOURCE_IDS[index])
+  ) {
     throw new RefreshError("source_coverage_mismatch");
   }
+
   const recordCounts = {
     independent: independent.programs?.length,
     platform: platform.programs?.length,
     web3: web3.records?.length,
   };
-  for (const dataset of evidence.datasets) {
-    const content = serialized[dataset.id];
-    if (content && sha256(content) !== dataset.sha256) throw new RefreshError("dataset_hash_mismatch");
-    if (recordCounts[dataset.id] !== undefined && recordCounts[dataset.id] !== dataset.records) {
+  if (
+    !Array.isArray(evidence.datasets) ||
+    evidence.datasets.length !== DATASET_BINDINGS.length
+  ) {
+    throw new RefreshError("dataset_coverage_mismatch");
+  }
+  for (const [index, binding] of DATASET_BINDINGS.entries()) {
+    const dataset = evidence.datasets[index];
+    const content = serialized[binding.id];
+    if (dataset?.id !== binding.id || dataset?.path !== binding.path) {
+      throw new RefreshError("dataset_coverage_mismatch");
+    }
+    if (
+      typeof content !== "string" ||
+      !SHA256_PATTERN.test(dataset.sha256) ||
+      sha256(content) !== dataset.sha256
+    ) {
+      throw new RefreshError("dataset_hash_mismatch");
+    }
+    if (recordCounts[binding.id] !== dataset.records) {
       throw new RefreshError("dataset_count_mismatch");
     }
   }
-  if (evidence.evidence_id && evidenceDigest(evidence) !== evidence.evidence_id) {
+
+  const duplicateSummary = summarizeDatasetDuplicates(platform, web3, independent);
+  for (const [key, expected] of Object.entries(duplicateSummary)) {
+    if (evidence.totals?.[key] !== expected) {
+      throw new RefreshError("generation_totals_mismatch");
+    }
+  }
+  const expectedSourceCounts = {
+    hackerone: sourceCount(platform.programs, "HackerOne"),
+    bugcrowd: sourceCount(platform.programs, "Bugcrowd"),
+    intigriti: sourceCount(platform.programs, "Intigriti"),
+    yeswehack: sourceCount(platform.programs, "YesWeHack"),
+    hackenproof: sourceCount(platform.programs, "HackenProof"),
+    immunefi: sourceCount(web3.records, "Immunefi"),
+    cantina: sourceCount(web3.records, "Cantina"),
+    sherlock: sourceCount(web3.records, "Sherlock"),
+    "first-party": duplicateSummary.independent_eligible,
+  };
+  if (
+    evidence.sources.some(
+      (source) => source.count !== expectedSourceCounts[source.source_id],
+    )
+  ) {
+    throw new RefreshError("source_count_mismatch");
+  }
+  const expectedStatus = evidence.sources.every((source) => source.complete)
+    ? "complete"
+    : "partial";
+  if (evidence.status !== expectedStatus) throw new RefreshError("generation_status_mismatch");
+  if (
+    typeof evidence.evidence_id !== "string" ||
+    !SHA256_PATTERN.test(evidence.evidence_id) ||
+    evidenceDigest(evidence) !== evidence.evidence_id
+  ) {
     throw new RefreshError("evidence_hash_mismatch");
   }
   return true;
@@ -1387,18 +1526,7 @@ export async function refreshData({ dryRun = false, now = new Date() } = {}) {
       source,
     ]),
   );
-  const sourceOrder = [
-    "hackerone",
-    "bugcrowd",
-    "intigriti",
-    "yeswehack",
-    "hackenproof",
-    "immunefi",
-    "cantina",
-    "sherlock",
-    "first-party",
-  ];
-  const sources = sourceOrder.map((id) => sourceById.get(id));
+  const sources = CONFIGURED_SOURCE_IDS.map((id) => sourceById.get(id));
 
   const independentContent = serializeJson(independent);
   const platformContent = serializeJson(platform);

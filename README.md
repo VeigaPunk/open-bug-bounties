@@ -16,7 +16,9 @@ GitHub Actions runs every 12 hours and on demand. It:
 - retains the last-good inventory through transient, access, parser, or completeness failures;
 - leaves Bugcrowd, Intigriti, YesWeHack, HackenProof, Immunefi, and Cantina as dated, clearly labeled snapshots until reuse or crawl permission is recorded;
 - writes `data/refresh_evidence.json` last, binding all three datasets to one run ID, hashes, counts, source outcomes, dedupe totals, and freshness;
-- validates the generated data and static export before committing a scheduled refresh; only the resulting pushed commit is built and deployed.
+- validates the generated data and static export before committing a scheduled refresh, then builds and deploys that exact commit in the same workflow run.
+
+Coverage is exhaustive only across the nine configured source groups and their recorded access modes; it is not an internet-wide completeness claim. A `robots.txt` allowance is a technical fetch condition, not permission to reuse an inventory. Permission-limited snapshots remain retained until separate reuse or crawl permission is recorded.
 
 The index stores only minimal factual records: program name, source, surface, reward summary where independently verified, and a link to the official policy. It does not reproduce scopes, policy text, logos, or platform descriptions.
 
