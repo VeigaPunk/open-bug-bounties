@@ -3306,14 +3306,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:amazonvrp-devices",
-      "platform": "HackerOne",
-      "name": "Amazon Vulnerability Research Program - Devices",
-      "url": "https://hackerone.com/amazonvrp-devices",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:anduril_industries",
       "platform": "HackerOne",
       "name": "Anduril Industries",
@@ -6138,20 +6130,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260903T163109387Z",
-  "last_attempted_check_at_utc": "2026-09-03T16:31:09.387Z",
+  "refresh_run_id": "refresh-20260904T044434249Z",
+  "last_attempted_check_at_utc": "2026-09-04T04:44:34.249Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-03T16:31:09.387Z",
+      "checked_at_utc": "2026-09-04T04:44:34.249Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-03T16:31:09.387Z",
-      "included": 223,
-      "raw_count": 223,
+      "inventory_at_utc": "2026-09-04T04:44:34.249Z",
+      "included": 222,
+      "raw_count": 222,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-03T16:31:09.387Z"
+  "last_permitted_check_at_utc": "2026-09-04T04:44:34.249Z"
 }
