@@ -4026,14 +4026,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:klarna",
-      "platform": "HackerOne",
-      "name": "Klarna",
-      "url": "https://hackerone.com/klarna",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:koho",
       "platform": "HackerOne",
       "name": "KOHO",
@@ -6130,20 +6122,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260904T044434249Z",
-  "last_attempted_check_at_utc": "2026-09-04T04:44:34.249Z",
+  "refresh_run_id": "refresh-20260904T162700414Z",
+  "last_attempted_check_at_utc": "2026-09-04T16:27:00.414Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-04T04:44:34.249Z",
+      "checked_at_utc": "2026-09-04T16:27:00.414Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-04T04:44:34.249Z",
-      "included": 222,
-      "raw_count": 222,
+      "inventory_at_utc": "2026-09-04T16:27:00.414Z",
+      "included": 221,
+      "raw_count": 221,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-04T04:44:34.249Z"
+  "last_permitted_check_at_utc": "2026-09-04T16:27:00.414Z"
 }
