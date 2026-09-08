@@ -894,8 +894,8 @@
       }
     }
   ],
-  "refresh_run_id": "refresh-20260907T174602980Z",
-  "last_attempted_check_at_utc": "2026-09-07T17:46:02.980Z",
+  "refresh_run_id": "refresh-20260908T044707003Z",
+  "last_attempted_check_at_utc": "2026-09-08T04:47:07.003Z",
   "source_check": {
     "status": "partial_last_good_retained",
     "configured": 60,
@@ -911,5 +911,5 @@
     ],
     "retention": "No listing is removed automatically after a failed or missing check."
   },
-  "last_permitted_check_at_utc": "2026-09-07T17:46:02.980Z"
+  "last_permitted_check_at_utc": "2026-09-08T04:47:07.003Z"
 }
