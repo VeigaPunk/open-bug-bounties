@@ -2138,6 +2138,14 @@
       "kyc_required": null
     },
     {
+      "id": "sherlock:407",
+      "name": "Tenor Labs",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/407",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
       "id": "sherlock:12",
       "name": "Union",
       "platform": "Sherlock",
@@ -2186,25 +2194,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20260911T163432262Z",
-  "last_attempted_check_at_utc": "2026-09-11T16:34:32.262Z",
+  "refresh_run_id": "refresh-20260912T044221060Z",
+  "last_attempted_check_at_utc": "2026-09-12T04:42:21.060Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-09-11T16:34:32.262Z",
+      "checked_at_utc": "2026-09-12T04:42:21.060Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-11T16:34:32.262Z",
-      "included": 35,
-      "raw_count": 37,
+      "inventory_at_utc": "2026-09-12T04:42:21.060Z",
+      "included": 36,
+      "raw_count": 38,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-11T16:34:32.262Z",
+  "last_permitted_check_at_utc": "2026-09-12T04:42:21.060Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 35
+    "Sherlock": 36
   }
 }
