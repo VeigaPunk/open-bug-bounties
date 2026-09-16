@@ -3324,7 +3324,7 @@
     {
       "id": "hackerone:arc-bbp",
       "platform": "HackerOne",
-      "name": "Arc BBP",
+      "name": "Arc",
       "url": "https://hackerone.com/arc-bbp",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -3492,7 +3492,7 @@
     {
       "id": "hackerone:circle-bbp",
       "platform": "HackerOne",
-      "name": "Circle BBP",
+      "name": "Circle",
       "url": "https://hackerone.com/circle-bbp",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
@@ -3590,6 +3590,14 @@
       "platform": "HackerOne",
       "name": "CS Money",
       "url": "https://hackerone.com/cs_money",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
+      "id": "hackerone:common_codes",
+      "platform": "HackerOne",
+      "name": "d-you App & German EUDI Wallet Ecosystem",
+      "url": "https://hackerone.com/common_codes",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -4030,6 +4038,14 @@
       "platform": "HackerOne",
       "name": "Kiwi.com",
       "url": "https://hackerone.com/kiwicom",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
+      "id": "hackerone:klarna",
+      "platform": "HackerOne",
+      "name": "Klarna",
+      "url": "https://hackerone.com/klarna",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6130,20 +6146,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260916T045620805Z",
-  "last_attempted_check_at_utc": "2026-09-16T04:56:20.805Z",
+  "refresh_run_id": "refresh-20260916T170550574Z",
+  "last_attempted_check_at_utc": "2026-09-16T17:05:50.574Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-16T04:56:20.805Z",
+      "checked_at_utc": "2026-09-16T17:05:50.574Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-16T04:56:20.805Z",
-      "included": 222,
-      "raw_count": 222,
+      "inventory_at_utc": "2026-09-16T17:05:50.574Z",
+      "included": 224,
+      "raw_count": 224,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-16T04:56:20.805Z"
+  "last_permitted_check_at_utc": "2026-09-16T17:05:50.574Z"
 }
