@@ -3322,6 +3322,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:arc-bbp",
+      "platform": "HackerOne",
+      "name": "Arc BBP",
+      "url": "https://hackerone.com/arc-bbp",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:arkose_labs",
       "platform": "HackerOne",
       "name": "Arkose Labs",
@@ -6122,20 +6130,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260915T170548967Z",
-  "last_attempted_check_at_utc": "2026-09-15T17:05:48.967Z",
+  "refresh_run_id": "refresh-20260916T045620805Z",
+  "last_attempted_check_at_utc": "2026-09-16T04:56:20.805Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-15T17:05:48.967Z",
+      "checked_at_utc": "2026-09-16T04:56:20.805Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-15T17:05:48.967Z",
-      "included": 221,
-      "raw_count": 221,
+      "inventory_at_utc": "2026-09-16T04:56:20.805Z",
+      "included": 222,
+      "raw_count": 222,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-15T17:05:48.967Z"
+  "last_permitted_check_at_utc": "2026-09-16T04:56:20.805Z"
 }
