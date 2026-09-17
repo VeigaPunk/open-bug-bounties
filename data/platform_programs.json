@@ -6146,13 +6146,13 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260916T170550574Z",
-  "last_attempted_check_at_utc": "2026-09-16T17:05:50.574Z",
+  "refresh_run_id": "refresh-20260917T045852886Z",
+  "last_attempted_check_at_utc": "2026-09-17T04:58:52.886Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-16T17:05:50.574Z",
+      "checked_at_utc": "2026-09-17T04:58:52.886Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-16T17:05:50.574Z",
+      "inventory_at_utc": "2026-09-17T04:58:52.886Z",
       "included": 224,
       "raw_count": 224,
       "duplicates_removed": 0,
@@ -6161,5 +6161,5 @@
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-16T17:05:50.574Z"
+  "last_permitted_check_at_utc": "2026-09-17T04:58:52.886Z"
 }
