@@ -3834,14 +3834,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:freshworks",
-      "platform": "HackerOne",
-      "name": "Freshworks",
-      "url": "https://hackerone.com/freshworks",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:fronthq",
       "platform": "HackerOne",
       "name": "Front",
@@ -6138,20 +6130,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260920T045949589Z",
-  "last_attempted_check_at_utc": "2026-09-20T04:59:49.589Z",
+  "refresh_run_id": "refresh-20260920T161353276Z",
+  "last_attempted_check_at_utc": "2026-09-20T16:13:53.276Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-20T04:59:49.589Z",
+      "checked_at_utc": "2026-09-20T16:13:53.276Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-20T04:59:49.589Z",
-      "included": 223,
-      "raw_count": 223,
+      "inventory_at_utc": "2026-09-20T16:13:53.276Z",
+      "included": 222,
+      "raw_count": 222,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-20T04:59:49.589Z"
+  "last_permitted_check_at_utc": "2026-09-20T16:13:53.276Z"
 }
