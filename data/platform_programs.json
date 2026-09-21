@@ -4802,10 +4802,10 @@
       "industry": null
     },
     {
-      "id": "hackerone:vercel-open-source",
+      "id": "hackerone:vercel",
       "platform": "HackerOne",
-      "name": "Vercel Open Source",
-      "url": "https://hackerone.com/vercel-open-source",
+      "name": "Vercel",
+      "url": "https://hackerone.com/vercel",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6130,13 +6130,13 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260921T050522454Z",
-  "last_attempted_check_at_utc": "2026-09-21T05:05:22.454Z",
+  "refresh_run_id": "refresh-20260921T181354421Z",
+  "last_attempted_check_at_utc": "2026-09-21T18:13:54.421Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-21T05:05:22.454Z",
+      "checked_at_utc": "2026-09-21T18:13:54.421Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-21T05:05:22.454Z",
+      "inventory_at_utc": "2026-09-21T18:13:54.421Z",
       "included": 222,
       "raw_count": 222,
       "duplicates_removed": 0,
@@ -6145,5 +6145,5 @@
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-21T05:05:22.454Z"
+  "last_permitted_check_at_utc": "2026-09-21T18:13:54.421Z"
 }
