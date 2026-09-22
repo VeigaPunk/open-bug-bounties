@@ -3410,6 +3410,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:brave",
+      "platform": "HackerOne",
+      "name": "Brave Software",
+      "url": "https://hackerone.com/brave",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:braze_inc",
       "platform": "HackerOne",
       "name": "Braze, Inc.",
@@ -6130,20 +6138,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260921T181354421Z",
-  "last_attempted_check_at_utc": "2026-09-21T18:13:54.421Z",
+  "refresh_run_id": "refresh-20260922T050639009Z",
+  "last_attempted_check_at_utc": "2026-09-22T05:06:39.009Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-21T18:13:54.421Z",
+      "checked_at_utc": "2026-09-22T05:06:39.009Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-21T18:13:54.421Z",
-      "included": 222,
-      "raw_count": 222,
+      "inventory_at_utc": "2026-09-22T05:06:39.009Z",
+      "included": 223,
+      "raw_count": 223,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-21T18:13:54.421Z"
+  "last_permitted_check_at_utc": "2026-09-22T05:06:39.009Z"
 }

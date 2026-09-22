@@ -1938,14 +1938,6 @@
       "kyc_required": null
     },
     {
-      "id": "sherlock:8",
-      "name": "Axis Finance",
-      "platform": "Sherlock",
-      "program_url": "https://audits.sherlock.xyz/bug-bounties/8",
-      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
-      "kyc_required": null
-    },
-    {
       "id": "sherlock:400",
       "name": "Babylon",
       "platform": "Sherlock",
@@ -2202,25 +2194,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20260921T181354421Z",
-  "last_attempted_check_at_utc": "2026-09-21T18:13:54.421Z",
+  "refresh_run_id": "refresh-20260922T050639009Z",
+  "last_attempted_check_at_utc": "2026-09-22T05:06:39.009Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-09-21T18:13:54.421Z",
+      "checked_at_utc": "2026-09-22T05:06:39.009Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-21T18:13:54.421Z",
-      "included": 37,
-      "raw_count": 39,
+      "inventory_at_utc": "2026-09-22T05:06:39.009Z",
+      "included": 36,
+      "raw_count": 38,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-21T18:13:54.421Z",
+  "last_permitted_check_at_utc": "2026-09-22T05:06:39.009Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 37
+    "Sherlock": 36
   }
 }
