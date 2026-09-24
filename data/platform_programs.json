@@ -4010,6 +4010,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:kaltura",
+      "platform": "HackerOne",
+      "name": "Kaltura",
+      "url": "https://hackerone.com/kaltura",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:kayak",
       "platform": "HackerOne",
       "name": "KAYAK",
@@ -6138,20 +6146,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260924T050018101Z",
-  "last_attempted_check_at_utc": "2026-09-24T05:00:18.101Z",
+  "refresh_run_id": "refresh-20260924T171743919Z",
+  "last_attempted_check_at_utc": "2026-09-24T17:17:43.919Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-24T05:00:18.101Z",
+      "checked_at_utc": "2026-09-24T17:17:43.919Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-24T05:00:18.101Z",
-      "included": 223,
-      "raw_count": 223,
+      "inventory_at_utc": "2026-09-24T17:17:43.919Z",
+      "included": 224,
+      "raw_count": 224,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-24T05:00:18.101Z"
+  "last_permitted_check_at_utc": "2026-09-24T17:17:43.919Z"
 }
