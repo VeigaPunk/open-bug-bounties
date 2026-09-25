@@ -3290,6 +3290,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:algolia",
+      "platform": "HackerOne",
+      "name": "Algolia",
+      "url": "https://hackerone.com/algolia",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:alsco",
       "platform": "HackerOne",
       "name": "ALSCO",
@@ -4010,14 +4018,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:kaltura",
-      "platform": "HackerOne",
-      "name": "Kaltura",
-      "url": "https://hackerone.com/kaltura",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:kayak",
       "platform": "HackerOne",
       "name": "KAYAK",
@@ -4094,6 +4094,14 @@
       "platform": "HackerOne",
       "name": "LinkedIn",
       "url": "https://hackerone.com/linkedin",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
+      "id": "hackerone:live_nation",
+      "platform": "HackerOne",
+      "name": "Live Nation",
+      "url": "https://hackerone.com/live_nation",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6146,20 +6154,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20260924T171743919Z",
-  "last_attempted_check_at_utc": "2026-09-24T17:17:43.919Z",
+  "refresh_run_id": "refresh-20260925T050426714Z",
+  "last_attempted_check_at_utc": "2026-09-25T05:04:26.714Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-09-24T17:17:43.919Z",
+      "checked_at_utc": "2026-09-25T05:04:26.714Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-09-24T17:17:43.919Z",
-      "included": 224,
-      "raw_count": 224,
+      "inventory_at_utc": "2026-09-25T05:04:26.714Z",
+      "included": 225,
+      "raw_count": 225,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-09-24T17:17:43.919Z"
+  "last_permitted_check_at_utc": "2026-09-25T05:04:26.714Z"
 }
