@@ -1986,6 +1986,14 @@
       "kyc_required": null
     },
     {
+      "id": "sherlock:412",
+      "name": "Golem Network",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/412",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
       "id": "sherlock:233",
       "name": "Inverse Finance",
       "platform": "Sherlock",
@@ -2194,25 +2202,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261001T060547489Z",
-  "last_attempted_check_at_utc": "2026-10-01T06:05:47.489Z",
+  "refresh_run_id": "refresh-20261001T182730364Z",
+  "last_attempted_check_at_utc": "2026-10-01T18:27:30.364Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-10-01T06:05:47.489Z",
+      "checked_at_utc": "2026-10-01T18:27:30.364Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-01T06:05:47.489Z",
-      "included": 36,
-      "raw_count": 38,
+      "inventory_at_utc": "2026-10-01T18:27:30.364Z",
+      "included": 37,
+      "raw_count": 39,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-01T06:05:47.489Z",
+  "last_permitted_check_at_utc": "2026-10-01T18:27:30.364Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 36
+    "Sherlock": 37
   }
 }
