@@ -4290,6 +4290,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:omarchy",
+      "platform": "HackerOne",
+      "name": "Omarchy",
+      "url": "https://hackerone.com/omarchy",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:oppo_bbp",
       "platform": "HackerOne",
       "name": "OPPO",
@@ -4738,14 +4746,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:truecaller",
-      "platform": "HackerOne",
-      "name": "Truecaller",
-      "url": "https://hackerone.com/truecaller",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:twilio",
       "platform": "HackerOne",
       "name": "Twilio",
@@ -4966,14 +4966,6 @@
       "platform": "HackerOne",
       "name": "Yuga Labs",
       "url": "https://hackerone.com/yuga_labs",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
-      "id": "hackerone:zabbix",
-      "platform": "HackerOne",
-      "name": "Zabbix",
-      "url": "https://hackerone.com/zabbix",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6138,22 +6130,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261001T182730364Z",
-  "last_attempted_check_at_utc": "2026-10-01T18:27:30.364Z",
+  "refresh_run_id": "refresh-20261002T054851586Z",
+  "last_attempted_check_at_utc": "2026-10-02T05:48:51.586Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": null,
-      "status": "live_refresh_failed_snapshot_retained",
-      "inventory_at_utc": "2026-10-01T06:05:47.489Z",
-      "included": 223,
-      "raw_count": null,
-      "duplicates_removed": null,
-      "pages": 0,
-      "failure_codes": [
-        "hackerone_cards_missing"
-      ],
-      "consecutive_failures": 1
+      "checked_at_utc": "2026-10-02T05:48:51.586Z",
+      "status": "live_inventory_promoted",
+      "inventory_at_utc": "2026-10-02T05:48:51.586Z",
+      "included": 222,
+      "raw_count": 222,
+      "duplicates_removed": 0,
+      "pages": 1,
+      "failure_codes": [],
+      "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-01T06:05:47.489Z"
+  "last_permitted_check_at_utc": "2026-10-02T05:48:51.586Z"
 }

@@ -2202,19 +2202,21 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261001T182730364Z",
-  "last_attempted_check_at_utc": "2026-10-01T18:27:30.364Z",
+  "refresh_run_id": "refresh-20261002T054851586Z",
+  "last_attempted_check_at_utc": "2026-10-02T05:48:51.586Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-10-01T18:27:30.364Z",
-      "status": "live_inventory_promoted",
+      "checked_at_utc": null,
+      "status": "live_refresh_failed_snapshot_retained",
       "inventory_at_utc": "2026-10-01T18:27:30.364Z",
       "included": 37,
-      "raw_count": 39,
-      "duplicates_removed": 2,
-      "pages": 1,
-      "failure_codes": [],
-      "consecutive_failures": 0
+      "raw_count": null,
+      "duplicates_removed": null,
+      "pages": 0,
+      "failure_codes": [
+        "directory_http_error"
+      ],
+      "consecutive_failures": 1
     }
   },
   "last_permitted_check_at_utc": "2026-10-01T18:27:30.364Z",
