@@ -3410,6 +3410,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:brave",
+      "platform": "HackerOne",
+      "name": "Brave Software",
+      "url": "https://hackerone.com/brave",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:braze_inc",
       "platform": "HackerOne",
       "name": "Braze, Inc.",
@@ -4154,14 +4162,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:metamask",
-      "platform": "HackerOne",
-      "name": "MetaMask",
-      "url": "https://hackerone.com/metamask",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:modern_treasury",
       "platform": "HackerOne",
       "name": "Modern Treasury",
@@ -4214,14 +4214,6 @@
       "platform": "HackerOne",
       "name": "Netflix",
       "url": "https://hackerone.com/netflix",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
-      "id": "hackerone:netlify",
-      "platform": "HackerOne",
-      "name": "Netlify",
-      "url": "https://hackerone.com/netlify",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6122,20 +6114,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261005T055057747Z",
-  "last_attempted_check_at_utc": "2026-10-05T05:50:57.747Z",
+  "refresh_run_id": "refresh-20261006T062951361Z",
+  "last_attempted_check_at_utc": "2026-10-06T06:29:51.361Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-05T05:50:57.747Z",
+      "checked_at_utc": "2026-10-06T06:29:51.361Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-05T05:50:57.747Z",
-      "included": 221,
-      "raw_count": 221,
+      "inventory_at_utc": "2026-10-06T06:29:51.361Z",
+      "included": 220,
+      "raw_count": 220,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-05T05:50:57.747Z"
+  "last_permitted_check_at_utc": "2026-10-06T06:29:51.361Z"
 }
