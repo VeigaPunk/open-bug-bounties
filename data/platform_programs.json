@@ -4106,14 +4106,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:malwarebytes",
-      "platform": "HackerOne",
-      "name": "Malwarebytes",
-      "url": "https://hackerone.com/malwarebytes",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:marriott",
       "platform": "HackerOne",
       "name": "Marriott Bug Bounty Program",
@@ -6106,20 +6098,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261012T060800516Z",
-  "last_attempted_check_at_utc": "2026-10-12T06:08:00.516Z",
+  "refresh_run_id": "refresh-20261012T211834533Z",
+  "last_attempted_check_at_utc": "2026-10-12T21:18:34.533Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-12T06:08:00.516Z",
+      "checked_at_utc": "2026-10-12T21:18:34.533Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-12T06:08:00.516Z",
-      "included": 219,
-      "raw_count": 219,
+      "inventory_at_utc": "2026-10-12T21:18:34.533Z",
+      "included": 218,
+      "raw_count": 218,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-12T06:08:00.516Z"
+  "last_permitted_check_at_utc": "2026-10-12T21:18:34.533Z"
 }
