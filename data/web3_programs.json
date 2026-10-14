@@ -2002,6 +2002,14 @@
       "kyc_required": null
     },
     {
+      "id": "sherlock:425",
+      "name": "IOTA",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/425",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
       "id": "sherlock:359",
       "name": "Kite AI",
       "platform": "Sherlock",
@@ -2202,25 +2210,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261014T050122616Z",
-  "last_attempted_check_at_utc": "2026-10-14T05:01:22.616Z",
+  "refresh_run_id": "refresh-20261014T171858635Z",
+  "last_attempted_check_at_utc": "2026-10-14T17:18:58.635Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-10-14T05:01:22.616Z",
+      "checked_at_utc": "2026-10-14T17:18:58.635Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-14T05:01:22.616Z",
-      "included": 37,
-      "raw_count": 39,
+      "inventory_at_utc": "2026-10-14T17:18:58.635Z",
+      "included": 38,
+      "raw_count": 40,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-14T05:01:22.616Z",
+  "last_permitted_check_at_utc": "2026-10-14T17:18:58.635Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 37
+    "Sherlock": 38
   }
 }
