@@ -3378,14 +3378,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:basecamp",
-      "platform": "HackerOne",
-      "name": "Basecamp",
-      "url": "https://hackerone.com/basecamp",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:blend-labs",
       "platform": "HackerOne",
       "name": "Blend Labs",
@@ -3854,6 +3846,14 @@
       "platform": "HackerOne",
       "name": "GitLab",
       "url": "https://hackerone.com/gitlab",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
+      "id": "hackerone:gocardless_bbp",
+      "platform": "HackerOne",
+      "name": "GoCardless Bug Bounty Program",
+      "url": "https://hackerone.com/gocardless_bbp",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6098,13 +6098,13 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261019T045057566Z",
-  "last_attempted_check_at_utc": "2026-10-19T04:50:57.566Z",
+  "refresh_run_id": "refresh-20261019T184435168Z",
+  "last_attempted_check_at_utc": "2026-10-19T18:44:35.168Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-19T04:50:57.566Z",
+      "checked_at_utc": "2026-10-19T18:44:35.168Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-19T04:50:57.566Z",
+      "inventory_at_utc": "2026-10-19T18:44:35.168Z",
       "included": 218,
       "raw_count": 218,
       "duplicates_removed": 0,
@@ -6113,5 +6113,5 @@
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-19T04:50:57.566Z"
+  "last_permitted_check_at_utc": "2026-10-19T18:44:35.168Z"
 }
