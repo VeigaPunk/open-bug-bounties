@@ -3378,6 +3378,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:basecamp",
+      "platform": "HackerOne",
+      "name": "Basecamp",
+      "url": "https://hackerone.com/basecamp",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:blend-labs",
       "platform": "HackerOne",
       "name": "Blend Labs",
@@ -6106,20 +6114,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261020T045908064Z",
-  "last_attempted_check_at_utc": "2026-10-20T04:59:08.064Z",
+  "refresh_run_id": "refresh-20261020T171654569Z",
+  "last_attempted_check_at_utc": "2026-10-20T17:16:54.569Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-20T04:59:08.064Z",
+      "checked_at_utc": "2026-10-20T17:16:54.569Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-20T04:59:08.064Z",
-      "included": 219,
-      "raw_count": 219,
+      "inventory_at_utc": "2026-10-20T17:16:54.569Z",
+      "included": 220,
+      "raw_count": 220,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-20T04:59:08.064Z"
+  "last_permitted_check_at_utc": "2026-10-20T17:16:54.569Z"
 }

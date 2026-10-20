@@ -2002,14 +2002,6 @@
       "kyc_required": null
     },
     {
-      "id": "sherlock:425",
-      "name": "IOTA",
-      "platform": "Sherlock",
-      "program_url": "https://audits.sherlock.xyz/bug-bounties/425",
-      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
-      "kyc_required": null
-    },
-    {
       "id": "sherlock:433",
       "name": "Kamino",
       "platform": "Sherlock",
@@ -2030,14 +2022,6 @@
       "name": "Mellow Core Vaults",
       "platform": "Sherlock",
       "program_url": "https://audits.sherlock.xyz/bug-bounties/125",
-      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
-      "kyc_required": null
-    },
-    {
-      "id": "sherlock:106",
-      "name": "MetaLend",
-      "platform": "Sherlock",
-      "program_url": "https://audits.sherlock.xyz/bug-bounties/106",
       "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
       "kyc_required": null
     },
@@ -2218,25 +2202,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261020T045908064Z",
-  "last_attempted_check_at_utc": "2026-10-20T04:59:08.064Z",
+  "refresh_run_id": "refresh-20261020T171654569Z",
+  "last_attempted_check_at_utc": "2026-10-20T17:16:54.569Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-10-20T04:59:08.064Z",
+      "checked_at_utc": "2026-10-20T17:16:54.569Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-20T04:59:08.064Z",
-      "included": 39,
-      "raw_count": 41,
+      "inventory_at_utc": "2026-10-20T17:16:54.569Z",
+      "included": 37,
+      "raw_count": 39,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-20T04:59:08.064Z",
+  "last_permitted_check_at_utc": "2026-10-20T17:16:54.569Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 39
+    "Sherlock": 37
   }
 }
