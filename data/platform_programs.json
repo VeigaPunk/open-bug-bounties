@@ -3290,14 +3290,6 @@
       "industry": null
     },
     {
-      "id": "hackerone:algolia",
-      "platform": "HackerOne",
-      "name": "Algolia",
-      "url": "https://hackerone.com/algolia",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
       "id": "hackerone:alsco",
       "platform": "HackerOne",
       "name": "ALSCO",
@@ -6114,20 +6106,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261021T045825194Z",
-  "last_attempted_check_at_utc": "2026-10-21T04:58:25.194Z",
+  "refresh_run_id": "refresh-20261021T171939858Z",
+  "last_attempted_check_at_utc": "2026-10-21T17:19:39.858Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-21T04:58:25.194Z",
+      "checked_at_utc": "2026-10-21T17:19:39.858Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-21T04:58:25.194Z",
-      "included": 220,
-      "raw_count": 220,
+      "inventory_at_utc": "2026-10-21T17:19:39.858Z",
+      "included": 219,
+      "raw_count": 219,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-21T04:58:25.194Z"
+  "last_permitted_check_at_utc": "2026-10-21T17:19:39.858Z"
 }
