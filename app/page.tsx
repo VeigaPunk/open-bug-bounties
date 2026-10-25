@@ -13,6 +13,7 @@ import {
 } from "@/data/programs";
 
 const PAGE_SIZE = 48;
+const attemptedAtMs = new Date(lastRefreshAttemptAt).getTime();
 
 type SortMode = "name" | "reward" | "source";
 
@@ -43,6 +44,12 @@ function relativeTime(timestamp: number, now: number) {
   return `${Math.floor(hours / 24)}d ago`;
 }
 
+// Static snapshots render the absolute UTC clock of the attempt; the client
+// swaps in relative phrasing once the ticker starts.
+function attemptClock(iso: string) {
+  return `${iso.slice(11, 16)} UTC`;
+}
+
 function platformClass(platform: string) {
   return `platform-${platform.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 }
@@ -54,7 +61,9 @@ export default function Home() {
   const [surface, setSurface] = useState<"All" | Surface>("All");
   const [sort, setSort] = useState<SortMode>("name");
   const [limit, setLimit] = useState(PAGE_SIZE);
-  const [now, setNow] = useState(() => new Date(lastRefreshAttemptAt).getTime());
+  // null until the first tick: SSR and the first client render then agree on
+  // the absolute clock, so hydration matches and snapshots stay honest.
+  const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {
     const initialTick = window.setTimeout(() => setNow(Date.now()), 0);
@@ -108,7 +117,7 @@ export default function Home() {
   const completeSourceCount = sourceCoverage.filter((source) => source.completeness === "complete").length;
 
   return (
-    <main>
+    <>
       <header className="topbar">
         <a className="wordmark" href="#top" aria-label="The Bounty Index home">
           <span className="wordmark-mark" aria-hidden="true">B/</span>
@@ -121,222 +130,227 @@ export default function Home() {
         <a className="method-link" href="#method">METHOD ↓</a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-copy">
-          <div className="eyebrow-row">
-            <span className="eyebrow">OPEN • PAID • PUBLIC</span>
-            <span className="anti-aggregator">OFFICIAL EVIDENCE ONLY</span>
+      <main>
+        <section className="hero" id="top">
+          <div className="hero-grid" aria-hidden="true" />
+          <div className="hero-copy">
+            <div className="eyebrow-row">
+              <span className="eyebrow">OPEN • PAID • PUBLIC</span>
+              <span className="anti-aggregator">OFFICIAL EVIDENCE ONLY</span>
+            </div>
+            <h1>Bug bounties,<br /><span>without the dead ends.</span></h1>
+            <p className="hero-deck">
+              A source-linked record of vulnerability programs last observed as public and paid. Every
+              listing points to an official platform or the organization’s own policy—not a copied
+              aggregator page. Live-permitted sources are rechecked every 12 hours; retained snapshots
+              stay visibly dated.
+            </p>
+            <div className="hero-actions">
+              <a className="primary-button" href="#directory">Explore {programs.length} programs <span>→</span></a>
+              <a className="text-button" href="#sources">See source coverage →</a>
+            </div>
           </div>
-          <h1>Bug bounties,<br /><span>without the dead ends.</span></h1>
-          <p className="hero-deck">
-            A source-linked record of vulnerability programs last observed as public and paid. Every
-            listing points to an official platform or the organization’s own policy—not a copied
-            aggregator page. Live-permitted sources are rechecked every 12 hours; retained snapshots
-            stay visibly dated.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-button" href="#directory">Explore {programs.length} programs <span>→</span></a>
-            <a className="text-button" href="#sources">See source coverage →</a>
+
+          <div className="status-card">
+            <div className="status-card-head">
+              <span>INDEX HEALTH</span>
+              <span className={`status-open ${refreshHealth === "PARTIAL" ? "status-partial" : ""}`}>{refreshHealth}</span>
+            </div>
+            <div className="status-number">{programs.length}</div>
+            <div className="status-label">source-linked public listings</div>
+            <div className="status-rule" />
+            <dl className="status-list">
+              <div><dt>First-party policies</dt><dd>{firstPartyCount}</dd></div>
+              <div><dt>Source groups</dt><dd>{sourceCoverage.length}</dd></div>
+              <div><dt>Last attempt</dt><dd>{now === null ? attemptClock(lastRefreshAttemptAt) : relativeTime(attemptedAtMs, now)}</dd></div>
+              <div><dt>Complete live inventories</dt><dd>{completeSourceCount} / {sourceCoverage.length}</dd></div>
+            </dl>
           </div>
-        </div>
+        </section>
 
-        <div className="status-card">
-          <div className="status-card-head">
-            <span>INDEX HEALTH</span>
-            <span className={`status-open ${refreshHealth === "PARTIAL" ? "status-partial" : ""}`}>{refreshHealth}</span>
+        <section className="directory-section" id="directory">
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">01 / DIRECTORY</p>
+              <h2>Find your next scope.</h2>
+            </div>
+            <p role="status" aria-live="polite">{filtered.length} matching {filtered.length === 1 ? "program" : "programs"}</p>
           </div>
-          <div className="status-number">{programs.length}</div>
-          <div className="status-label">source-linked public listings</div>
-          <div className="status-rule" />
-          <dl className="status-list">
-            <div><dt>First-party policies</dt><dd>{firstPartyCount}</dd></div>
-            <div><dt>Source groups</dt><dd>{sourceCoverage.length}</dd></div>
-            <div><dt>Last attempt</dt><dd>{relativeTime(new Date(lastRefreshAttemptAt).getTime(), now)}</dd></div>
-            <div><dt>Complete live inventories</dt><dd>{completeSourceCount} / {sourceCoverage.length}</dd></div>
-          </dl>
-        </div>
-      </section>
 
-      <section className="directory-section" id="directory">
-        <div className="section-heading">
-          <div>
-            <p className="section-kicker">01 / DIRECTORY</p>
-            <h2>Find your next scope.</h2>
+          <div className="filter-shell">
+            <label className="search-field">
+              <span className="sr-only">Search programs</span>
+              <span aria-hidden="true">⌕</span>
+              <input
+                aria-keyshortcuts="Control+K Meta+K"
+                value={query}
+                onChange={(event) => { setQuery(event.target.value); setLimit(PAGE_SIZE); }}
+                placeholder="Search organization, source, or surface"
+                type="search"
+              />
+              <kbd>⌘ K</kbd>
+            </label>
+
+            <div className="filter-row">
+              <div className="segmented" aria-label="Evidence source filter">
+                {(["All", "First-party", "Platform"] as const).map((value) => (
+                  <button
+                    aria-pressed={sourceKind === value}
+                    className={sourceKind === value ? "active" : ""}
+                    key={value}
+                    onClick={() => { setSourceKind(value); setLimit(PAGE_SIZE); }}
+                    type="button"
+                  >
+                    {value}
+                  </button>
+                ))}
+              </div>
+
+              <label>
+                <span className="sr-only">Platform</span>
+                <select value={platform} onChange={(event) => { setPlatform(event.target.value); setLimit(PAGE_SIZE); }}>
+                  <option>All</option>
+                  {platforms.map((value) => <option key={value}>{value}</option>)}
+                </select>
+              </label>
+
+              <label>
+                <span className="sr-only">Surface</span>
+                <select value={surface} onChange={(event) => { setSurface(event.target.value as "All" | Surface); setLimit(PAGE_SIZE); }}>
+                  <option>All</option>
+                  <option>Web & cloud</option>
+                  <option>Web3</option>
+                  <option>Products</option>
+                  <option>Open source</option>
+                  <option>Mixed</option>
+                </select>
+              </label>
+
+              <label className="sort-select">
+                <span>Sort</span>
+                <select value={sort} onChange={(event) => { setSort(event.target.value as SortMode); setLimit(PAGE_SIZE); }}>
+                  <option value="name">A–Z</option>
+                  <option value="reward">Highest reward</option>
+                  <option value="source">Source</option>
+                </select>
+              </label>
+            </div>
           </div>
-          <p role="status" aria-live="polite">{filtered.length} matching {filtered.length === 1 ? "program" : "programs"}</p>
-        </div>
 
-        <div className="filter-shell">
-          <label className="search-field">
-            <span className="sr-only">Search programs</span>
-            <span aria-hidden="true">⌕</span>
-            <input
-              aria-keyshortcuts="Control+K Meta+K"
-              value={query}
-              onChange={(event) => { setQuery(event.target.value); setLimit(PAGE_SIZE); }}
-              placeholder="Search organization, source, or surface"
-              type="search"
-            />
-            <kbd>⌘ K</kbd>
-          </label>
-
-          <div className="filter-row">
-            <div className="segmented" aria-label="Evidence source filter">
-              {(["All", "First-party", "Platform"] as const).map((value) => (
-                <button
-                  aria-pressed={sourceKind === value}
-                  className={sourceKind === value ? "active" : ""}
-                  key={value}
-                  onClick={() => { setSourceKind(value); setLimit(PAGE_SIZE); }}
-                  type="button"
-                >
-                  {value}
-                </button>
-              ))}
+          <div className="program-table" role="table" aria-label="Open bug bounty programs">
+            <div className="program-header" role="row">
+              <span role="columnheader">Program</span>
+              <span role="columnheader">Evidence</span>
+              <span role="columnheader">Surface</span>
+              <span role="columnheader">Published reward</span>
+              <span aria-hidden="true" />
             </div>
 
-            <label>
-              <span className="sr-only">Platform</span>
-              <select value={platform} onChange={(event) => { setPlatform(event.target.value); setLimit(PAGE_SIZE); }}>
-                <option>All</option>
-                {platforms.map((value) => <option key={value}>{value}</option>)}
-              </select>
-            </label>
-
-            <label>
-              <span className="sr-only">Surface</span>
-              <select value={surface} onChange={(event) => { setSurface(event.target.value as "All" | Surface); setLimit(PAGE_SIZE); }}>
-                <option>All</option>
-                <option>Web & cloud</option>
-                <option>Web3</option>
-                <option>Products</option>
-                <option>Open source</option>
-                <option>Mixed</option>
-              </select>
-            </label>
-
-            <label className="sort-select">
-              <span>Sort</span>
-              <select value={sort} onChange={(event) => { setSort(event.target.value as SortMode); setLimit(PAGE_SIZE); }}>
-                <option value="name">A–Z</option>
-                <option value="reward">Highest reward</option>
-                <option value="source">Source</option>
-              </select>
-            </label>
-          </div>
-        </div>
-
-        <div className="program-table" role="table" aria-label="Open bug bounty programs">
-          <div className="program-header" role="row">
-            <span role="columnheader">Program</span>
-            <span role="columnheader">Evidence</span>
-            <span role="columnheader">Surface</span>
-            <span role="columnheader">Published reward</span>
-            <span aria-hidden="true" />
-          </div>
-
-          {filtered.slice(0, limit).map((program, index) => (
-            <article className="program-row" role="row" key={program.id}>
-              <div className="program-name" role="cell">
-                <span className="row-number">{String(index + 1).padStart(3, "0")}</span>
-                <div>
-                  <a href={program.url} target="_blank" rel="noopener noreferrer">{program.name}</a>
-                  {program.note && <small>{program.note}</small>}
+            {/* The full filtered list is server-rendered so the static snapshot
+                exposes the whole index to crawlers and no-JS readers; client
+                pagination only toggles `hidden` past `limit`. */}
+            {filtered.map((program, index) => (
+              <article className="program-row" role="row" key={program.id} hidden={index >= limit}>
+                <div className="program-name" role="cell">
+                  <span className="row-number">{String(index + 1).padStart(3, "0")}</span>
+                  <div>
+                    <a href={program.url} target="_blank" rel="noopener noreferrer">{program.name}</a>
+                    {program.note && <small>{program.note}</small>}
+                  </div>
                 </div>
+                <div role="cell">
+                  <a
+                    className={`platform-badge ${platformClass(program.platform)}`}
+                    href={program.evidenceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Open official evidence for ${program.name}`}
+                  >
+                    {program.sourceKind === "First-party" ? "FIRST-PARTY" : program.platform.toUpperCase()}
+                  </a>
+                </div>
+                <div className="surface-cell" role="cell">{program.surface}</div>
+                <div className="reward-cell" role="cell">{rewardLabel(program)}</div>
+                <a className="row-arrow" href={program.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${program.name} program`}>↗︎</a>
+              </article>
+            ))}
+
+            {filtered.length === 0 && (
+              <div className="empty-state">
+                <span>NO MATCH</span>
+                <h3>Try a wider scope.</h3>
+                <button type="button" onClick={() => { setQuery(""); setPlatform("All"); setSurface("All"); setSourceKind("All"); }}>
+                  Reset filters
+                </button>
               </div>
-              <div role="cell">
-                <a
-                  className={`platform-badge ${platformClass(program.platform)}`}
-                  href={program.evidenceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={`Open official evidence for ${program.name}`}
-                >
-                  {program.sourceKind === "First-party" ? "FIRST-PARTY" : program.platform.toUpperCase()}
-                </a>
-              </div>
-              <div className="surface-cell" role="cell">{program.surface}</div>
-              <div className="reward-cell" role="cell">{rewardLabel(program)}</div>
-              <a className="row-arrow" href={program.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${program.name} program`}>↗︎</a>
-            </article>
-          ))}
-
-          {filtered.length === 0 && (
-            <div className="empty-state">
-              <span>NO MATCH</span>
-              <h3>Try a wider scope.</h3>
-              <button type="button" onClick={() => { setQuery(""); setPlatform("All"); setSurface("All"); setSourceKind("All"); }}>
-                Reset filters
-              </button>
-            </div>
-          )}
-        </div>
-
-        {limit < filtered.length && (
-          <button className="load-more" type="button" onClick={() => setLimit((value) => value + PAGE_SIZE)}>
-            Show {Math.min(PAGE_SIZE, filtered.length - limit)} more
-            <span>{limit} / {filtered.length}</span>
-          </button>
-        )}
-      </section>
-
-      <section className="sources-section" id="sources">
-        <div className="section-heading light-heading">
-          <div>
-            <p className="section-kicker">02 / SOURCE COVERAGE</p>
-            <h2>Traceable by design.</h2>
+            )}
           </div>
-          <p>No community aggregator is accepted as evidence.</p>
-        </div>
-        <div className="source-grid">
-          {sourceCoverage.map((source, index) => (
-            <a href={source.url} target="_blank" rel="noopener noreferrer" className="source-card" key={source.id}>
-              <span className="source-index">{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3>{source.name}</h3>
-                <p>{source.note}</p>
-              </div>
-              <div className="source-count"><strong>{source.count}</strong><span>{source.completeness === "complete" ? "live" : "retained / partial"}</span></div>
-              <span className="source-arrow">↗︎</span>
-            </a>
-          ))}
-        </div>
-      </section>
 
-      <section className="method-section" id="method">
-        <div className="method-intro">
-          <p className="section-kicker">03 / METHOD</p>
-          <h2>What “open” means here.</h2>
-          <p>
-            There is no universal registry for bug bounties. This index treats completeness as a
-            verifiable process: cover authoritative directories, follow first-party disclosures,
-            and keep uncertainty visible.
-          </p>
-        </div>
-        <ol className="method-list">
-          <li>
-            <span>01</span>
-            <div><h3>Money is explicit</h3><p>Reward language or a bounty table must be present. Unpaid VDPs are excluded.</p></div>
-          </li>
-          <li>
-            <span>02</span>
-            <div><h3>The door is open</h3><p>Public submission must be available now. Private, paused, invite-only, and ended programs are excluded.</p></div>
-          </li>
-          <li>
-            <span>03</span>
-            <div><h3>Evidence is primary</h3><p>Accepted evidence is an official platform page or the organization’s own domain.</p></div>
-          </li>
-          <li>
-            <span>04</span>
-            <div><h3>Failures remain visible</h3><p>A source outage never silently deletes a program. Permission-gated directories stay labeled as snapshots instead of being crawled against their rules.</p></div>
-          </li>
-          <li>
-            <span>05</span>
-            <div><h3>Records stay minimal</h3><p>Platform descriptions, scopes, logos, and reward tables are not reproduced. Follow the official link for current terms.</p></div>
-          </li>
-        </ol>
-      </section>
+          {limit < filtered.length && (
+            <button className="load-more" type="button" onClick={() => setLimit((value) => value + PAGE_SIZE)}>
+              Show {Math.min(PAGE_SIZE, filtered.length - limit)} more
+              <span>{limit} / {filtered.length}</span>
+            </button>
+          )}
+        </section>
+
+        <section className="sources-section" id="sources">
+          <div className="section-heading light-heading">
+            <div>
+              <p className="section-kicker">02 / SOURCE COVERAGE</p>
+              <h2>Traceable by design.</h2>
+            </div>
+            <p>No community aggregator is accepted as evidence.</p>
+          </div>
+          <div className="source-grid">
+            {sourceCoverage.map((source, index) => (
+              <a href={source.url} target="_blank" rel="noopener noreferrer" className="source-card" key={source.id}>
+                <span className="source-index">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{source.name}</h3>
+                  <p>{source.note}</p>
+                </div>
+                <div className="source-count"><strong>{source.count}</strong><span>{source.completeness === "complete" ? "live" : "retained / partial"}</span></div>
+                <span className="source-arrow">↗︎</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="method-section" id="method">
+          <div className="method-intro">
+            <p className="section-kicker">03 / METHOD</p>
+            <h2>What “open” means here.</h2>
+            <p>
+              There is no universal registry for bug bounties. This index treats completeness as a
+              verifiable process: cover authoritative directories, follow first-party disclosures,
+              and keep uncertainty visible.
+            </p>
+          </div>
+          <ol className="method-list">
+            <li>
+              <span>01</span>
+              <div><h3>Money is explicit</h3><p>Reward language or a bounty table must be present. Unpaid VDPs are excluded.</p></div>
+            </li>
+            <li>
+              <span>02</span>
+              <div><h3>The door is open</h3><p>Public submission must be available now. Private, paused, invite-only, and ended programs are excluded.</p></div>
+            </li>
+            <li>
+              <span>03</span>
+              <div><h3>Evidence is primary</h3><p>Accepted evidence is an official platform page or the organization’s own domain.</p></div>
+            </li>
+            <li>
+              <span>04</span>
+              <div><h3>Failures remain visible</h3><p>A source outage never silently deletes a program. Permission-gated directories stay labeled as snapshots instead of being crawled against their rules.</p></div>
+            </li>
+            <li>
+              <span>05</span>
+              <div><h3>Records stay minimal</h3><p>Platform descriptions, scopes, logos, and reward tables are not reproduced. Follow the official link for current terms.</p></div>
+            </li>
+          </ol>
+        </section>
+      </main>
 
       <footer>
         <div>
@@ -348,6 +362,6 @@ export default function Home() {
           <span>EVIDENCE {refreshEvidenceId.slice(0, 12)} · 12H SCHEDULE</span>
         </div>
       </footer>
-    </main>
+    </>
   );
 }

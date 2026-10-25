@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/*
+ * Design verdict, recorded for DESIGN.md (polish pass, 2026-10-25):
+ * This site consciously invokes DESIGN.md's utilitarian exception ("utility
+ * documents read on paper-like surfaces"): the Bounty Index is a data record —
+ * a source-linked directory — so it keeps its own paper theme (--paper/--ink)
+ * and its signature accents (acid / orange / blue) instead of the shared
+ * matte-black surface. Typography is monospace-first: --mono is the identity
+ * voice (topbar, kickers, badges, status lists, footer-meta); the sans stack
+ * below is the secondary voice only. "Inter" is dropped — it was declared but
+ * never loaded, and DESIGN.md forbids Inter as an identity font.
+ */
 :root {
   --ink: #171912;
   --muted-ink: #55584d;
@@ -10,7 +21,7 @@
   --blue: #1557ff;
   --line: #c9c8be;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -297,7 +308,7 @@ select {
 
 .status-partial {
   background: var(--orange);
-  color: white;
+  color: var(--ink);
 }
 
 .status-number {
@@ -542,6 +553,11 @@ select {
   min-height: 78px;
   position: relative;
   transition: background 140ms ease, transform 140ms ease;
+}
+
+/* `display: grid` above would override the UA's [hidden] rule. */
+.program-row[hidden] {
+  display: none;
 }
 
 .program-row:hover {
