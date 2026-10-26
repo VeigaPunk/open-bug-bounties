@@ -3410,6 +3410,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:brave",
+      "platform": "HackerOne",
+      "name": "Brave Software",
+      "url": "https://hackerone.com/brave",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:braze_inc",
       "platform": "HackerOne",
       "name": "Braze, Inc.",
@@ -4150,14 +4158,6 @@
       "platform": "HackerOne",
       "name": "Modern Treasury",
       "url": "https://hackerone.com/modern_treasury",
-      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
-      "industry": null
-    },
-    {
-      "id": "hackerone:moneybird",
-      "platform": "HackerOne",
-      "name": "Moneybird",
-      "url": "https://hackerone.com/moneybird",
       "directory_url": "https://www.hackerone.com/bug-bounty-programs",
       "industry": null
     },
@@ -6098,13 +6098,13 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261026T045654102Z",
-  "last_attempted_check_at_utc": "2026-10-26T04:56:54.102Z",
+  "refresh_run_id": "refresh-20261026T184245885Z",
+  "last_attempted_check_at_utc": "2026-10-26T18:42:45.885Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-26T04:56:54.102Z",
+      "checked_at_utc": "2026-10-26T18:42:45.885Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-26T04:56:54.102Z",
+      "inventory_at_utc": "2026-10-26T18:42:45.885Z",
       "included": 218,
       "raw_count": 218,
       "duplicates_removed": 0,
@@ -6113,5 +6113,5 @@
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-26T04:56:54.102Z"
+  "last_permitted_check_at_utc": "2026-10-26T18:42:45.885Z"
 }
