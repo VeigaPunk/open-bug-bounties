@@ -4162,6 +4162,14 @@
       "industry": null
     },
     {
+      "id": "hackerone:moneybird",
+      "platform": "HackerOne",
+      "name": "Moneybird",
+      "url": "https://hackerone.com/moneybird",
+      "directory_url": "https://www.hackerone.com/bug-bounty-programs",
+      "industry": null
+    },
+    {
       "id": "hackerone:mongodb",
       "platform": "HackerOne",
       "name": "MongoDB",
@@ -6098,20 +6106,20 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261027T051430430Z",
-  "last_attempted_check_at_utc": "2026-10-27T05:14:30.430Z",
+  "refresh_run_id": "refresh-20261027T180358982Z",
+  "last_attempted_check_at_utc": "2026-10-27T18:03:58.982Z",
   "source_checks": {
     "HackerOne": {
-      "checked_at_utc": "2026-10-27T05:14:30.430Z",
+      "checked_at_utc": "2026-10-27T18:03:58.982Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-27T05:14:30.430Z",
-      "included": 218,
-      "raw_count": 218,
+      "inventory_at_utc": "2026-10-27T18:03:58.982Z",
+      "included": 219,
+      "raw_count": 219,
       "duplicates_removed": 0,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-27T05:14:30.430Z"
+  "last_permitted_check_at_utc": "2026-10-27T18:03:58.982Z"
 }
