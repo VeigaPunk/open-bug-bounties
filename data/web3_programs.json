@@ -2210,13 +2210,13 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261027T180358982Z",
-  "last_attempted_check_at_utc": "2026-10-27T18:03:58.982Z",
+  "refresh_run_id": "refresh-20261028T055244714Z",
+  "last_attempted_check_at_utc": "2026-10-28T05:52:44.714Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-10-27T18:03:58.982Z",
+      "checked_at_utc": "2026-10-28T05:52:44.714Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-10-27T18:03:58.982Z",
+      "inventory_at_utc": "2026-10-28T05:52:44.714Z",
       "included": 38,
       "raw_count": 40,
       "duplicates_removed": 2,
@@ -2225,7 +2225,7 @@
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-10-27T18:03:58.982Z",
+  "last_permitted_check_at_utc": "2026-10-28T05:52:44.714Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
