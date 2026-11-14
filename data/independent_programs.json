@@ -894,15 +894,15 @@
       }
     }
   ],
-  "refresh_run_id": "refresh-20261114T063954251Z",
-  "last_attempted_check_at_utc": "2026-11-14T06:39:54.251Z",
+  "refresh_run_id": "refresh-20261114T181512627Z",
+  "last_attempted_check_at_utc": "2026-11-14T18:15:12.627Z",
   "source_check": {
     "status": "partial_last_good_retained",
     "configured": 60,
     "checked": 47,
-    "reachable": 32,
+    "reachable": 30,
     "excluded": 13,
-    "errors": 15,
+    "errors": 17,
     "failure_codes": [
       "access_denied",
       "network_request_timeout",
@@ -911,5 +911,5 @@
     ],
     "retention": "No listing is removed automatically after a failed or missing check."
   },
-  "last_permitted_check_at_utc": "2026-11-14T06:39:54.251Z"
+  "last_permitted_check_at_utc": "2026-11-14T18:15:12.627Z"
 }
