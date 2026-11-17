@@ -2194,6 +2194,14 @@
       "kyc_required": null
     },
     {
+      "id": "sherlock:438",
+      "name": "Veda",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/438",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
       "id": "sherlock:384",
       "name": "Vesu",
       "platform": "Sherlock",
@@ -2210,25 +2218,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261117T080420129Z",
-  "last_attempted_check_at_utc": "2026-11-17T08:04:20.129Z",
+  "refresh_run_id": "refresh-20261117T210223395Z",
+  "last_attempted_check_at_utc": "2026-11-17T21:02:23.395Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-11-17T08:04:20.129Z",
+      "checked_at_utc": "2026-11-17T21:02:23.395Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-11-17T08:04:20.129Z",
-      "included": 38,
-      "raw_count": 40,
+      "inventory_at_utc": "2026-11-17T21:02:23.395Z",
+      "included": 39,
+      "raw_count": 41,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-11-17T08:04:20.129Z",
+  "last_permitted_check_at_utc": "2026-11-17T21:02:23.395Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 38
+    "Sherlock": 39
   }
 }
