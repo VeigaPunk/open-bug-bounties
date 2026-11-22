@@ -1954,6 +1954,14 @@
       "kyc_required": null
     },
     {
+      "id": "sherlock:148",
+      "name": "Beanstalk",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/148",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
       "id": "sherlock:114",
       "name": "Cap",
       "platform": "Sherlock",
@@ -2218,25 +2226,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261122T070220808Z",
-  "last_attempted_check_at_utc": "2026-11-22T07:02:20.808Z",
+  "refresh_run_id": "refresh-20261122T194905779Z",
+  "last_attempted_check_at_utc": "2026-11-22T19:49:05.779Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-11-22T07:02:20.808Z",
+      "checked_at_utc": "2026-11-22T19:49:05.779Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-11-22T07:02:20.808Z",
-      "included": 39,
-      "raw_count": 41,
+      "inventory_at_utc": "2026-11-22T19:49:05.779Z",
+      "included": 40,
+      "raw_count": 42,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-11-22T07:02:20.808Z",
+  "last_permitted_check_at_utc": "2026-11-22T19:49:05.779Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 39
+    "Sherlock": 40
   }
 }
