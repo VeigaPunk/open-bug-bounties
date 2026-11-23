@@ -6090,8 +6090,8 @@
       "industry": "Marketing Tech"
     }
   ],
-  "refresh_run_id": "refresh-20261122T194905779Z",
-  "last_attempted_check_at_utc": "2026-11-22T19:49:05.779Z",
+  "refresh_run_id": "refresh-20261123T075120499Z",
+  "last_attempted_check_at_utc": "2026-11-23T07:51:20.499Z",
   "source_checks": {
     "HackerOne": {
       "checked_at_utc": null,
@@ -6104,7 +6104,7 @@
       "failure_codes": [
         "hackerone_cards_missing"
       ],
-      "consecutive_failures": 40
+      "consecutive_failures": 41
     }
   },
   "last_permitted_check_at_utc": "2026-11-02T21:46:45.707Z"
