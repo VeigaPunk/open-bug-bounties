@@ -2074,6 +2074,14 @@
       "kyc_required": null
     },
     {
+      "id": "sherlock:455",
+      "name": "Osero SDK and Swap API",
+      "platform": "Sherlock",
+      "program_url": "https://audits.sherlock.xyz/bug-bounties/455",
+      "source_directory_url": "https://audits.sherlock.xyz/bug-bounties",
+      "kyc_required": null
+    },
+    {
       "id": "sherlock:344",
       "name": "Paradex",
       "platform": "Sherlock",
@@ -2226,25 +2234,25 @@
       "kyc_required": null
     }
   ],
-  "refresh_run_id": "refresh-20261125T084709546Z",
-  "last_attempted_check_at_utc": "2026-11-25T08:47:09.546Z",
+  "refresh_run_id": "refresh-20261125T214911998Z",
+  "last_attempted_check_at_utc": "2026-11-25T21:49:11.998Z",
   "source_checks": {
     "Sherlock": {
-      "checked_at_utc": "2026-11-25T08:47:09.546Z",
+      "checked_at_utc": "2026-11-25T21:49:11.998Z",
       "status": "live_inventory_promoted",
-      "inventory_at_utc": "2026-11-25T08:47:09.546Z",
-      "included": 40,
-      "raw_count": 42,
+      "inventory_at_utc": "2026-11-25T21:49:11.998Z",
+      "included": 41,
+      "raw_count": 43,
       "duplicates_removed": 2,
       "pages": 1,
       "failure_codes": [],
       "consecutive_failures": 0
     }
   },
-  "last_permitted_check_at_utc": "2026-11-25T08:47:09.546Z",
+  "last_permitted_check_at_utc": "2026-11-25T21:49:11.998Z",
   "counts": {
     "Cantina": 51,
     "Immunefi": 187,
-    "Sherlock": 40
+    "Sherlock": 41
   }
 }
